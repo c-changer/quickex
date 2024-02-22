@@ -414,7 +414,7 @@ timerElements.forEach(function(timerElement) {
     })
     let status = document.querySelectorAll(".huistatus")
     status.forEach(() => {
-      status.textContent = "Сделка отменена"
+      status.innerText = "Сделка отменена"
       status.style.color = "red"
     })
     
@@ -432,7 +432,7 @@ timerElements.forEach(function(timerElement) {
     })
     let status = document.querySelectorAll(".huistatus")
     status.forEach(() => {
-      status.textContent = "Сделка успешна"
+      status.innerText = "Сделка успешна"
       status.style.color = "#4ade80"
     })
   }
