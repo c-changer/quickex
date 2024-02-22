@@ -313,7 +313,7 @@
               </svg>
             </div>
             <div class="xl:pr-8 max-w-[14rem]">
-              <div class="text-[11px] xl:text-base {% if exchange.status == 'P' %}text-green-400{% elif exchange.status == 'W' %}text-zinc-400{% endif %} steptwohuitext" style="{% if exchange.status == "NP" %}color:red{% endif %}">Готово!</div>
+              <div class="text-[11px] xl:text-base {% if exchange.status == 'P' %}text-green-400{% else %}text-zinc-400{% endif %} steptwohuitext" style="{% if exchange.status == "NP" %}color:red{% endif %}">Готово!</div>
               <div class="text-neutral-400 text-opacity-75 text-[13px] leading-tight hidden xl:block">Поздравляем! Ваш обмен завершен. Наслаждайтесь полученной криптовалютой.</div>
             </div>
           </div>
