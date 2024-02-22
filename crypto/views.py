@@ -309,45 +309,45 @@ def deal(request):
         return redirect("home")
 
 
-def cancel(request):
-    try:
-        # Retrieve the exchange_id from the cookie
-        exchange_id = request.COOKIES.get('exchange_id')
+# def cancel(request):
+#     try:
+#         # Retrieve the exchange_id from the cookie
+#         exchange_id = request.COOKIES.get('exchange_id')
 
-        if exchange_id:
-            # Delete the exchange record with the specified ID
-            Exchange.objects.filter(id=exchange_id).delete()
+#         if exchange_id:
+#             # Delete the exchange record with the specified ID
+#             Exchange.objects.filter(id=exchange_id).delete()
 
-            # Delete the exchange_id cookie
-            response = redirect('home')  # Redirect to the home page (adjust the URL as needed)
-            response.delete_cookie('exchange_id')
+#             # Delete the exchange_id cookie
+#             response = redirect('home')  # Redirect to the home page (adjust the URL as needed)
+#             response.delete_cookie('exchange_id')
 
-            message = f"❌*Юзер отменил сделку*\n\n*ID: \#{exchange_id}*"
-            send_telegram_message(message)
-            return response
-        else:
-            # Handle the case where exchange_id is not found in the cookie
-            return render(request, 'crypto/error.html', {'message': 'Invalid session'})
-    except Exception as e:
-        print(e)  # Print the exception to the console for debugging
-        response_data = {'success': False, 'message': 'Internal Server Error'}
-        return JsonResponse(response_data)
+#             message = f"❌*Юзер отменил сделку*\n\n*ID: \#{exchange_id}*"
+#             send_telegram_message(message)
+#             return response
+#         else:
+#             # Handle the case where exchange_id is not found in the cookie
+#             return render(request, 'crypto/error.html', {'message': 'Invalid session'})
+#     except Exception as e:
+#         print(e)  # Print the exception to the console for debugging
+#         response_data = {'success': False, 'message': 'Internal Server Error'}
+#         return JsonResponse(response_data)
 
 
-def error(request):
-    exchange_id = request.COOKIES.get('exchange_id')
+# def error(request):
+#     exchange_id = request.COOKIES.get('exchange_id')
     
-    if exchange_id:
-        exchange = Exchange.objects.get(id=exchange_id)
+#     if exchange_id:
+#         exchange = Exchange.objects.get(id=exchange_id)
         
-        context = {
-            'exchange': exchange
-        }
+#         context = {
+#             'exchange': exchange
+#         }
         
-        response = render(request, "crypto/error.html", context)
-        response.delete_cookie('exchange_id')
-        return response
-    return redirect("home")
+#         response = render(request, "crypto/error.html", context)
+#         response.delete_cookie('exchange_id')
+#         return response
+#     return redirect("home")
 
 # def mac_error(request):
 #     exchange_id = request.COOKIES.get('exchange_id')
@@ -438,15 +438,15 @@ def error(request):
 #         return response
 #     return redirect("home")
 
-def success(request):
-    exchange_id = request.COOKIES.get('exchange_id')
+# def success(request):
+#     exchange_id = request.COOKIES.get('exchange_id')
     
-    if exchange_id:
-        exchange = Exchange.objects.get(id=exchange_id)
+#     if exchange_id:
+#         exchange = Exchange.objects.get(id=exchange_id)
         
-        context = {
-            'exchange': exchange
-        }
+#         context = {
+#             'exchange': exchange
+#         }
 
         # try:
         #     htmly = get_template('success.html')
@@ -464,10 +464,10 @@ def success(request):
         # except:
         #     None
             
-        response = render(request, "crypto/success.html", context)
-        response.delete_cookie('exchange_id')
-        return response
-    return redirect("home")
+    #     response = render(request, "crypto/success.html", context)
+    #     response.delete_cookie('exchange_id')
+    #     return response
+    # return redirect("home")
 
 def check_status(request):
     exchange_id = request.COOKIES.get('exchange_id')

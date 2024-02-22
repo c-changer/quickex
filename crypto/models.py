@@ -102,7 +102,7 @@ class Exchange(models.Model):
             (WAIT, "В ожидании"),
             (PAYED, 'Оплачено'),
             (NOT_PAYED, 'Ошибка'),
-            (STEP2, 'Шаг 2')
+            (STEP2, 'Шаг 3')
             # (IP_ERROR, 'Несовпадение IP-адреса'),
             # (MAC_ERROR, 'Несовпадение MAC-адреса'),
             # (DOES_NOT_EXIST, 'Кошелек не существует'),
