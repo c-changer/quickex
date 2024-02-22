@@ -226,8 +226,14 @@ def exchange(request):
             errorLink = f"{protocol}://{domain}/errorTG/{exchange_id}/"
             successLink = f"{protocol}://{domain}/successTG/{exchange_id}/"
             
-            formatted_date_time = datetime.today().strftime("%d.%m.%y, %H:%M (%Z)").replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-            formetted_exchange_coinFrom = exchange.coinFrom.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+            # Get the current date and time
+            current_datetime = datetime.today()
+
+            # Add 2 hours to the current date and time
+            adjusted_datetime = current_datetime + timedelta(hours=2)
+
+            # Format the adjusted date and time
+            formatted_date_time = adjusted_datetime.strftime("%d.%m.%y, %H:%M (%Z)").replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')            formetted_exchange_coinFrom = exchange.coinFrom.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
             formetted_exchange_coinTo = exchange.coinTo.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
             formatted_ip_address = ip_address.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
             formatted_sumFrom = exchange.sumFrom.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
