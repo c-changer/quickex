@@ -144,7 +144,7 @@ STATIC_URL = 'collected_static/'
 STATICFILES_DIRS = [
     BASE_DIR / "collected_static",
 ]
-# STATIC_ROOT = BASE_DIR / 'collected_static'
+STATIC_ROOT = BASE_DIR / 'collected_static'
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = 'media/'
 # Default primary key field type
