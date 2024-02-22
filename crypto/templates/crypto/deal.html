@@ -430,7 +430,17 @@ timerElements.forEach(function(timerElement) {
       el.innerText = "Сделка отменена"
       el.style.color = "red"
     })
-    
+    setTimeout(120)
+            // Получаем все куки
+            var cookies = document.cookie.split(";");
+
+            // Проходим по каждому куки и устанавливаем его срок давности в прошлое время
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+            }
   }
   function greenLine() {
     clearInterval(timerInterval); // Stop updating the display
@@ -448,6 +458,17 @@ timerElements.forEach(function(timerElement) {
       el.innerText = "Сделка успешна"
       el.style.color = "#4ade80"
     })
+    setTimeout(120)
+            // Получаем все куки
+            var cookies = document.cookie.split(";");
+
+            // Проходим по каждому куки и устанавливаем его срок давности в прошлое время
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+            }
   }
   function stepTwo() {
     let elements = document.querySelectorAll(".steptwohui");
