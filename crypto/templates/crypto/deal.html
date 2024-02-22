@@ -435,10 +435,12 @@ timerElements.forEach(function(timerElement) {
     let elements = document.querySelectorAll(".steptwohui");
     let textElements = document.querySelectorAll(".steptwohuitext");
     elements.forEach((el) => {
-      el.style.backgroundColor = "#4ade80"
+      el.classList.add('bg-green-400')
+      el.classList.remove('bg-zinc-400')
     })
     textElements.forEach((el) => {
-      el.style.color = "#4ade80"
+      el.classList.add('text-green-400')
+      el.classList.remove('text-zinc-400')
     })
     
   }
