@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  О Нас: №1 Сервис Мгновенного Обмена Криптовалют | Quickex.io
+{% endblock title %}
+
+{% block meta %}
+  <meta name="description" content="Quickex.io — это ваш надежный сервис для мгновенного обмена криптовалют. Мы предлагаем быстрый, безопасный и удобный обмен любых криптовалютных пар в самые короткие сроки." />
+  <meta property="og:description" content="Quickex.io — это ваш надежный сервис для мгновенного обмена криптовалют. Мы предлагаем быстрый, безопасный и удобный обмен любых криптовалютных пар в самые короткие сроки." />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+  <meta name="theme-color" content="#ffffff" />
+{% endblock meta %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/swiper-vue.BDUAz1xZ.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/Dialog.DvuX66LT.css' %}`" />
+  <link rel="stylesheet" href="{% static 'css/default.CnLTM92Y.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/index.B6R-is7E.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/index.CJFaGB0B.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+{% endblock css %}
+
+{% block content %}
+  <main data-v-7cfced15="">
+    <!-- [ -->
+    <div class="nuxt-loading-indicator" style="
+              position: fixed;
+              top: 0px;
+              right: 0px;
+              left: 0px;
+              pointer-events: none;
+              width: auto;
+              height: 3px;
+              opacity: 0;
+              background: repeating-linear-gradient(
+                to right,
+                rgb(0, 220, 130) 0%,
+                rgb(52, 205, 254) 50%,
+                rgb(0, 71, 225) 100%
+              );
+              transform: scaleX(0);
+              transform-origin: left center;
+              transition: transform 0.1s ease 0s, height 0.4s ease 0s,
+                opacity 0.4s ease 0s;
+              z-index: 999999;
+            "></div>
+    <div class="-mt-[81px] flex bg-cover bg-bottom pb-[47px] xl:pb-[64px]" style="
+              background-image: url('https://quickex.io/_nuxt/sky.Cdm85pbs.png');
+            ">
+      <div class="container mx-auto text-white mt-[90px] xl:mt-[100px]">
+        <h1 class="text-center font-bold text-[24px] xl:text-[54px]">О Quickex: Сервис Мгновенного Обмена</h1>
+      </div>
+    </div>
+    <div class="container mx-auto text-white py-10 xl:py-16">
+      <h2 class="text-left font-medium text-white text-[24px] mb-3 xl:text-[28px] xl:mb-4">Quickex — что это?</h2>
+      <p class="text-left font-light my-3 text-wgray-200 xl:my-4 text-[16px] xl:text-[18px] [&amp;&gt;strong]:text-white [&amp;&gt;strong]:font-semibold">Quickex — некастодиальный сервис мгновенного обмена криптовалюты. Наша миссия — предоставить клиентам возможность быстро обменивать криптовалюты безопасным, простым и эффективным способом, предоставляя наилучшие курсы и высокие лимиты сумм. Платформа была запущена в 2018 году и уже заслужила доверие тысяч пользователей. Сегодня Quickex предлагает к обмену более 100 монет, и это число постоянно растет.</p>
+      <p class="text-left font-light my-3 text-wgray-200 xl:my-4 text-[16px] xl:text-[18px] [&amp;&gt;strong]:text-white [&amp;&gt;strong]:font-semibold">Платформа безопасна и не хранит средства пользователей. Сервис известен своим удобством для пользователя и надежной службой поддержки, которая всегда готова вам помочь. Мы стремимся упростить торговлю криптовалютой: интерфейс нашего сайта очень удобен, а для завершения транзакции необходимо выполнить всего 3 шага.</p>
+    </div>
+    <section class="py-28 bg-cover bg-center" style="
+              background-image: url('https://quickex.io/_nuxt/sky.Cdm85pbs.png');
+            ">
+      {% include "crypto/form.html" %}
+    </section>
+    <!-- ] -->
+  </main>
+{% endblock content %}

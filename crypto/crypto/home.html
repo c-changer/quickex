@@ -1,0 +1,1050 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block cssStyle %}
+  {% static 'css/home.css' %}
+{% endblock cssStyle %}
+
+{% block content %}
+  <main class="main">
+      <div id="vue-exchange" class="trade" style="opacity: 1;">
+        <div class="wrap">
+          <div class="trade__box">
+            <div class="trade__info">
+              <div class="trade__info-item">
+                <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#fast" style="width: 80px;" alt="">
+                <div class="trade__info-text">Быстрый, автоматический способ обмена</div>
+              </div>
+              <div class="trade__info-item">
+                <img src="https://coinchanger.in/img/sprite.svg#online" style="width: 80px;" alt="">
+                <div class="trade__info-text">Круглосуточная поддержка в чате во время сделки</div>
+              </div>
+            </div>
+            <form id="js-exchange" class="trade__form" method="POST" action="{% url 'exchange' %}">
+              {% csrf_token %}
+              <div class="preloader">
+                <img src="{% static "images/preload.svg" %}" alt="loading" />
+              </div><h1 class="trade__title">Купить <span class="name1">{{ default_dep.crypto.name }} {% if default_dep.network is not None %}{{ default_dep.network }}{% endif %} ({{ default_dep.crypto.symbol }})</span> за <span class="name2">{{ default_payment.crypto.name }} {% if default_payment.network is not None %}{{ default_payment.network }}{% endif %} ({{ default_payment.crypto.symbol }})</span></h1><div>
+                <div class="trade__actual">
+                  Курс актуален <span id="timer" class="time"></span> — плавающий курс <a href="{% url "agreement" %}" target="_blank">подробнее</a>
+                </div>
+                <div class="trade__form-item">
+                  <div class="trade__form-hdr">
+                    <div class="trade__form-title">Отдаете</div>
+                    <div class="trade__form-title" >1 <span class="firstsymbol" name="symbolFrom">{{ default_payment.crypto.symbol }}</span> = <span class="priceratio">{{ price_ratio }}</span> <span class="secondsymbol" name="symbolTo">{{ default_dep.crypto.symbol }}</span></div>
+                    <input type="hidden" name="symbolFromInput" class="symbolFromInput" value="{% if default_payment.network is not None %}{{ default_payment.crypto.symbol }} {{ default_payment.network }}{% else %}{{ default_payment.crypto.name }}{% endif %}">
+                    <input type="hidden" name="symbolToInput" class="symbolToInput" value="{{ default_dep.crypto.symbol }} {% if default_dep.network is not None %}{{ default_dep.network }}{% else %}{{ default_dep.crypto.name }}{% endif %}">
+
+                    <input type="hidden" name="priceFromInput" class="priceFromInput" value="{{ default_payment.crypto.price }}">
+                    <input type="hidden" name="priceToInput" class="priceToInput" value="{{ default_dep.crypto.price }}">
+                  </div>
+                  <div class="field ex-field js-dropdown-container active">
+                    <input name="sumFrom" type="text" id="sumFrom" autocomplete="off" min="{{ min_amount_payment }}" max="{{ max_amount_payment }}" type="number" placeholder="{{ min_amount_payment }} - {{ max_amount_payment }}" class="trade__form-item__field js-field with-drdwn" /><label class="label label-payment">{{ default_payment.crypto.name }} ({{ default_payment.crypto.symbol }})</label><a class="open-select open-select-payment">
+                      <img src="{{ default_payment.crypto.icon }}" alt="BTC" />
+                      <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#drop" style="width: 18px;" alt="">
+                      <span class="payment-price" name="priceFrom" style="display:none">{{ default_payment.crypto.price }}</span>
+                    </a><div class="hidden hidden-payment">
+                      <div class="hidden__hdr">
+                        <h1 class="hidden__hdr-title">Отдаете</h1><button type="button" class="hidden__hdr-close">
+                          <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#close" style="width: 30px;" alt="">
+                        </button>
+                      </div>
+                      <div class="hidden__search">
+                       <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#search" style="width:36px;" alt="">
+                        <input type="search" placeholder="Поиск" class=" hidden__search-field hidden__search-field-payment" />
+                      </div>
+                      <div class="hidden__choose">
+                        <button type="button" class="hidden__choose-link active">Все</button><!--  -->
+                        <!--  -->
+                      </div>
+                      <div class="hidden__list">
+                        {% for payment in payments|dictsort:"crypto.name"  %}
+                           <div class="hidden__item hidden__item-payment">
+                            <img src="{{ payment.crypto.icon }}" alt="{{ payment.crypto.name }}" class="hidden__item-img hidden__item-img-payment" />
+                            <div class="hidden__item-wrapper">
+                              <span class="hidden__item-name hidden__item-name-payment">{{ payment.crypto.name }} {% if payment.network is not None %}{{ payment.network }}{% endif %} ({{ payment.crypto.symbol }})</span>
+                              <span style="display: none;" class="hidden__item-symbol hidden__item-symbol-payment">{{ payment.crypto.symbol }}</span>
+                              <span style="display: none;" class="hidden__item-price hidden__item-price-payment">{{ payment.crypto.price }}</span>
+                              <span style="display: none;" class="hidden__item-price hidden__item-network-payment">{{ payment.network }}</span>
+                            </div>
+                          </div>
+                        {% endfor %}
+                       
+                        <!--  -->
+                        <!--  -->
+                        <!--  -->
+                        <!--  -->
+                        <!--  -->
+                      </div>
+                    </div>
+                  </div>
+                  <a type="button" style="display:flex; justify-content: center;"class="trade__form-exchange ">
+                    <div class="obratnyi" style="display:flex;">Обратный обмен
+                    <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#change" style="width:30px" alt=""></div>
+                    
+                  </a>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="trade__form-item">
+                  <div class="trade__form-hdr">
+                    <div class="trade__form-title">Получаете</div>
+                    <div class="trade__form-title">Резерв: <span class="reserve">{{ reserve }} {{ default_dep.crypto.symbol }}</span></div>
+                  </div>
+                  <div class="field ex-field js-dropdown-container active">
+                    <input name="sumTo" type="text" id="sumTo" autocomplete="off" placeholder="{{ min_amount_dep }} - {{ max_amount_dep }}" class="trade__form-item__field js-field with-drdwn" /><label class="label label-dep">{{ default_dep.crypto.name }} {% if default_dep.network is not None %}{{ default_dep.network }}{% endif %} ({{ default_dep.crypto.symbol }})</label><a class="open-select open-select-dep">
+                      
+                      <img src="{{ default_dep.crypto.icon }}" alt="USDTERC20" />
+                      <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#drop" style="width:18px" alt="">
+                      <span class="dep-price" name="priceTo" style="display:none">{{ default_dep.crypto.price }}</span>
+                    </a><div class="hidden hidden-dep">
+                      <div class="hidden__hdr">
+                        <h1 class="hidden__hdr-title">Получаете</h1><button type="button" class="hidden__hdr-close">
+                          <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#close" style="width: 30px;" alt="">
+                        </button>
+                      </div>
+                      <div class="hidden__search">
+                        <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#search" style="width:36px;" alt="">
+                        <input type="search" placeholder="Поиск" class="hidden__search-field hidden__search-field-dep" />
+                      </div>
+                      <div class="hidden__choose">
+                        <button type="button" class="hidden__choose-link hidden__choose-link-all active">Все</button><button type="button" class="hidden__choose-link hidden__choose-link-crypto">Криптовалюты</button><!--  --><button type="button" class="hidden__choose-link hidden__choose-link-bank">Банки</button><!--  -->
+                        <!--  -->
+                      </div>
+                      <div class="hidden__list">
+                        {% for dep in deposit|dictsort:"crypto.name"  %}
+                           <div class="hidden__item hidden__item-dep">
+                            <img src="{{ dep.crypto.icon }}" alt="{{ dep.crypto.name }}" class="hidden__item-img hidden__item-img-dep" /><div class="hidden__item-wrapper">
+                            <span class="hidden__item-name hidden__item-name-dep">{{ dep.crypto.name }} {% if dep.network is not None %}{{ dep.network }}{% endif %} ({{ dep.crypto.symbol }})</span>
+                            <span style="display: none;" class="hidden__item-symbol hidden__item-symbol-dep">{{ dep.crypto.symbol }}</span>
+                            <span style="display: none;" class="hidden__item-price hidden__item-price-dep">{{ dep.crypto.price }}</span>
+                            <span style="display: none;" class="hidden__item-price hidden__item-network-dep">{{ dep.network }}</span>
+                            <span style="display: none;" class="hidden__item-price hidden__item-reserve-dep">{{ dep.reserve }}</span>
+                          </div>
+                        </div>
+                        {% endfor %}
+                        {% for bank in banks %}
+                           <div class="hidden__item hidden__item-bank">
+                            <img src="{{ bank.icon }}" alt="{{ bank.name }}" class="hidden__item-img hidden__item-img-bank" /><div class="hidden__item-wrapper">
+                            <span class="hidden__item-name hidden__item-name-bank">{{ bank.name }} ({{ bank.symbol }})</span>
+                            <span style="display: none;" class="hidden__item-symbol hidden__item-symbol-bank">{{ bank.symbol }}</span>
+                            <span style="display: none;" class="hidden__item-price hidden__item-price-bank">{{ bank.price }}</span>
+                            <span style="display: none;" class="hidden__item-price hidden__item-reserve-bank">{{ bank.reserve }}</span>
+                          </div>
+                        </div>
+                        {% endfor %}
+                       
+                        <!--  -->
+                        <!--  -->
+                        <!--  -->
+                        <!--  -->
+                        <!--  -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="trade__form-info">Укажите реквизиты куда вам перевести ваши средства</div>
+                </div>
+                <div class="trade__form-item field" style="display: none;">
+                  <input name="wallet_from" type="text" id="client-wallet" autocomplete="off" class="trade__form-item__field js-field" /><label class="label"><!--  --></label><div class="trade__form-info">
+                    <!--  -->
+                  </div>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="trade__form-item field active">
+                  <input name="fio" type="text" id="fio" placeholder="" class="trade__form-item__field js-field fio" style="display:none;"/><label class="label">ФИО</label>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="trade__form-item field active">
+                  <input name="email" type="email" id="email" placeholder="" class="trade__form-item__field js-field" /><label class="label">E-mail</label>
+                </div>
+                <!--  -->
+                <!--  -->
+                <div class="trade__form-item field active">
+                  <input name="wallet" type="text" id="wallet" autocomplete="off" class="trade__form-item__field js-field" placeholder="" /><label class="label label-wallet">Кошелек</label><div class="trade__form-info">Укажите реквизиты куда вам перевести ваши средства</div>
+                </div>
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  --><button type="submit" class="trade__form-action mainButton" disabled>Перейти к оплате</button><label class="trade__form-agree">
+                  <input type="checkbox" class="checkbox" />
+                  <div class="custom-checkbox"></div>
+                  <div class="custom-text">
+                    Согласие с <a href="https://coinchanger.in/aml-agreement" target="_blank" class="trade__resalt-agreement__link">политикой AML</a> и <a href="https://coinchanger.in/agreement" target="_blank" class="trade__resalt-agreement__link">пользовательским соглашением</a> сервиса coinchanger.in
+                  </div>
+                </label>
+              </div>
+            </form><img src="{% static "images/unicorn.svg" %}" alt="unicon" class="trade__img" />
+          </div>
+        </div>
+      </div>
+    </main>
+<style>
+  .error {
+    border: 1px solid red;
+  }
+  .trade__form-action[disabled] {
+  opacity: 0.8;
+  cursor: default;
+}
+
+</style>
+    <span class="min" style="display: none;">{{ settings.min_amount }}</span>
+    <span class="max" style="display: none;">{{ settings.max_amount }}</span>
+
+    <div>
+  {% if all_settings %}
+    {% for all_set in all_settings %}
+      <span class="all-symbol" style="display: none;">{{ all_set.crypto }}</span>
+      <span class="all-min" style="display: none;">{{ all_set.min_amount }}</span>
+      <span class="all-max" style="display: none;">{{ all_set.max_amount }}</span>
+    {% endfor %}
+  {% else %}
+    <span class="all-symbol" style="display: none;">None</span>
+    <span class="all-min" style="display: none;">None</span>
+    <span class="all-max" style="display: none;">None</span>
+  {% endif %}
+</div>
+ <!-- Ваш HTML-код -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function updateFormState() {
+      var labelPayment = document.querySelector(".label-payment").textContent.trim();
+      var labelDep = document.querySelector(".label-dep").textContent.trim();
+      var reserveElement = document.querySelector(".reserve");
+      var priceratioElement = document.querySelector(".priceratio");
+      var sumFromInput = document.getElementById("sumFrom");
+      var sumToInput = document.getElementById("sumTo");
+
+      if (labelPayment === labelDep) {
+        // Лейблы одинаковые, делаем кнопку disabled
+        document.querySelector(".trade__form-action").disabled = true;
+        reserveElement.textContent = "- ---";
+        priceratioElement.textContent = "-";
+        sumFromInput.classList.add("error");
+        sumToInput.classList.add("error");
+      } else {
+        // Лейблы разные, возвращаем в нормальное состояние
+        document.querySelector(".trade__form-action").disabled = false;
+        sumFromInput.classList.remove("error");
+        sumToInput.classList.remove("error");
+      }
+    }
+
+    // Вызываем функцию при загрузке документа
+    updateFormState();
+
+    // Слушаем событие изменения контента лейблов
+    var labels = document.querySelectorAll(".label-payment, .label-dep");
+    labels.forEach(function (label) {
+      new MutationObserver(function () {
+        updateFormState();
+      }).observe(label, { childList: true, subtree: true });
+    });
+  });
+</script>
+
+
+
+
+{% comment %} <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  // Получаем элемент формы priceratio
+  var priceratioElement = document.querySelector('.priceratio');
+
+  // Проверяем, существует ли элемент
+  if (priceratioElement) {
+    // Получаем текущее значение priceratio
+    var currentPriceratio = priceratioElement.textContent.trim();
+
+    // Заменяем запятые на пробелы, а точки на запятые в текущем значении
+    var newPriceratio = currentPriceratio.replace(/,/g, ' ').replace(/\./g, ',');
+    
+    // Устанавливаем новое значение в форму priceratio
+    priceratioElement.textContent = newPriceratio;
+  }
+
+  var reserveElement = document.querySelector('.reserve');
+
+  // Проверяем, существует ли элемент
+  if (reserveElement) {
+    // Получаем текущее значение priceratio
+    var currentReserve = reserveElement.textContent.trim();
+
+    // Заменяем запятые на пробелы, а точки на запятые в текущем значении
+    var newReserve = currentReserve.replace(/,/g, ' ').replace(/\./g, ',');
+    
+    // Устанавливаем новое значение в форму priceratio
+    reserveElement.textContent = newReserve;
+  }
+});
+
+</script> {% endcomment %}
+
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var cryptoButton = document.querySelector('.hidden__choose-link-crypto');
+    var bankButton = document.querySelector('.hidden__choose-link-bank');
+    var allButton = document.querySelector('.hidden__choose-link-all');
+
+    cryptoButton.addEventListener('click', function() {
+        toggleActiveClass(cryptoButton);
+        showHideItems('.hidden__item-bank', 'none');
+        showHideItems('.hidden__item-dep', 'flex');
+    });
+
+    bankButton.addEventListener('click', function() {
+        toggleActiveClass(bankButton);
+        showHideItems('.hidden__item-dep', 'none');
+        showHideItems('.hidden__item-bank', 'flex');
+    });
+
+    allButton.addEventListener('click', function() {
+        toggleActiveClass(allButton);
+        showHideItems('.hidden__item-dep', 'flex');
+        showHideItems('.hidden__item-bank', 'flex');
+    });
+
+    function toggleActiveClass(button) {
+        // Remove the "active" class from all buttons
+        document.querySelectorAll('.hidden__choose-link').forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        // Add the "active" class to the clicked button
+        button.classList.add('active');
+    }
+
+    function showHideItems(selector, display) {
+        // Show/hide items based on the provided selector and display value
+        document.querySelectorAll(selector).forEach(function(item) {
+            item.style.display = display;
+        });
+    }
+});
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Найти элементы по классу
+        let openSelectButtons = document.querySelectorAll('.open-select-payment');
+        let hiddenLists = document.querySelectorAll('.hidden-payment');
+        let hiddenItems = document.querySelectorAll('.hidden__item-payment');
+
+        // Добавить обработчик события на каждую кнопку open-select
+        openSelectButtons.forEach(function (button, index) {
+            button.addEventListener('click', function () {
+                // Переключить класс 'show' на соответствующем списке hidden
+                hiddenLists[index].classList.toggle('show');
+            });
+        });
+
+        // Добавить обработчик события на каждый элемент в списке
+        hiddenItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                // Получить данные о выбранном элементе
+                let itemName = item.querySelector('.hidden__item-name-payment').innerText;
+                let itemSymbol = item.querySelector('.hidden__item-symbol-payment').innerText;
+                let itemNetwork = item.querySelector('.hidden__item-network-payment').innerText;
+                let itemIcon = item.querySelector('.hidden__item-img-payment').getAttribute('src');
+
+                // Подставить данные в нужные места
+
+                let openSelectImg = document.querySelector('.open-select-payment img');
+                openSelectImg.setAttribute('src', itemIcon);
+
+                let name2 = document.querySelector('.name2');
+                name2.innerText = itemName;
+                
+
+                let itemPrice = parseFloat(item.querySelector('.hidden__item-price-payment').innerText.replace(',', '.'));
+                let allSymbol = document.querySelector(".all-symbol").innerText;
+
+                let min = parseFloat(document.querySelector('.min').innerText.replace(',', '.'));
+                let max = parseFloat(document.querySelector('.max').innerText.replace(',', '.'));
+                if (itemSymbol === allSymbol){
+                  min = parseFloat(document.querySelector('.all-min').innerText.replace(',', '.'));
+                  max = parseFloat(document.querySelector('.all-max').innerText.replace(',', '.'));
+                }
+
+                // Подставить данные в нужные места
+                let labelElement = document.querySelector('.label-payment');
+                labelElement.innerText = itemName;
+
+                let sumFromInput = document.getElementById('sumFrom');
+                let minChange = min.toString();  // Ensure minChange is a string
+                let maxChange = max.toString();  // Ensure maxChange is a string
+
+                if (itemSymbol !== "USDT" && itemSymbol !== "USDC") {
+                  minChange = (min / itemPrice).toFixed(5).toString();
+                  maxChange = (max / itemPrice).toFixed(5).toString();
+                }
+
+                sumFromInput.placeholder = `${minChange.replace('.', ',')} - ${maxChange.replace('.', ',')}`;
+
+                let price = document.querySelector(".payment-price");
+                price.innerText = itemPrice;
+
+                let priceFromInput = document.querySelector(".priceFromInput");
+                priceFromInput.value = itemPrice;
+                // Get the element by its class name
+                var priceratioElement = document.querySelector('.priceratio');
+                
+                let depPrice = parseFloat(document.querySelector('.dep-price').innerText.replace(',', '.'));
+                // Update price ratio
+                let newPriceRatio = itemPrice / depPrice;
+                newPriceRatio = newPriceRatio + (newPriceRatio*0.025)
+
+                var symbol = document.querySelector('.firstsymbol');
+                symbol.innerText = itemSymbol;
+                
+                let symbolFromInput = document.querySelector(".symbolFromInput");
+                if (itemNetwork=='None'){
+                  symbolFromInput.value = itemName;   
+                } else {
+                  symbolFromInput.value = itemSymbol + ' ' + itemNetwork;   
+                }
+                
+
+                let zero = newPriceRatio.toString().split('.')[1];
+                if (zero && zero.charAt(0) === '0') {
+                  priceratioElement.innerText = newPriceRatio.toFixed(8).replace('.', ','); // Adjusted precision
+                } else {
+                  priceratioElement.innerText = newPriceRatio.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' '); // Adjusted precision
+                }
+
+                let reserveSpan = document.querySelector('.reserve');
+    
+                let newReserve = (maxChange / minChange) * 25.2716;
+
+                let formattedReserve = formatNumberWithSpaces(newReserve);
+                reserveSpan.innerText = formattedReserve.replace('.', ',') + " " + itemSymbol;
+
+                var gg = document.getElementById('sumFrom');
+                gg.value = '';
+                var wp = document.getElementById('sumTo');
+                wp.value = '';
+                // Закрыть соответствующий список hidden
+                let hiddenList = item.closest('.hidden-payment');
+                hiddenList.classList.remove('show');
+            });
+        });
+    });
+</script>
+
+<script>
+    let btn = document.querySelector('.obratnyi');
+
+    btn.addEventListener('click', function () {
+        // Для первого набора данных
+        let labelElementDep = document.querySelector('.label-dep');
+        let openSelectImgDep = document.querySelector('.open-select-dep img');
+        let name1Dep = document.querySelector('.name1');
+
+        // Для второго набора данных
+        let labelElementPayment = document.querySelector('.label-payment');
+        let openSelectImgPayment = document.querySelector('.open-select-payment img');
+        let name2Payment = document.querySelector('.name2');
+
+        // Сохраняем текущие значения для первого набора данных
+        let currentLabelDep = labelElementDep.innerText;
+        let currentOpenSelectImgDepSrc = openSelectImgDep.getAttribute('src');
+        let currentName1Dep = name1Dep.innerText;
+
+        // Заменяем значения первого набора на значения второго набора
+        labelElementDep.innerText = labelElementPayment.innerText;
+        openSelectImgDep.setAttribute('src', openSelectImgPayment.getAttribute('src'));
+        name1Dep.innerText = name2Payment.innerText;
+
+        // Заменяем значения второго набора на сохраненные текущие значения первого набора
+        labelElementPayment.innerText = currentLabelDep;
+        openSelectImgPayment.setAttribute('src', currentOpenSelectImgDepSrc);
+        name2Payment.innerText = currentName1Dep;
+
+        // Обновляем плейсхолдеры инпутов
+        let sumFromInput = document.getElementById('sumFrom');
+        let sumToInput = document.getElementById('sumTo');
+        let third = sumFromInput.placeholder;
+        sumFromInput.placeholder = sumToInput.placeholder;
+        sumToInput.placeholder = third;
+
+        // Обновляем значения вписанные пользователем
+        let userEnteredValueFrom = sumFromInput.value;
+        sumFromInput.value = sumToInput.value;
+        sumToInput.value = userEnteredValueFrom;
+
+      // Обновляем отображаемую информацию о цене
+       let firstSymbolElement = document.querySelector(".firstsymbol");
+        let secondSymbolElement = document.querySelector(".secondsymbol");
+
+        let firstSymbol = firstSymbolElement.innerText;
+        let secondSymbol = secondSymbolElement.innerText;
+
+        // Swap symbols
+        let thirdSymbol = firstSymbol;
+        firstSymbolElement.innerText = secondSymbol;
+        secondSymbolElement.innerText = thirdSymbol;
+
+        let symbolFromInput = document.querySelector(".symbolFromInput");
+        symbolFromInput.value = name2Payment.innerText;   
+
+        let symbolToInput = document.querySelector(".symbolToInput");
+        symbolToInput.value = name1Dep.innerText;
+
+        // Get the element by its class name
+        var priceratioElement = document.querySelector('.priceratio');
+
+        // Get the content of the span and format it as a float
+        var priceratioValue = parseFloat(priceratioElement.textContent.replace(/\s/g, '').replace(',', '.'));
+
+        // Check if the conversion was successful
+        if (!isNaN(priceratioValue)) {
+            // Now, priceratioValue contains the float number
+            console.log(priceratioValue);
+        } else {
+            console.error('Unable to convert the content to a float.');
+        }
+
+        priceratioValue = priceratioValue + (priceratioValue*0.025)
+        // Update price ratio
+        let newPriceRatio = 1.0 / priceratioValue;
+
+        let zero = newPriceRatio.toString().split('.')[1];
+        if (zero && zero.charAt(0) === '0') {
+          priceratioElement.innerText = newPriceRatio.toFixed(8).replace('.', ','); // Adjusted precision
+        } else {
+          priceratioElement.innerText = newPriceRatio.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' '); // Adjusted precision
+        }
+
+        // Get the placeholder text from the sumTo input
+        let placeholderText = sumToInput.placeholder;
+
+        // Extract the number from the placeholder text
+        let maxAmountDep = parseFloat(placeholderText.split(' - ')[1].replace(',', '.'));
+        let minAmountDep = parseFloat(placeholderText.split(' - ')[0].replace(',', '.'));
+        // Calculate the new reserve value (multiply by 2)
+        let newReserve = (maxAmountDep / minAmountDep) * 25.2716;
+
+        // Format the reserve value with spaces for thousands
+        let formattedReserve = formatNumberWithSpaces(newReserve);
+
+        let priceFromInput = document.querySelector(".priceFromInput");
+        let priceToInput = document.querySelector(".priceToInput");
+
+        let thirdPrice = priceToInput.value;
+        console.log(priceToInput.value)
+        
+
+        // Replace comma with dot and parse the values
+        let originalValue = parseFloat(thirdPrice.replace(",", "."));
+
+        // Calculate the increased value (2.5%)
+        let increasedValue = originalValue + (originalValue * 0.025);
+
+        // Set the values
+        priceToInput.value = priceFromInput.value;
+        priceFromInput.value = increasedValue.toFixed(10);  // Use as many decimal places as needed
+        
+
+        console.log(priceFromInput.value)
+        console.log(priceToInput.value)
+        console.log(symbolFromInput.value)
+        console.log(symbolToInput.value)
+        // Update the reserve span with the new formatted value
+        let reserveSpan = document.querySelector('.reserve');
+        reserveSpan.innerText = formattedReserve.replace('.', ',') + " " + thirdSymbol;
+    });
+
+    // Function to format a number with spaces as thousands separator
+    function formatNumberWithSpaces(number) {
+        return number.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+        let hiddenItems = document.querySelectorAll('.hidden__item-bank');
+
+        // Добавить обработчик события на каждый элемент в списке
+        hiddenItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                // Получить данные о выбранном элементе
+                let itemName = item.querySelector('.hidden__item-name-bank').innerText;
+                let itemSymbol = item.querySelector('.hidden__item-symbol-bank').innerText;
+                let itemIcon = item.querySelector('.hidden__item-img-bank').getAttribute('src');
+
+                // Подставить данные в нужные места
+                let labelElement = document.querySelector('.label-dep');
+                labelElement.innerText = itemName;               
+                
+
+                let openSelectImg = document.querySelector('.open-select-dep img');
+                openSelectImg.setAttribute('src', itemIcon);
+
+                let name2 = document.querySelector('.name1');
+                name2.innerText = itemName;
+                
+                let itemPrice = parseFloat(item.querySelector('.hidden__item-price-bank').innerText.replace(',', '.'));
+                
+                let allSymbol = document.querySelector(".all-symbol").innerText;
+
+                let min = parseFloat(document.querySelector('.min').innerText.replace(',', '.'));
+                let max = parseFloat(document.querySelector('.max').innerText.replace(',', '.'));
+                if (itemSymbol === allSymbol){
+                  min = parseFloat(document.querySelector('.all-min').innerText.replace(',', '.'));
+                  max = parseFloat(document.querySelector('.all-max').innerText.replace(',', '.'));
+                }
+
+                let sumFromInput = document.getElementById('sumTo');
+                let minChange = min.toString();  // Ensure minChange is a string
+                let maxChange = max.toString();  // Ensure maxChange is a string
+
+                
+                minChange = (min / itemPrice).toFixed(0).toString();
+                maxChange = (max / itemPrice).toFixed(0).toString();
+                
+
+                sumFromInput.placeholder = `${minChange.replace('.', ',')} - ${maxChange.replace('.', ',')}`;
+
+                
+
+                let price = document.querySelector(".dep-price");
+                price.innerText = itemPrice;
+
+                let priceToInput = document.querySelector(".priceToInput");
+                priceToInput.value = itemPrice;
+                // Get the element by its class name
+                var priceratioElement = document.querySelector('.priceratio');
+                let paymentPrice = parseFloat(document.querySelector('.payment-price').innerText.replace(',', '.'));
+                // Update price ratio
+                let newPriceRatio = paymentPrice / itemPrice;
+
+                var symbol = document.querySelector('.secondsymbol');
+                symbol.innerText = itemSymbol;
+                
+                let symbolToInput = document.querySelector(".symbolToInput");
+                symbolToInput.value = itemSymbol;   
+
+                console.log(symbol);
+
+                let zero = newPriceRatio.toString().split('.')[1];
+                if (zero && zero.charAt(0) === '0') {
+                  priceratioElement.innerText = newPriceRatio.toFixed(8).replace('.', ','); // Adjusted precision
+                } else {
+                  priceratioElement.innerText = newPriceRatio.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' '); // Adjusted precision
+                }
+
+                let reserveSpan = document.querySelector('.reserve');
+                let itemReserve = parseFloat(item.querySelector('.hidden__item-reserve-bank').innerText.replace(',', '.'));
+
+                let formattedReserve = formatNumberWithSpaces(itemReserve);
+                reserveSpan.innerText = formattedReserve.replace('.', ',') + " " + itemSymbol;
+
+
+                let obj = document.querySelector(".obratnyi");
+                obj.style.display = "none";
+
+                let labelWallet = document.querySelector(".label-wallet");
+                labelWallet.innerText = "Номер счета"
+
+                let fio = document.querySelector(".fio");
+                fio.style.display = "block";
+
+                var wp = document.getElementById('sumTo');
+                wp.value = '';
+                var gg = document.getElementById('sumFrom');
+                gg.value = '';
+                // Закрыть соответствующий список hidden
+                let hiddenList = item.closest('.hidden-dep');
+                hiddenList.classList.remove('show');
+            });
+        });
+    });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+        // Найти элементы по классу
+        let openSelectButtons = document.querySelectorAll('.open-select-dep');
+        let hiddenLists = document.querySelectorAll('.hidden-dep');
+        let hiddenItems = document.querySelectorAll('.hidden__item-dep');
+
+        // Добавить обработчик события на каждую кнопку open-select
+        openSelectButtons.forEach(function (button, index) {
+            button.addEventListener('click', function () {
+                // Переключить класс 'show' на соответствующем списке hidden
+                hiddenLists[index].classList.toggle('show');
+            });
+        });
+
+        // Добавить обработчик события на каждый элемент в списке
+        hiddenItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                // Получить данные о выбранном элементе
+                let itemName = item.querySelector('.hidden__item-name-dep').innerText;
+                let itemSymbol = item.querySelector('.hidden__item-symbol-dep').innerText;
+                let itemNetwork = item.querySelector('.hidden__item-network-dep').innerText;
+                let itemIcon = item.querySelector('.hidden__item-img-dep').getAttribute('src');
+
+                // Подставить данные в нужные места
+                let labelElement = document.querySelector('.label-dep');
+                labelElement.innerText = itemName;
+                
+
+                let openSelectImg = document.querySelector('.open-select-dep img');
+                openSelectImg.setAttribute('src', itemIcon);
+
+                let name2 = document.querySelector('.name1');
+                name2.innerText = itemName;
+
+                let itemPrice = parseFloat(item.querySelector('.hidden__item-price-dep').innerText.replace(',', '.'));
+                
+                let allSymbol = document.querySelector(".all-symbol").innerText;
+
+                let min = parseFloat(document.querySelector('.min').innerText.replace(',', '.'));
+                let max = parseFloat(document.querySelector('.max').innerText.replace(',', '.'));
+                if (itemSymbol === allSymbol){
+                  min = parseFloat(document.querySelector('.all-min').innerText.replace(',', '.'));
+                  max = parseFloat(document.querySelector('.all-max').innerText.replace(',', '.'));
+                }
+
+                let sumFromInput = document.getElementById('sumTo');
+                let minChange = min.toString();  // Ensure minChange is a string
+                let maxChange = max.toString();  // Ensure maxChange is a string
+
+                if (itemSymbol !== "USDT" && itemSymbol !== "USDC") {
+                  minChange = (min / itemPrice).toFixed(5).toString();
+                  maxChange = (max / itemPrice).toFixed(5).toString();
+                }
+
+                sumFromInput.placeholder = `${minChange.replace('.', ',')} - ${maxChange.replace('.', ',')}`;
+
+                
+
+                let price = document.querySelector(".dep-price");
+                price.innerText = itemPrice;
+
+                let priceToInput = document.querySelector(".priceToInput");
+                priceToInput.value = itemPrice;
+                // Get the element by its class name
+                var priceratioElement = document.querySelector('.priceratio');
+                let paymentPrice = parseFloat(document.querySelector('.payment-price').innerText.replace(',', '.'));
+                // Update price ratio
+                let newPriceRatio = paymentPrice / itemPrice;
+
+                var symbol = document.querySelector('.secondsymbol');
+                symbol.innerText = itemSymbol;
+                
+                let symbolToInput = document.querySelector(".symbolToInput");
+                if (itemNetwork=='None'){
+                  symbolToInput.value = itemName;   
+                } else {
+                  symbolToInput.value = itemSymbol + ' ' + itemNetwork;   
+                }
+
+                console.log(symbol);
+
+                let zero = newPriceRatio.toString().split('.')[1];
+                if (zero && zero.charAt(0) === '0') {
+                  priceratioElement.innerText = newPriceRatio.toFixed(8).replace('.', ','); // Adjusted precision
+                } else {
+                  priceratioElement.innerText = newPriceRatio.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' '); // Adjusted precision
+                }
+
+                let reserveSpan = document.querySelector('.reserve');
+    
+
+                let newReserve = (maxChange / minChange) * 25.2716;
+
+                let formattedReserve = formatNumberWithSpaces(newReserve);
+                reserveSpan.innerText = formattedReserve.replace('.', ',') + " " + itemSymbol;
+
+                let obj = document.querySelector(".obratnyi");
+                obj.style.display = "flex";
+
+                let labelWallet = document.querySelector(".label-wallet");
+                labelWallet.innerText = "Кошелек"
+
+                let fio = document.querySelector(".fio");
+                fio.style.display = "none";
+
+                var wp = document.getElementById('sumTo');
+                wp.value = '';
+                var gg = document.getElementById('sumFrom');
+                gg.value = '';
+                // Закрыть соответствующий список hidden
+                let hiddenList = item.closest('.hidden-dep');
+                hiddenList.classList.remove('show');
+            });
+        });
+    });
+</script>
+
+<script>
+    let openSelectButton = document.querySelector('.open-select-dep');
+    let openSelectButton2 = document.querySelector('.open-select-payment');
+    let hiddenList = document.querySelector('.hidden-dep');
+    let hiddenList2 = document.querySelector('.hidden-payment');
+
+    openSelectButton.addEventListener('click', function() {
+        hiddenList2.classList.remove('show');
+    });
+
+    openSelectButton2.addEventListener('click', function() {
+        hiddenList.classList.remove('show');
+    });
+</script>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function startTimer() {
+            var seconds = 30;
+
+            function formatTime(secs) {
+                var minutes = Math.floor(secs / 60);
+                var seconds = secs % 60;
+                return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+
+            function updateTimer() {
+                document.getElementById('timer').innerText = formatTime(seconds);
+
+                if (seconds > 0) {
+                    // Обновляем время каждую секунду
+                    seconds--;
+                    setTimeout(updateTimer, 1000);
+                } else {
+                    // Когда время вышло, начинаем таймер заново
+                    seconds = 30;
+                    setTimeout(updateTimer, 1000);
+                }
+            }
+
+            // Запускаем таймер
+            updateTimer();
+        }
+
+        function reloadPageAfter5Minutes() {
+            // Перезагружаем страницу каждые 5 минут
+            setTimeout(function () {
+                location.reload();
+            }, 300000); // 5 минут в миллисекундах
+        }
+
+        // Запускаем таймер и перезагрузку страницы
+        startTimer();
+        reloadPageAfter5Minutes();
+    });
+</script>
+
+<script>
+  function calculateAmount() {
+    var sumFromInput = document.getElementById('sumFrom');
+    var sumToInput = document.getElementById('sumTo');
+    
+    // Remove the "error" class from both inputs
+    sumFromInput.classList.remove('error');
+    sumToInput.classList.remove('error');
+
+    // Получаем значение из первого инпута
+    var sumFromValue = parseFloat(sumFromInput.value.replace(',', '.')) || null;
+    // Получаем цену из скрытого элемента или откуда-то еще (ваша реализация может отличаться)
+    var price = parseFloat(document.querySelector('.priceratio').textContent.replace(/\s/g, '').replace(',', '.')) || null;
+
+    // Вычисляем сумму во втором инпуте
+    var sumToValue = (sumFromValue !== null && price !== null) ? (sumFromValue * price).toFixed(5) : '';
+
+    // Устанавливаем значение во второй инпут
+    sumToInput.value = isNaN(sumToValue) ? '' : sumToValue;
+  }
+
+  document.getElementById('sumFrom').addEventListener('input', calculateAmount);
+  document.getElementById('sumTo').addEventListener('input', function() {
+    var sumToInput = document.getElementById('sumTo');
+    var sumFromInput = document.getElementById('sumFrom');
+    
+    // Получаем значение из второго инпута
+    var sumToValue = parseFloat(sumToInput.value.replace(',', '.')) || null;
+
+    // Получаем цену из скрытого элемента или откуда-то еще (ваша реализация может отличаться)
+    var price = parseFloat(document.querySelector('.priceratio').textContent.replace(/\s/g, '').replace(',', '.')) || null;
+
+    // Вычисляем сумму в первом инпуте
+    var sumFromValue = (sumToValue !== null && price !== null) ? (sumToValue / price).toFixed(5) : '';
+
+    // Устанавливаем значение в первый инпут
+    sumFromInput.value = isNaN(sumFromValue) ? '' : sumFromValue;
+  });
+
+  // Очистка значения второго инпута при фокусе на первом инпуте
+  document.getElementById('sumFrom').addEventListener('focus', function() {
+    var sumToInput = document.getElementById('sumTo');
+    sumToInput.value = '';
+  });
+
+  calculateAmount();  // Вызываем функцию при загрузке страницы, если начальное значение задано
+</script>
+
+<script>
+  function validateInputs() {
+    // Получаем значения инпутов
+    var sumFromValue = parseFloat(document.getElementById('sumFrom').value.replace(',', '.')) || 0;
+    var sumToValue = parseFloat(document.getElementById('sumTo').value.replace(',', '.')) || 0;
+    var emailValue = document.getElementById('email').value.trim();
+    var fio = document.getElementById('fio')
+    var fioValue = document.getElementById('fio').value.trim();
+    var walletValue = document.getElementById('wallet').value.trim();
+
+    // Проверяем условия
+    var isCheckboxChecked = document.querySelector('.checkbox').checked;
+    var isEmailValid = emailValue !== '';
+    var isWalletValid = walletValue !== '';
+    var isFIOValid = fioValue !== '';
+
+    // Проверяем, не пустые ли инпуты для сум
+    var isSumFromEmpty = document.getElementById('sumFrom').value.trim() === '';
+    var isSumToEmpty = document.getElementById('sumTo').value.trim() === '';
+
+    // Получаем кнопку
+    var submitButton = document.querySelector('.mainButton');
+
+    // Устанавливаем состояние кнопки
+    if (fio.style.display == "none"){
+      submitButton.disabled = !(isCheckboxChecked && isEmailValid && isWalletValid && !isSumFromEmpty && !isSumToEmpty);
+    } else {
+      submitButton.disabled = !(isCheckboxChecked && isEmailValid && isWalletValid && !isSumFromEmpty && !isSumToEmpty && isFIOValid);
+    }
+  }
+
+  // Слушаем события изменения для валидации
+  document.querySelectorAll('.trade__form-item__field, .checkbox').forEach(function(input) {
+    input.addEventListener('input', validateInputs);
+  });
+
+  // Вызываем валидацию при загрузке страницы
+  validateInputs();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("js-exchange");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var formData = new FormData(form);
+
+      fetch("{% url 'exchange' %}", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        // Check if the response is a redirect (status code 302)
+        if (response.redirected) {
+          window.location.href = response.url;
+        } else {
+          // Parse the response as JSON
+          return response.json();
+        }
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+    });
+  });
+</script>
+
+<script>
+  // Get all elements with the class ".hidden__hdr-close"
+let closeButtons = document.querySelectorAll(".hidden__hdr-close");
+
+// Get all elements with the class ".hidden"
+let modals = document.querySelectorAll(".hidden");
+
+// Iterate through each close button
+closeButtons.forEach((closeButton, index) => {
+  // Add a click event listener to the current close button
+  closeButton.addEventListener("click", () => {
+    // Close the corresponding modal by hiding it
+    modals[index].style.display = "none";
+  });
+});
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // Function to validate inputs and manage the button state
+  function validateInputs() {
+    var submitButton = document.querySelector('.trade__form-action');
+
+  // Get the minimum and maximum values from the placeholders
+  let minAmountDep = parseFloat(sumToInput.placeholder.split(' -')[0].replace(',', '.'));
+  let maxAmountDep = parseFloat(sumToInput.placeholder.split(' -')[1].replace(',', '.'));
+  let minAmountPayment = parseFloat(sumFromInput.placeholder.split(' -')[0].replace(',', '.'));
+  let maxAmountPayment = parseFloat(sumFromInput.placeholder.split(' -')[1].replace(',', '.'));
+
+    var enteredValueTo = parseFloat(sumToInput.value.replace(',', '.'));
+    var enteredValueFrom = parseFloat(sumFromInput.value.replace(',', '.'));
+
+    // Check if the entered values are within the specified range
+    var isSumToValid = isNaN(enteredValueTo) || enteredValueTo < minAmountDep || enteredValueTo > maxAmountDep;
+    var isSumFromValid = isNaN(enteredValueFrom) || enteredValueFrom < minAmountPayment || enteredValueFrom > maxAmountPayment;
+
+    // Add or remove the 'error' class based on validation
+    sumToInput.classList.toggle('error', isSumToValid);
+    sumFromInput.classList.toggle('error', isSumFromValid);
+
+    // Disable or enable the button based on validation
+    submitButton.disabled = isSumToValid || isSumFromValid;
+  }
+  var sumToInput = document.getElementById('sumTo');
+  var sumFromInput = document.getElementById('sumFrom');
+  // Add input event listeners to the input fields
+  sumToInput.addEventListener('input', validateInputs);
+  sumFromInput.addEventListener('input', validateInputs);
+
+});
+
+</script>
+
+<script>
+  const searchField = document.querySelector('.hidden__search-field-payment');
+  const coinItems = document.querySelectorAll('.hidden__item-name-payment');
+
+  searchField.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+
+    coinItems.forEach(item => {
+      const itemText = item.textContent.toLowerCase();
+      const shouldShow = itemText.includes(searchTerm);
+      item.closest('.hidden__item-payment').style.display = shouldShow ? 'flex' : 'none';
+    });
+  });
+</script>
+
+<script>
+  const searchFieldDep = document.querySelector('.hidden__search-field-dep');
+  const coinItemsDep = document.querySelectorAll('.hidden__item-name-dep');
+
+  searchFieldDep.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+
+    coinItemsDep.forEach(item => {
+      const itemText = item.textContent.toLowerCase();
+      const shouldShow = itemText.includes(searchTerm);
+      item.closest('.hidden__item-dep').style.display = shouldShow ? 'flex' : 'none';
+    });
+  });
+</script>
+{% endblock %}

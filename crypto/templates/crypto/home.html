@@ -1,0 +1,1473 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Обменник Криптовалют Онлайн в 2024 году | Quickex.io
+{% endblock title %}
+
+{% block meta %}
+  <meta name="description" content="Добро пожаловать в Quickex, лучшую платформу для обмена криптовалют, предлагающую безопасные и быстрые сделки." />
+  <meta property="og:description" content="Добро пожаловать в Quickex, лучшую платформу для обмена криптовалют, предлагающую безопасные и быстрые сделки." />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+  <meta name="theme-color" content="#ffffff" />
+{% endblock meta %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/swiper-vue.BDUAz1xZ.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/Dialog.DvuX66LT.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/default.CnLTM92Y.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/index.B6R-is7E.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/index.CJFaGB0B.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock css %}
+
+{% block content %}
+  <main data-v-7cfced15="">
+    <!-- [ -->
+    <div class="nuxt-loading-indicator" style="
+              position: fixed;
+              top: 0px;
+              right: 0px;
+              left: 0px;
+              pointer-events: none;
+              width: auto;
+              height: 3px;
+              opacity: 0;
+              background: repeating-linear-gradient(
+                to right,
+                rgb(0, 220, 130) 0%,
+                rgb(52, 205, 254) 50%,
+                rgb(0, 71, 225) 100%
+              );
+              transform: scaleX(0);
+              transform-origin: left center;
+              transition: transform 0.1s ease 0s, height 0.4s ease 0s,
+                opacity 0.4s ease 0s;
+              z-index: 999999;
+            "></div>
+    <div class="-mt-[81px] flex bg-cover bg-bottom pb-[47px] xl:pb-[64px]" style="
+              background-image: url('https://quickex.io/_nuxt/sky.Cdm85pbs.png');
+            ">
+      <div class="container mx-auto text-white mt-[90px] xl:mt-[100px]">
+        <h1 class="text-center font-bold text-[24px] xl:text-[54px]">Лучший Онлайн Обменник Криптовалют</h1>
+        <p class="text-left font-light my-3 text-wgray-200 xl:my-4 text-[16px] xl:text-[18px] [&amp;&gt;strong]:text-white [&amp;&gt;strong]:font-semibold page-header-subtitle">
+          <span>Quickex — надежная и безопасная платформа обмена криптовалюты, работающая с 2018 года.</span>
+          <span class="hidden xl:inline">Просто и безопасно обменивайте Bitcoin, Ethereum, Tether, BNB и сотни различных альткойнов по лучшим курсам.</span>
+        </p>
+        {% include 'crypto/form.html' %}
+      </div>
+    </div>
+    <div class="container mx-auto text-white py-10 xl:py-16" style="margin-top:50px">
+      <section class="text-white mt-16 xl:-mt-20 container mx-auto">
+        <h2 class="text-left font-medium text-white text-[21px] mb-3 xl:text-[21px] xl:mb-4">ПОСЛЕДНИЕ ОБМЕНЫ</h2>
+        <div class="latest-swiper items-center relative">
+          <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+            <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+              <div class="swiper-slide swiper-slide-active" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-usdttrc20-trx" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="30 USDT TRC20">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/usdt20230419113051.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">30</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">USDT TRC20</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static "images/arrow-right-grey.svg" %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="219.883816 TRX">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static "images/trx20230419113015.png" %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">219.883816</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">TRX</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide swiper-slide-next" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-xmr-btc" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="37.2 XMR">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static "images/xmr20230419113106.png" %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">37.2</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">XMR</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static 'images/arrow-right-grey.svg' %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="0.08477227 BTC">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static "images/btc20230419112752.png" %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">0.08477227</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">BTC</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-usdttrc20-xmr" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="5600 USDT TRC20">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static "images/usdt20230419113051.png" %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">5600</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">USDT TRC20</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static 'images/arrow-right-grey.svg' %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="46.376675326 XMR">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static "images/xmr20230419113106.png" %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">46.376675326</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">XMR</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-usdttrc20-xmr" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="5250 USDT TRC20">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static "images/usdt20230419113051.png" %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">5250</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">USDT TRC20</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static "images/arrow-right-grey.svg" %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="43.474497265 XMR">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/xmr20230419113106.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">43.474497265</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">XMR</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-usdterc20-trx" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="992 USDT ERC20">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static "images/usdt20230419113051.png" %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">992</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">USDT ERC20</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static "images/arrow-right-grey.svg" %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="7301.765824 TRX">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static "images/trx20230419113015.png" %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">7301.765824</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">TRX</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-xmr-usdttrc20" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="160.4 XMR">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/xmr20230419113106.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">160.4</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">XMR</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static 'images/arrow-right-grey.svg' %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="19142.887922 USDT TRC20">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/usdt20230419113051.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">19142.887922</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">USDT TRC20</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-usdttrc20-trx" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="462.92 USDT TRC20">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/usdt20230419113051.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">462.92</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">USDT TRC20</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static 'images/arrow-right-grey.svg' %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="3410.82164 TRX">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/trx20230419113015.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">3410.82164</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">TRX</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-usdttrc20-ltc" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="130 USDT TRC20">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/usdt20230419113051.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">130</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">USDT TRC20</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static 'images/arrow-right-grey.svg' %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="1.84137772 LTC">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/ltc20230419112918.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">1.84137772</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">LTC</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-xmr-btc" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="602 XMR">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/xmr20230419113106.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">602</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">XMR</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static 'images/arrow-right-grey.svg' %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="1.39752085 BTC">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/btc20230419112752.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">1.39752085</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">BTC</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+              <div class="swiper-slide" style="width: 362.667px; margin-right: 16px;">
+                <a href="https://quickex.io/ru/exchange-usdttrc20-xmr" class="flex flex-col py-6 px-5 bg-neutral-700 rounded-lg">
+                  <div class="flex gap-3 ju">
+                    <div class="flex gap-2 items-center flex-1" title="7625 USDT TRC20">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/usdt20230419113051.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">7625</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">USDT TRC20</span>
+                      </div>
+                    </div>
+                    <img loading="lazy" class="w-[16px]" src="{% static 'images/arrow-right-grey.svg' %}" aria-hidden="true" alt="" />
+                    <div class="flex gap-2 items-center flex-1 justify-end" title="62.646282265 XMR">
+                      <img loading="lazy" class="w-[16px] h-[16px]" src="{% static 'images/xmr20230419113106.png' %}" alt="" aria-hidden="true" />
+                      <div class="flex items-center max-w-[130px]">
+                        <span class="whitespace-nowrap overflow-hidden truncate flex-grow">62.646282265</span>
+                        &nbsp;
+                        <span class="flex-shrink-0">XMR</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <!--  -->
+              </div>
+            </div>
+            <!--  -->
+            <!--  -->
+            <!--  -->
+          </div>
+          <button class="w-[24px] h-[24px] rounded-full bg-neutral-700 flex justify-center items-center arrow-prev absolute top-1/2 -translate-y-1/2 -left-10 swiper-button-disabled" disabled="">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.04199 9.08335L0.958659 5.00002L5.04199 0.916687" stroke="#FFF7FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+          <button class="w-[24px] h-[24px] rounded-full bg-neutral-700 flex justify-center items-center arrow-next absolute top-1/2 -translate-y-1/2 -right-10">
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.958008 0.916647L5.04134 4.99998L0.958008 9.08331" stroke="#FFF7FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <section class="bg-center bg-cover my-12 xl:my-0 xl:pt-24 xl:pb-[54px]">
+        <div class="container mx-auto opacity-[.99] text-white">
+          <div class="text-center mb-5 xl:mb-12 px-8 xl:px-0">
+            <h2 class="text-[26px] xl:text-[34px] uppercase mb-5">Как обменять криптовалюту</h2>
+            <div class="max-w-sm mx-auto shadow border border-fuchsia-800"></div>
+          </div>
+          <div class="gap-6 xl:gap-10 grid grid-cols-1 xl:grid-cols-3 mb-8 xl:mb-16">
+            <div>
+              <div class="space-x-8 xl:space-x-0 xl:space-y-2 flex xl:flex-col items-center xl:items-start">
+                <div class="text-fuchsia-800 text-[80px] font-light shrink-0 shadow-numbers">1</div>
+                <div class="space-y-2">
+                  <div class="text-zinc-100 text-2xl xl:text-[28px]">Выберите желаемую валютуную пару</div>
+                  <div class="text-violet-100">Чтобы начать обмен криптовалютой на Quickex, начните с выбора пары криптовалют, которую вы хотите обменять. Используйте выпадающие списки "Отпрвляете" и "Получаете", чтобы указать криптовалюту, которую вы хотите продать, и криптовалюту, которую вы хотите приобрести.</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="space-x-8 xl:space-x-0 xl:space-y-2 flex xl:flex-col items-center xl:items-start">
+                <div class="text-fuchsia-800 text-[80px] font-light shrink-0 shadow-numbers">2</div>
+                <div class="space-y-2">
+                  <div class="text-zinc-100 text-2xl xl:text-[28px]">Укажите сумму обмена и адрес назначения</div>
+                  <div class="text-violet-100">После выбора пары введите сумму обмена в поле "Отправляете". Платформа автоматически рассчитает эквивалентную сумму в поле "Получаете" на основе текущего обменного курса. Укажите "Адрес получателя" для получения средств и внимательно проверьте детали для успешной транзакции.</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="space-x-8 xl:space-x-0 xl:space-y-2 flex xl:flex-col items-center xl:items-start">
+                <div class="text-fuchsia-800 text-[80px] font-light shrink-0 shadow-numbers">3</div>
+                <div class="space-y-2">
+                  <div class="text-zinc-100 text-2xl xl:text-[28px]">Совершите перевод</div>
+                  <div class="text-violet-100">После выполнения этих шагов вы будете перенаправлены на страницу обмена, где будут указаны адрес для перевода и точная сумма средств для перевода. Перейдите в свой кошелек, отправьте указанную сумму на адрес Quickex, и по успешному переводу вы получите уведомление. После завершения транзакции обмененные средства будут переведены непосредственно на указанный вами адрес кошелька.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <button class="px-6 py-3 rounded-xl border border-neutral-100 border-opacity-50 items-center gap-2 flex">
+              <a href="https://quickex.io/ru/how-it-works" class="text-zinc-100 text-xl">Читать далее</a>
+              <svg class="w-4 h-auto" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M3.70667 11.6508C3.30732 11.7058 2.99951 12.0532 2.99951 12.4735C2.99951 12.9321 3.36582 13.3038 3.81769 13.3038H18.1994L13.0042 18.555L12.9248 18.6479C12.6865 18.9725 12.7119 19.4338 13.0018 19.7292C13.3207 20.0542 13.8387 20.0552 14.1589 19.7317L20.7473 13.0732C20.7865 13.0351 20.822 12.993 20.8531 12.9476C21.0761 12.6234 21.0447 12.1736 20.7588 11.8847L14.1588 5.21556L14.0669 5.13537C13.7461 4.89489 13.2916 4.92268 13.0018 5.21809C12.6829 5.54305 12.684 6.06878 13.0043 6.39234L18.2007 11.6432L3.81769 11.6432L3.70667 11.6508Z" fill="currentColor"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="bg-center bg-cover mb-12 xl:mb-24">
+        <div class="container mx-auto opacity-[.99] text-white">
+          <div class="text-center mb-5 xl:mb-16">
+            <h2 class="text-[26px] xl:text-[34px] uppercase mb-4">Статистика за неделю</h2>
+            <div class="max-w-sm mx-auto shadow border border-fuchsia-800"></div>
+          </div>
+          <div class="gap-6 xl:gap-10 grid grid-cols-1 xl:grid-cols-3 mb-12 xl:mb-16">
+            <div>
+              <div class="px-6 xl:px-7 py-6 xl:pt-9 xl:pb-9 bg-neutral-700 rounded-[22px] flex flex-col items-center">
+                <img loading="lazy" src="data:image/svg+xml,%3csvg%20width=&#39;94&#39;%20height=&#39;93&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M23.515%2056.817a2.906%202.906%200%20012.906%202.907v16.233l2.789-2.788a2.906%202.906%200%20114.11%204.11l-7.75%207.75a2.906%202.906%200%2001-4.11%200l-7.75-7.75a2.906%202.906%200%20114.11-4.11l2.788%202.788V59.724a2.906%202.906%200%20012.907-2.907zm15.382.852a2.906%202.906%200%20014.11%200l7.75%207.75a2.906%202.906%200%2001-4.11%204.11l-2.789-2.79v16.234a2.906%202.906%200%2001-5.812%200V66.74l-2.789%202.788a2.906%202.906%200%2011-4.11-4.11l7.75-7.75z&#39;%20fill=&#39;%23F3F3F3&#39;/%3e%3cpath%20d=&#39;M77.469%2042.906a3.875%203.875%200%2011-7.75%200%203.875%203.875%200%20017.75%200z&#39;%20fill=&#39;%23F3F3F3&#39;/%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M54.437%209H42.375c-7.121%200-12.762%200-17.176.593-4.543.611-8.22%201.898-11.12%204.798-2.9%202.9-4.187%206.577-4.798%2011.12-.594%204.415-.593%2010.055-.593%2017.177v.437c0%202.848-.055%208.354-.05%2012.513.002%202.089%202.129%203.438%204.038%202.59a3.028%203.028%200%20001.783-2.804c-.036-3.513.041-8.912.041-12.518%200-7.389.006-12.638.542-16.62.524-3.899%201.507-6.145%203.147-7.785%201.64-1.64%203.886-2.623%207.784-3.147%203.983-.535%209.232-.541%2016.62-.541H54.22c7.389%200%2012.638.006%2016.62.541%203.899.524%206.145%201.507%207.785%203.147%201.932%201.932%202.93%204.676%203.37%209.874h-7.506c-8.313%200-15.425%206.307-15.425%2014.531%200%208.225%207.112%2014.532%2015.425%2014.532h7.506c-.44%205.198-1.438%207.942-3.37%209.873-1.64%201.64-3.886%202.623-7.785%203.147-3.982.536-1.231.542-8.62.542h-3.09c-1.587%200-2.585%201.32-2.645%202.906a2.801%202.801%200%20002.8%202.906h3.153c7.122%200%204.762%200%209.177-.593%204.543-.61%208.22-1.898%2011.12-4.798%203.582-3.582%204.723-8.379%205.138-14.604%202.237-.984%203.926-3.066%204.112-5.703.016-.233.016-.484.016-.717V35.416c0-.233%200-.485-.016-.718-.186-2.637-1.875-4.718-4.112-5.703-.415-6.225-1.556-11.022-5.138-14.604-2.9-2.9-6.577-4.187-11.12-4.798C67.199%209%2061.559%209%2054.437%209zM27.094%2024.5a2.906%202.906%200%20000%205.813h15.5a2.906%202.906%200%20100-5.813h-15.5zm57.479%209.688a34.777%2034.777%200%2001.444.002c.799.049%201.142.588%201.168.912l.002.06V50.65c0%20.035-.002.06-.002.06-.026.323-.37.863-1.168.911h-.009c-.012%200-.037.002-.086.002l-.35.001H74.489c-5.516%200-9.613-4.103-9.613-8.719s4.097-8.718%209.613-8.718h10.085z&#39;%20fill=&#39;%23F3F3F3&#39;/%3e%3c/svg%3e" alt="" class="w-16 xl:w-24 h-auto mb-6" />
+                <div class="text-zinc-500">Количество обменов</div>
+                <div class="text-transparent bg-clip-text bg-gradient-to-r from-[#90287B] to-[#9E2A5F] shadow-numbers text-[32px] xl:text-[40px] font-bold">7 819</div>
+              </div>
+            </div>
+            <div>
+              <div class="px-6 xl:px-7 py-6 xl:pt-9 xl:pb-9 bg-neutral-700 rounded-[22px] flex flex-col items-center">
+                <img loading="lazy" src="https://quickex.io/_nuxt/star.DAT7Rx-s.svg" alt="" class="w-16 xl:w-24 h-auto mb-6" />
+                <div class="text-zinc-500">Самая популярная обменная пара</div>
+                <div class="text-transparent bg-clip-text bg-gradient-to-r from-[#90287B] to-[#9E2A5F] shadow-numbers text-[32px] xl:text-[40px] font-bold">USDT – BTC</div>
+              </div>
+            </div>
+            <div>
+              <div class="px-6 xl:px-7 py-6 xl:pt-9 xl:pb-9 bg-neutral-700 rounded-[22px] flex flex-col items-center">
+                <img loading="lazy" src="data:image/svg+xml,%3csvg%20width=&#39;94&#39;%20height=&#39;93&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath%20d=&#39;M12.136%2047.882a2.906%202.906%200%2001-.002%204.11l-.597.595a1.299%201.299%200%20000%201.84c.512.51%201.341.51%201.852%200l6.556-6.548a2.906%202.906%200%20114.108%204.113l-6.556%206.547a7.124%207.124%200%2001-10.067%200%207.111%207.111%200%20010-10.064l.596-.596a2.906%202.906%200%20014.11.003zM30.946%2051.742a2.906%202.906%200%20010%204.11l-8.203%208.203a2.906%202.906%200%2001-4.11-4.11l8.203-8.203a2.906%202.906%200%20014.11%200zM41.702%2062.485a2.906%202.906%200%20010%204.11l-8.148%208.147a2.906%202.906%200%2011-4.11-4.11l8.147-8.147a2.906%202.906%200%20014.11%200zM29.454%2064.02a2.906%202.906%200%2001-.045%204.109l-6.625%206.479a2.906%202.906%200%2001-4.064-4.156l6.625-6.479a2.906%202.906%200%20014.11.046zM45.474%2069.464a2.906%202.906%200%2001-.002%204.11l-6.556%206.548a1.299%201.299%200%20000%201.84c.511.51%201.341.51%201.852%200l.596-.596a2.906%202.906%200%20014.108%204.113l-.596.595a7.124%207.124%200%2001-10.067%200%207.111%207.111%200%20010-10.065l6.555-6.547a2.906%202.906%200%20014.11.002z&#39;%20fill=&#39;%23F3F3F3&#39;/%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M70.219%204.844h2.63c2.92%200%205.399%200%207.375.265%202.103.281%204.07.91%205.658%202.492%201.591%201.584%202.224%203.546%202.508%205.646.266%201.971.266%204.441.266%207.347v2.626c.002%203.49.004%206.047-.97%208.39-.975%202.342-2.79%204.147-5.27%206.614l-.37.367-8.78%208.743.152.235c1.321%202.038%202.403%203.706%203.187%205.15.815%201.502%201.408%202.935%201.646%204.534a14.176%2014.176%200%2001-.966%207.548c-.382.914-1.033%201.853-1.68%202.686-.68.877-1.51%201.83-2.397%202.794-1.763%201.919-3.877%204.024-5.747%205.886l-.028.027-.283.283c-2.613%202.602-7.146%201.764-8.544-1.739-.771-1.931-1.072-2.672-1.447-3.355a13.382%2013.382%200%2000-1.202-1.82c-.475-.604-1.03-1.166-2.456-2.586l-1.64-1.436c-.274.03-.553.045-.836.045-2.243%200-4.078-.939-5.768-2.222-1.586-1.206-3.34-2.952-5.404-5.007l-4.907-4.887c-2.064-2.055-3.817-3.8-5.028-5.381-1.289-1.682-2.236-3.516-2.236-5.76%200-.34.022-.672.064-.999l-2.664-2.652a13.47%2013.47%200%2000-4.538-3.07c-.08-.033-.163-.066-.379-.15l-1.276-.506c-3.668-1.452-4.66-6.187-1.856-8.98l.027-.027c1.87-1.862%203.985-3.968%205.912-5.723.968-.883%201.924-1.709%202.805-2.387.837-.644%201.778-1.291%202.693-1.67a14.312%2014.312%200%20017.563-.96c1.6.236%203.035.825%204.543%201.636%201.449.78%203.124%201.857%205.171%203.173l.255.163%208.794-8.757.366-.365c2.48-2.472%204.291-4.278%206.64-5.247%202.347-.968%204.907-.966%208.417-.964zm-1.163%2046.682c1.09%201.687%201.873%202.92%202.44%203.965.643%201.184.906%201.946%201.006%202.617a8.365%208.365%200%2001-.58%204.452c-.073.175-.33.618-.908%201.362-.543.7-1.253%201.52-2.086%202.426-1.57%201.708-3.46%203.6-5.26%205.394-.535-1.334-.925-2.267-1.414-3.157a19.194%2019.194%200%2000-1.725-2.61c-.727-.927-1.559-1.755-2.863-3.054l-.14-.14.39-.33c1.277-1.103%202.708-2.528%204.353-4.166l6.787-6.758zm1.68-40.87c-4.25%200-5.57.052-6.718.526-1.148.473-2.114%201.364-5.12%204.357L39.186%2035.167c-1.683%201.676-2.947%202.936-3.896%204.019-.954%201.088-1.413%201.802-1.628%202.336a2.078%202.078%200%2000-.168.806c0%20.456.144%201.06%201.038%202.226.945%201.233%202.414%202.704%204.655%204.936l.264.263%204.894-4.874a2.906%202.906%200%20114.101%204.119l-4.877%204.856.247.246c2.241%202.231%203.719%203.694%204.958%204.635%201.17.89%201.782%201.038%202.251%201.038.24%200%20.474-.04.746-.14.528-.194%201.242-.63%202.348-1.584%201.102-.95%202.388-2.229%204.115-3.949l19.711-19.628c3.008-2.995%203.9-3.956%204.374-5.094.472-1.137.524-2.442.524-6.678v-1.91c0-3.155-.006-5.229-.213-6.765-.196-1.45-.522-1.98-.849-2.306-.328-.327-.865-.653-2.328-.85-1.545-.206-3.63-.212-6.799-.212h-1.917zm.86%2011.171c-3.691-3.675-9.67-3.675-13.362%200a9.407%209.407%200%20000%2013.34c3.691%203.675%209.67%203.675%2013.362%200a9.407%209.407%200%20000-13.34zm-9.26%204.12a3.661%203.661%200%20015.158%200%203.594%203.594%200%20010%205.101%203.66%203.66%200%2001-5.158%200%203.594%203.594%200%20010-5.102zm-20.551-1.57c-1.683-1.08-2.918-1.855-3.964-2.418-1.19-.64-1.957-.903-2.637-1.004a8.501%208.501%200%2000-4.488.579c-.18.074-.625.331-1.373.907a40.074%2040.074%200%2000-2.437%202.077c-1.707%201.556-3.597%203.428-5.391%205.214l.81.32.019.008c.19.076.311.123.432.173a19.28%2019.28%200%20016.082%203.984c.094.091.186.184.332.328l1.318%201.313c.141-.17.286-.338.433-.506%201.093-1.246%202.495-2.641%204.102-4.242l6.762-6.733z&#39;%20fill=&#39;%23F3F3F3&#39;/%3e%3c/svg%3e" alt="" class="w-16 xl:w-24 h-auto mb-6" />
+                <div class="text-zinc-500">Среднее время обмена</div>
+                <div class="text-transparent bg-clip-text bg-gradient-to-r from-[#90287B] to-[#9E2A5F] shadow-numbers text-[32px] xl:text-[40px] font-bold">10.4 min</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-center bg-cover mb-12 xl:mb-16">
+        <div class="container mx-auto opacity-[.99] text-white">
+          <div class="text-center mb-5 xl:mb-16">
+            <h2 class="text-[26px] xl:text-[34px] uppercase mb-4">Почему клиенты выбирают Quickex</h2>
+            <div class="max-w-sm mx-auto shadow border border-fuchsia-800"></div>
+          </div>
+          <div class="gap-8 grid grid-cols-1 xl:grid-cols-3 mb-[68px] px-4 xl:px-0">
+            <div>
+              <div class="space-y-2 flex flex-col">
+                <img src="data:image/svg+xml,%3csvg%20width=&#39;243&#39;%20height=&#39;243&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20filter=&#39;url(%23filter0_d_1771_10586)&#39;%3e%3cpath%20opacity=&#39;.05&#39;%20d=&#39;M33.915%2072.545c-11.686-43.374%2032.607-52.61%2064.967-38.28%2020.163%208.25%2034.683-12.512%2057.661-3.87%2026.861%2010.104-.137%2035.75%2034.182%2051.074%2034.925%2015.931%2021.163%2080.883-14.216%2081.529-33.988.645-24.492%2013.322-56.863%2036.32-32.37%2022.998-84.25-9.403-72.709-47.488%2011.54-34.051.225-30.473-13.022-79.285z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.1&#39;%20d=&#39;M43.795%2077.937c-10.114-37.315%2028.557-46.898%2056.94-34.151%2018.099%207.613%2031.519-10.187%2051.539-2.657%2024.68%209.286%201.338%2031.116%2030.963%2044.913%2030.353%2014.527%2019.48%2071.929-12.873%2072.467-30.685.537-22.065%2012.294-50.809%2031.988-28.744%2019.694-73.982-8.207-64.364-42.314%209.617-29.265.27-27.622-11.396-70.246z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.15&#39;%20d=&#39;M53.677%2083.345C45.135%2052.09%2078.184%2042.16%20102.588%2053.323c16.035%206.975%2028.355-7.86%2045.418-1.443%2022.499%208.468%202.812%2026.48%2027.743%2038.752%2025.781%2013.122%2017.799%2062.973-11.53%2063.404-27.381.43-19.637%2011.267-44.754%2027.656-25.117%2016.39-63.714-7.01-56.02-37.139%207.694-24.48.316-24.771-9.768-61.208z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.2&#39;%20d=&#39;M63.558%2088.777c-6.97-25.196%2020.457-35.473%2040.884-25.893%2013.971%206.337%2025.191-5.536%2039.296-.23%2020.318%207.65%204.285%2021.846%2024.524%2032.591%2021.209%2011.718%2016.116%2054.019-10.187%2054.341-24.079.323-17.211%2010.24-38.701%2023.325-21.49%2013.085-53.445-5.815-47.675-31.964%205.77-19.695.36-21.921-8.14-52.17z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.25&#39;%20d=&#39;M73.44%2094.243c-5.399-19.136%2016.407-29.761%2032.856-21.764%2011.907%205.7%2022.027-3.21%2033.174.985%2018.137%206.83%205.76%2017.21%2021.305%2026.429%2016.637%2010.313%2014.433%2045.063-8.844%2045.278-20.775.215-14.783%209.213-32.646%2018.993-17.864%209.781-43.178-4.619-39.331-26.79%203.847-14.909.406-19.07-6.514-43.131z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.3&#39;%20d=&#39;M83.324%2099.76c-3.827-13.076%2012.357-24.048%2024.829-17.634%209.841%205.061%2018.861-.885%2027.052%202.198%2015.956%206.011%207.234%2012.576%2018.085%2020.268%2012.065%208.909%2012.751%2036.108-7.501%2036.216-17.472.107-12.356%208.185-26.592%2014.661-14.237%206.476-32.91-3.423-30.986-21.615%201.923-10.124.45-16.219-4.887-34.094z&#39;%20fill=&#39;%23505050&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cg%20filter=&#39;url(%23filter1_d_1771_10586)&#39;%20stroke=&#39;%239F2B5F&#39;%20stroke-width=&#39;2.25&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;%3e%3cpath%20d=&#39;M109.867%20118.172l4.489-5.835%205.122%204.023%204.393-5.671&#39;/%3e%3ccircle%20cx=&#39;128.993&#39;%20cy=&#39;102.3&#39;%20r=&#39;2.883&#39;/%3e%3cpath%20d=&#39;M121.386%20100.68h-10.901c-4.518%200-7.318%203.199-7.318%207.716v12.124c0%204.517%202.745%207.702%207.318%207.702h12.906c4.517%200%207.318-3.185%207.318-7.702v-10.559&#39;/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cfilter%20id=&#39;filter0_d_1771_10586&#39;%20x=&#39;.75&#39;%20y=&#39;.75&#39;%20width=&#39;241.497&#39;%20height=&#39;241.501&#39;%20filterUnits=&#39;userSpaceOnUse&#39;%20color-interpolation-filters=&#39;sRGB&#39;%3e%3cfeFlood%20flood-opacity=&#39;0&#39;%20result=&#39;BackgroundImageFix&#39;/%3e%3cfeColorMatrix%20in=&#39;SourceAlpha&#39;%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200&#39;%20result=&#39;hardAlpha&#39;/%3e%3cfeOffset%20dy=&#39;4&#39;/%3e%3cfeGaussianBlur%20stdDeviation=&#39;15&#39;/%3e%3cfeComposite%20in2=&#39;hardAlpha&#39;%20operator=&#39;out&#39;/%3e%3cfeColorMatrix%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.05%200&#39;/%3e%3cfeBlend%20in2=&#39;BackgroundImageFix&#39;%20result=&#39;effect1_dropShadow_1771_10586&#39;/%3e%3cfeBlend%20in=&#39;SourceGraphic&#39;%20in2=&#39;effect1_dropShadow_1771_10586&#39;%20result=&#39;shape&#39;/%3e%3c/filter%3e%3cfilter%20id=&#39;filter1_d_1771_10586&#39;%20x=&#39;85.999&#39;%20y=&#39;87&#39;%20width=&#39;62&#39;%20height=&#39;62&#39;%20filterUnits=&#39;userSpaceOnUse&#39;%20color-interpolation-filters=&#39;sRGB&#39;%3e%3cfeFlood%20flood-opacity=&#39;0&#39;%20result=&#39;BackgroundImageFix&#39;/%3e%3cfeColorMatrix%20in=&#39;SourceAlpha&#39;%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200&#39;%20result=&#39;hardAlpha&#39;/%3e%3cfeOffset%20dy=&#39;4&#39;/%3e%3cfeGaussianBlur%20stdDeviation=&#39;6.5&#39;/%3e%3cfeComposite%20in2=&#39;hardAlpha&#39;%20operator=&#39;out&#39;/%3e%3cfeColorMatrix%20values=&#39;0%200%200%200%200.721569%200%200%200%200%200.0901961%200%200%200%200%200.537255%200%200%200%200.5%200&#39;/%3e%3cfeBlend%20in2=&#39;BackgroundImageFix&#39;%20result=&#39;effect1_dropShadow_1771_10586&#39;/%3e%3cfeBlend%20in=&#39;SourceGraphic&#39;%20in2=&#39;effect1_dropShadow_1771_10586&#39;%20result=&#39;shape&#39;/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e"
+                  alt=""
+                  class="w-60 h-auto self-center xl:self-start -mx-10 -mt-10 -mb-4" />
+                <div class="text-zinc-100 text-xl font-semibold">Лучшие курсы обмена</div>
+                <div class="text-violet-100">Используйте возможности Quickex и максимизируйте ценность ваших криптоактивов. Сотрудничая с лучшими трейдинговыми платформами, мы обеспечиваем самые выгодные сделки для наших пользователей. Мы обязуемся предлагать вам наиболее конкурентоспособные обменные курсы на рынке.</div>
+              </div>
+            </div>
+            <div>
+              <div class="space-y-2 flex flex-col">
+                <img src="data:image/svg+xml,%3csvg%20width=&#39;243&#39;%20height=&#39;243&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20filter=&#39;url(%23filter0_d_1771_10632)&#39;%3e%3cpath%20opacity=&#39;.05&#39;%20d=&#39;M76.544%20205.085c-43.374%2011.686-52.61-32.607-38.28-64.967%208.251-20.164-12.511-34.684-3.87-57.662%2010.105-26.86%2035.75.137%2051.074-34.181C101.4%2013.35%20166.352%2027.112%20166.997%2062.49c.646%2033.989%2013.322%2024.492%2036.32%2056.863%2022.998%2032.371-9.402%2084.25-47.488%2072.709-34.051-11.54-30.473-.225-79.285%2013.023z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.1&#39;%20d=&#39;M81.936%20195.204c-37.314%2010.114-46.897-28.557-34.15-56.939%207.612-18.1-10.187-31.52-2.657-51.54%209.286-24.68%2031.115-1.337%2044.913-30.962%2014.527-30.353%2071.928-19.48%2072.466%2012.873.538%2030.685%2012.295%2022.064%2031.988%2050.808%2019.694%2028.744-8.206%2073.982-42.313%2064.365-29.266-9.617-27.622-.271-70.247%2011.395z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.15&#39;%20d=&#39;M87.344%20185.323c-31.254%208.542-41.185-24.507-30.021-48.911%206.975-16.035-7.861-28.355-1.443-45.418%208.467-22.499%2026.48-2.812%2038.752-27.743%2013.122-25.781%2062.973-17.799%2063.403%2011.53.431%2027.381%2011.268%2019.637%2027.657%2044.754%2016.389%2025.117-7.011%2063.714-37.139%2056.02-24.48-7.694-24.771-.316-61.209%209.768z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.2&#39;%20d=&#39;M92.776%20175.441c-25.195%206.97-35.473-20.457-25.893-40.884%206.338-13.971-5.535-25.191-.229-39.296%207.649-20.318%2021.846-4.285%2032.59-24.524%2011.718-21.209%2054.019-16.116%2054.342%2010.187.322%2024.079%2010.24%2017.21%2023.325%2038.701%2013.085%2021.49-5.815%2053.445-31.965%2047.675-19.694-5.77-21.92-.361-52.17%208.141z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.25&#39;%20d=&#39;M98.242%20165.559c-19.136%205.399-29.76-16.407-21.764-32.856%205.7-11.907-3.21-22.027.985-33.174%206.83-18.137%2017.21-5.76%2026.429-21.305%2010.313-16.637%2045.063-14.434%2045.278%208.844.216%2020.775%209.213%2014.783%2018.994%2032.646%209.78%2017.864-4.619%2043.178-26.79%2039.331-14.909-3.847-19.07-.406-43.132%206.514z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.3&#39;%20d=&#39;M103.76%20155.675c-13.076%203.827-24.049-12.357-17.635-24.828%205.062-9.842-.885-18.862%202.199-27.052%206.01-15.956%2012.575-7.234%2020.268-18.085%208.908-12.066%2036.108-12.752%2036.215%207.5.108%2017.472%208.186%2012.357%2014.662%2026.593%206.476%2014.236-3.423%2032.909-21.616%2030.986-10.123-1.924-16.219-.451-34.093%204.886z&#39;%20fill=&#39;%23505050&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cg%20filter=&#39;url(%23filter1_d_1771_10632)&#39;%20stroke=&#39;%239F2B5F&#39;%20stroke-width=&#39;2.25&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;%3e%3cpath%20d=&#39;M133.246%20109.907h-20.427M127.102%20103.544l6.145%206.363-6.145%206.363M108.749%20125.399h20.427M114.893%20131.761l-6.145-6.363%206.145-6.362&#39;/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cfilter%20id=&#39;filter0_d_1771_10632&#39;%20x=&#39;.75&#39;%20y=&#39;.753&#39;%20width=&#39;241.5&#39;%20height=&#39;241.497&#39;%20filterUnits=&#39;userSpaceOnUse&#39;%20color-interpolation-filters=&#39;sRGB&#39;%3e%3cfeFlood%20flood-opacity=&#39;0&#39;%20result=&#39;BackgroundImageFix&#39;/%3e%3cfeColorMatrix%20in=&#39;SourceAlpha&#39;%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200&#39;%20result=&#39;hardAlpha&#39;/%3e%3cfeOffset%20dy=&#39;4&#39;/%3e%3cfeGaussianBlur%20stdDeviation=&#39;15&#39;/%3e%3cfeComposite%20in2=&#39;hardAlpha&#39;%20operator=&#39;out&#39;/%3e%3cfeColorMatrix%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.05%200&#39;/%3e%3cfeBlend%20in2=&#39;BackgroundImageFix&#39;%20result=&#39;effect1_dropShadow_1771_10632&#39;/%3e%3cfeBlend%20in=&#39;SourceGraphic&#39;%20in2=&#39;effect1_dropShadow_1771_10632&#39;%20result=&#39;shape&#39;/%3e%3c/filter%3e%3cfilter%20id=&#39;filter1_d_1771_10632&#39;%20x=&#39;89.999&#39;%20y=&#39;89.734&#39;%20width=&#39;62&#39;%20height=&#39;63.447&#39;%20filterUnits=&#39;userSpaceOnUse&#39;%20color-interpolation-filters=&#39;sRGB&#39;%3e%3cfeFlood%20flood-opacity=&#39;0&#39;%20result=&#39;BackgroundImageFix&#39;/%3e%3cfeColorMatrix%20in=&#39;SourceAlpha&#39;%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200&#39;%20result=&#39;hardAlpha&#39;/%3e%3cfeOffset%20dy=&#39;4&#39;/%3e%3cfeGaussianBlur%20stdDeviation=&#39;6.5&#39;/%3e%3cfeComposite%20in2=&#39;hardAlpha&#39;%20operator=&#39;out&#39;/%3e%3cfeColorMatrix%20values=&#39;0%200%200%200%200.721569%200%200%200%200%200.0901961%200%200%200%200%200.537255%200%200%200%200.5%200&#39;/%3e%3cfeBlend%20in2=&#39;BackgroundImageFix&#39;%20result=&#39;effect1_dropShadow_1771_10632&#39;/%3e%3cfeBlend%20in=&#39;SourceGraphic&#39;%20in2=&#39;effect1_dropShadow_1771_10632&#39;%20result=&#39;shape&#39;/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e"
+                  alt=""
+                  class="w-60 h-auto self-center xl:self-start -mx-10 -mt-10 -mb-4" />
+                <div class="text-zinc-100 text-xl font-semibold">Быстрые транзакции</div>
+                <div class="text-violet-100">Торгуйте своими криптовалютными активами на Quickex и убедитесь в скорости наших транзакций. Стратегическое сотрудничество с авторитетными партнерами позволяет нам оперативно отслеживать и предоставлять вам лучшие обменные курсы.</div>
+              </div>
+            </div>
+            <div>
+              <div class="space-y-2 flex flex-col">
+                <img src="data:image/svg+xml,%3csvg%20width=&#39;243&#39;%20height=&#39;243&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20filter=&#39;url(%23filter0_d_1771_10645)&#39;%3e%3cpath%20opacity=&#39;.05&#39;%20d=&#39;M209.084%20162.455c11.686%2043.374-32.607%2052.61-64.967%2038.28-20.163-8.251-34.683%2012.512-57.661%203.871-26.86-10.105.137-35.751-34.182-51.075C17.35%20137.6%2031.111%2072.648%2066.49%2072.002c33.988-.645%2024.492-13.322%2056.863-36.32%2032.37-22.998%2084.249%209.403%2072.709%2047.488-11.541%2034.051-.225%2030.473%2013.022%2079.285z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.1&#39;%20d=&#39;M199.204%20157.063c10.114%2037.315-28.557%2046.898-56.94%2034.151-18.099-7.613-31.519%2010.186-51.54%202.657-24.679-9.286-1.337-31.116-30.962-44.913-30.353-14.527-19.48-71.929%2012.873-72.467%2030.685-.537%2022.065-12.294%2050.809-31.988%2028.744-19.694%2073.982%208.207%2064.364%2042.314-9.617%2029.265-.27%2027.622%2011.396%2070.246z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.15&#39;%20d=&#39;M189.322%20151.655c8.542%2031.255-24.507%2041.185-48.911%2030.022-16.035-6.975-28.355%207.861-45.418%201.443-22.499-8.468-2.812-26.481-27.743-38.752-25.781-13.122-17.799-62.974%2011.53-63.404%2027.381-.43%2019.637-11.267%2044.754-27.656%2025.117-16.39%2063.714%207.01%2056.02%2037.139-7.694%2024.48-.316%2024.771%209.768%2061.208z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.2&#39;%20d=&#39;M179.441%20146.223c6.97%2025.196-20.457%2035.473-40.884%2025.893-13.971-6.337-25.191%205.536-39.296.229-20.318-7.648-4.285-21.845-24.524-32.59-21.209-11.718-16.116-54.018%2010.187-54.341%2024.079-.323%2017.211-10.24%2038.701-23.325%2021.49-13.085%2053.445%205.815%2047.675%2031.965-5.77%2019.694-.361%2021.92%208.141%2052.169z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.25&#39;%20d=&#39;M169.559%20140.758c5.399%2019.135-16.407%2029.76-32.856%2021.763-11.907-5.699-22.027%203.211-33.174-.985-18.137-6.829-5.76-17.21-21.305-26.429-16.637-10.313-14.434-45.063%208.844-45.278%2020.775-.215%2014.783-9.213%2032.646-18.993%2017.864-9.78%2043.178%204.619%2039.331%2026.79-3.847%2014.909-.406%2019.07%206.514%2043.132z&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cpath%20opacity=&#39;.3&#39;%20d=&#39;M159.675%20135.24c3.827%2013.076-12.357%2024.048-24.829%2017.634-9.841-5.061-18.861.885-27.052-2.198-15.956-6.011-7.234-12.576-18.085-20.268-12.065-8.909-12.751-36.108%207.5-36.216%2017.473-.107%2012.357-8.185%2026.593-14.661%2014.237-6.476%2032.91%203.423%2030.986%2021.615-1.923%2010.124-.451%2016.219%204.887%2034.094z&#39;%20fill=&#39;%23505050&#39;%20stroke=&#39;%23505050&#39;%20stroke-width=&#39;2.5&#39;/%3e%3cg%20filter=&#39;url(%23filter1_d_1771_10645)&#39;%20stroke=&#39;%239F2B5F&#39;%20stroke-width=&#39;2.25&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;%3e%3cpath%20d=&#39;M128.942%20114.651v10.704M121.942%20109.53v15.826M115.057%20120.308v5.047&#39;/%3e%3cpath%20clip-rule=&#39;evenodd&#39;%20d=&#39;M114.971%20101.854h14.057c4.9%200%207.972%203.608%207.972%208.715v13.777c0%205.107-3.058%208.715-7.972%208.715h-14.057c-4.914%200-7.971-3.608-7.971-8.715v-13.777c0-5.107%203.057-8.715%207.971-8.715z&#39;/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cfilter%20id=&#39;filter0_d_1771_10645&#39;%20x=&#39;.753&#39;%20y=&#39;.749&#39;%20width=&#39;241.497&#39;%20height=&#39;241.501&#39;%20filterUnits=&#39;userSpaceOnUse&#39;%20color-interpolation-filters=&#39;sRGB&#39;%3e%3cfeFlood%20flood-opacity=&#39;0&#39;%20result=&#39;BackgroundImageFix&#39;/%3e%3cfeColorMatrix%20in=&#39;SourceAlpha&#39;%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200&#39;%20result=&#39;hardAlpha&#39;/%3e%3cfeOffset%20dy=&#39;4&#39;/%3e%3cfeGaussianBlur%20stdDeviation=&#39;15&#39;/%3e%3cfeComposite%20in2=&#39;hardAlpha&#39;%20operator=&#39;out&#39;/%3e%3cfeColorMatrix%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.05%200&#39;/%3e%3cfeBlend%20in2=&#39;BackgroundImageFix&#39;%20result=&#39;effect1_dropShadow_1771_10645&#39;/%3e%3cfeBlend%20in=&#39;SourceGraphic&#39;%20in2=&#39;effect1_dropShadow_1771_10645&#39;%20result=&#39;shape&#39;/%3e%3c/filter%3e%3cfilter%20id=&#39;filter1_d_1771_10645&#39;%20x=&#39;90.999&#39;%20y=&#39;89.733&#39;%20width=&#39;62&#39;%20height=&#39;63.447&#39;%20filterUnits=&#39;userSpaceOnUse&#39;%20color-interpolation-filters=&#39;sRGB&#39;%3e%3cfeFlood%20flood-opacity=&#39;0&#39;%20result=&#39;BackgroundImageFix&#39;/%3e%3cfeColorMatrix%20in=&#39;SourceAlpha&#39;%20values=&#39;0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200&#39;%20result=&#39;hardAlpha&#39;/%3e%3cfeOffset%20dy=&#39;4&#39;/%3e%3cfeGaussianBlur%20stdDeviation=&#39;6.5&#39;/%3e%3cfeComposite%20in2=&#39;hardAlpha&#39;%20operator=&#39;out&#39;/%3e%3cfeColorMatrix%20values=&#39;0%200%200%200%200.721569%200%200%200%200%200.0901961%200%200%200%200%200.537255%200%200%200%200.5%200&#39;/%3e%3cfeBlend%20in2=&#39;BackgroundImageFix&#39;%20result=&#39;effect1_dropShadow_1771_10645&#39;/%3e%3cfeBlend%20in=&#39;SourceGraphic&#39;%20in2=&#39;effect1_dropShadow_1771_10645&#39;%20result=&#39;shape&#39;/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e"
+                  alt=""
+                  class="w-60 h-auto self-center xl:self-start -mx-10 -mt-10 -mb-4" />
+                <div class="text-zinc-100 text-xl font-semibold">Прозрачный сервис</div>
+                <div class="text-violet-100">В Quickex мы ценим вашу конфиденциальность и ставим в приоритет сохранение контроля над средствами в ваших руках. Вы можете отслеживать свою транзакцию на каждом этапе и контролировать весь процесс. Мы воздерживаемся от хранения монет: после обмена они отправляются напрямую на ваш кошелек.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-center bg-cover mb-16">
+        <div class="container mx-auto opacity-[.99] text-white">
+          <div class="text-center mb-5 xl:mb-32">
+            <h2 class="text-[26px] xl:text-[34px] uppercase mb-4">ПЛАТФОРМА</h2>
+            <div class="max-w-sm mx-auto shadow border border-fuchsia-800"></div>
+          </div>
+          <div class="flex xl:grid grid-cols-[2fr_3fr] gap-12">
+            <div class="relative justify-end hidden xl:flex">
+              <div class="flex justify-center items-center">
+                <img loading="lazy" width="715" height="698" alt="" class="absolute max-w-none" src="https://quickex.io/_nuxt/platformbg.BXMfNLJG.svg" />
+                <div class="overflow-hidden rounded-2xl relative">
+                  <img loading="lazy" width="240" height="456" alt="" class="block w-[240px] h-auto" src="{% static 'images/platform.DC9GV0Tb.png' %}" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-violet-100 mb-12 text-xl xl:text-[28px] text-center xl:text-left leading-[140%]">
+                <span class="">Quickex сохраняет вашу конфиденциальность и гарантирует безопасность.</span>
+                <span class="font-semibold">Мы являемся некастодиальным обменным сервисом</span>
+              </h3>
+              <div class="flex flex-col gap-6">
+                <div>
+                  <div class="flex space-x-6 items-center">
+                    <div class="shrink-0 w-[42px] h-[42px] relative bg-fuchsia-900 bg-opacity-75 rounded-[32px] flex items-center justify-center">
+                      <img loading="lazy" width="24" height="24" class="w-6 h-6" src="data:image/svg+xml,%3csvg%20width=&#39;24&#39;%20height=&#39;24&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M10.387%203.25h3.225c1.085%200%201.966%200%202.675.085.739.088%201.373.276%201.928.71.555.432.891%201.002%201.156%201.698.254.667.468%201.522.731%202.574l.483%201.933H22a.75.75%200%20010%201.5h-1.985a.88.88%200%2001-.032%200H4.016a.88.88%200%2001-.032%200H2a.75.75%200%20010-1.5h1.414l.483-1.933c.263-1.052.477-1.907.731-2.574.265-.696.601-1.266%201.156-1.699.555-.433%201.19-.62%201.928-.71.71-.084%201.59-.084%202.675-.084zm-5.427%207H19.04l-.38-1.523c-.278-1.11-.471-1.877-.69-2.45-.211-.555-.418-.848-.677-1.05-.26-.203-.594-.332-1.183-.403-.61-.073-1.401-.074-2.544-.074h-3.13c-1.144%200-1.935.001-2.545.074-.589.07-.924.2-1.183.403-.259.202-.466.495-.677%201.05-.219.573-.412%201.34-.69%202.45l-.38%201.523zm1.54%204.5a2.75%202.75%200%20100%205.5%202.75%202.75%200%20000-5.5zM2.25%2017.5a4.25%204.25%200%20018.35-1.125%203.75%203.75%200%20012.8%200%204.252%204.252%200%20018.35%201.125%204.25%204.25%200%2001-8.474.477l-.27-.135a2.25%202.25%200%2000-2.013%200l-.27.135A4.25%204.25%200%20012.25%2017.5zm15.25-2.75a2.75%202.75%200%20100%205.5%202.75%202.75%200%20000-5.5z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3c/svg%3e" alt="" />
+                    </div>
+                    <div class="xl:text-2xl">Мы уважаем вашу конфиденциальность</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex space-x-6 items-center">
+                    <div class="shrink-0 w-[42px] h-[42px] relative bg-fuchsia-900 bg-opacity-75 rounded-[32px] flex items-center justify-center">
+                      <img loading="lazy" width="24" height="24" class="w-6 h-6" src="data:image/svg+xml,%3csvg%20width=&#39;24&#39;%20height=&#39;24&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M15.75%202a.75.75%200%2000-1.5%200v20a.75.75%200%20001.5%200v-1.256c1.21-.012%202.22-.053%203.059-.196%201.028-.174%201.872-.511%202.55-1.19.748-.748%201.08-1.697%201.238-2.869.153-1.14.153-2.595.153-4.433v-.112c0-1.838%200-3.294-.153-4.433-.158-1.172-.49-2.121-1.238-2.87-.678-.678-1.522-1.015-2.55-1.19-.839-.142-1.85-.183-3.059-.196V2zm0%202.756v14.488c1.186-.012%202.09-.052%202.808-.174.842-.143%201.355-.387%201.74-.772.423-.423.677-1.003.812-2.009.138-1.028.14-2.382.14-4.289%200-1.907-.002-3.261-.14-4.29-.135-1.005-.389-1.585-.812-2.008-.385-.385-.898-.629-1.74-.772-.719-.122-1.622-.162-2.808-.174z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3cpath%20d=&#39;M9.944%203.25c-1.838%200-3.294%200-4.433.153-1.172.158-2.121.49-2.87%201.238-.748.749-1.08%201.698-1.238%202.87-.153%201.14-.153%202.595-.153%204.433v.112c0%201.838%200%203.294.153%204.433.158%201.172.49%202.121%201.238%202.87.749.748%201.698%201.08%202.87%201.238%201.14.153%202.595.153%204.433.153H12a.75.75%200%20000-1.5h-2c-1.907%200-3.261-.002-4.29-.14-1.005-.135-1.585-.389-2.008-.812-.423-.423-.677-1.003-.812-2.009-.138-1.028-.14-2.382-.14-4.289%200-1.907.002-3.261.14-4.29.135-1.005.389-1.585.812-2.008.423-.423%201.003-.677%202.009-.812%201.028-.138%202.382-.14%204.289-.14h2a.75.75%200%20000-1.5H9.944z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3cpath%20d=&#39;M8%2013a1%201%200%20100-2%201%201%200%20000%202zM13%2012a1%201%200%2011-2%200%201%201%200%20012%200z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3c/svg%3e" alt="" />
+                    </div>
+                    <div class="xl:text-2xl">Мы не требуем регистрации</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex space-x-6 items-center">
+                    <div class="shrink-0 w-[42px] h-[42px] relative bg-fuchsia-900 bg-opacity-75 rounded-[32px] flex items-center justify-center">
+                      <img loading="lazy" width="24" height="24" class="w-6 h-6" src="data:image/svg+xml,%3csvg%20width=&#39;24&#39;%20height=&#39;24&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M12%208.25a3.75%203.75%200%20100%207.5%203.75%203.75%200%20000-7.5zM9.75%2012a2.25%202.25%200%20114.5%200%202.25%202.25%200%2001-4.5%200z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M11.975%201.25c-.445%200-.816%200-1.12.02a2.823%202.823%200%2000-.907.19%202.75%202.75%200%2000-1.489%201.488c-.145.35-.184.72-.2%201.122a.868.868%200%2001-.415.731.868.868%200%2001-.841-.005c-.356-.188-.696-.339-1.072-.389a2.75%202.75%200%2000-2.033.545c-.25.192-.44.428-.617.691-.17.254-.356.575-.578.96l-.025.044c-.223.385-.408.706-.542.98-.14.286-.25.568-.29.88a2.75%202.75%200%2000.544%202.033c.231.301.532.52.872.734a.868.868%200%2001.426.726.868.868%200%2001-.426.726c-.34.214-.64.433-.872.734a2.75%202.75%200%2000-.545%202.033c.041.312.15.594.29.88.135.274.32.595.543.98l.025.044c.222.385.408.706.578.96.177.263.367.5.617.69a2.75%202.75%200%20002.033.546c.376-.05.716-.2%201.072-.389a.867.867%200%2001.84-.005c.242.138.405.408.417.731.015.402.054.772.2%201.122a2.75%202.75%200%20001.488%201.489c.29.12.59.167.907.188.304.021.675.021%201.12.021h.05c.445%200%20.816%200%201.12-.02.318-.022.617-.069.907-.19a2.75%202.75%200%20001.489-1.488c.145-.35.184-.72.2-1.122a.868.868%200%2001.415-.732.868.868%200%2001.841.006c.356.188.696.339%201.072.388a2.75%202.75%200%20002.033-.544c.25-.192.44-.428.617-.691.17-.254.356-.575.578-.96l.025-.044c.223-.385.408-.706.542-.98.14-.286.25-.569.29-.88a2.75%202.75%200%2000-.544-2.033c-.231-.301-.532-.52-.872-.734a.868.868%200%2001-.426-.726c0-.278.152-.554.426-.726.34-.214.64-.433.872-.734a2.75%202.75%200%2000.545-2.033%202.826%202.826%200%2000-.29-.88c-.135-.274-.32-.595-.543-.98l-.025-.044c-.222-.385-.408-.706-.578-.96a2.823%202.823%200%2000-.617-.69%202.75%202.75%200%2000-2.033-.546c-.376.05-.716.2-1.072.389a.868.868%200%2001-.84.005.868.868%200%2001-.417-.731c-.015-.402-.054-.772-.2-1.122a2.75%202.75%200%2000-1.488-1.489c-.29-.12-.59-.167-.907-.188-.304-.021-.675-.021-1.12-.021h-.05zm-1.453%201.595c.077-.032.194-.061.435-.078.247-.017.567-.017%201.043-.017s.796%200%201.043.017c.241.017.358.046.435.078.307.127.55.37.677.677.04.096.073.247.086.604.03.792.439%201.555%201.165%201.974.726.42%201.591.392%202.292.022.316-.167.463-.214.567-.227a1.25%201.25%200%2001.924.247c.066.051.15.138.285.338.139.206.299.483.537.895.238.412.397.69.506.912.107.217.14.333.15.416a1.25%201.25%200%2001-.247.924c-.064.083-.178.187-.48.377-.672.422-1.128%201.158-1.128%201.996%200%20.838.456%201.574%201.128%201.996.302.19.416.294.48.377.202.263.29.595.247.924-.01.083-.044.2-.15.416-.109.223-.268.5-.506.912-.238.412-.399.689-.537.895-.135.2-.219.287-.285.338a1.25%201.25%200%2001-.924.247c-.104-.013-.25-.06-.567-.227-.7-.37-1.566-.398-2.292.021-.726.42-1.135%201.183-1.165%201.975-.013.357-.046.508-.086.604a1.25%201.25%200%2001-.677.677c-.077.032-.194.061-.435.078-.247.017-.567.017-1.043.017s-.796%200-1.043-.017c-.241-.017-.358-.046-.435-.078a1.25%201.25%200%2001-.677-.677c-.04-.096-.073-.247-.086-.604-.03-.792-.439-1.555-1.165-1.974-.726-.42-1.591-.392-2.292-.022-.316.167-.463.214-.567.227a1.25%201.25%200%2001-.924-.247c-.066-.051-.15-.138-.285-.338a17.055%2017.055%200%2001-.537-.895c-.238-.412-.397-.69-.506-.912-.107-.217-.14-.333-.15-.416a1.25%201.25%200%2001.247-.924c.064-.083.178-.187.48-.377.672-.422%201.128-1.158%201.128-1.996%200-.838-.456-1.574-1.128-1.996-.302-.19-.416-.294-.48-.377a1.25%201.25%200%2001-.247-.924c.01-.083.044-.2.15-.416.109-.223.268-.5.506-.912.238-.412.399-.689.537-.895.135-.2.219-.287.285-.338a1.25%201.25%200%2001.924-.247c.104.013.25.06.567.227.7.37%201.566.398%202.292-.022.726-.419%201.135-1.182%201.165-1.974.013-.357.046-.508.086-.604.127-.307.37-.55.677-.677z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3c/svg%3e" alt="" />
+                    </div>
+                    <div class="xl:text-2xl">Мы не задерживаем ваши средства</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex space-x-6 items-center">
+                    <div class="shrink-0 w-[42px] h-[42px] relative bg-fuchsia-900 bg-opacity-75 rounded-[32px] flex items-center justify-center">
+                      <img loading="lazy" width="24" height="24" class="w-6 h-6" src="data:image/svg+xml,%3csvg%20width=&#39;24&#39;%20height=&#39;24&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M20.924%2011.75H18.23c-1.424%200-2.481%201.059-2.481%202.25s1.057%202.25%202.48%202.25h2.718c.206-.013.295-.152.302-.236v-.015-3.916-.053V12v-.015c-.007-.084-.096-.223-.302-.235h-.024zm-.074-1.5c.066%200%20.13%200%20.19.004.87.053%201.641.71%201.706%201.628.004.06.004.125.004.185v3.866c0%20.06%200%20.125-.004.185-.065.918-.836%201.575-1.707%201.629-.059.003-.123.003-.19.003h-2.618c-2.145%200-3.981-1.628-3.981-3.75s1.836-3.75%203.98-3.75h2.62z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3cpath%20d=&#39;M19%2014a1%201%200%2011-2%200%201%201%200%20012%200z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M20.85%2010.25a1.888%201.888%200%2001.835.16c-.107-1.606-.402-2.844-1.326-3.769-.749-.748-1.698-1.08-2.87-1.238l-.042-.005a.778.778%200%2000-.032-.023l-3.736-2.477a3.987%203.987%200%2000-4.358%200L5.586%205.375a.773.773%200%2000-.033.023l-.042.005c-1.172.158-2.121.49-2.87%201.238-.748.749-1.08%201.698-1.238%202.87-.153%201.14-.153%202.595-.153%204.433v.112c0%201.838%200%203.294.153%204.433.158%201.172.49%202.121%201.238%202.87.749.748%201.698%201.08%202.87%201.238%201.14.153%202.595.153%204.433.153h3.112c1.838%200%203.294%200%204.433-.153%201.172-.158%202.121-.49%202.87-1.238.924-.925%201.219-2.163%201.326-3.77-.202.09-.42.144-.646.158-.059.003-.123.003-.19.003h-.681c-.114%201.341-.371%202.05-.87%202.548-.423.423-1.003.677-2.009.812-1.027.138-2.382.14-4.289.14h-3c-1.907%200-3.261-.002-4.29-.14-1.005-.135-1.585-.389-2.008-.812-.423-.423-.677-1.003-.812-2.009-.138-1.027-.14-2.382-.14-4.289%200-1.907.002-3.261.14-4.29.135-1.005.389-1.585.812-2.008.423-.423%201.003-.677%202.009-.812%201.028-.138%202.382-.14%204.289-.14h3c1.907%200%203.262.002%204.29.14%201.005.135%201.585.389%202.008.812.499.498.756%201.207.87%202.548h.682zm-10.906-5h3.112c.517%200%201.003%200%201.46.003L12.85%204.148c-.8-.53-1.9-.53-2.7%200L8.483%205.253c.458-.003.944-.003%201.46-.003z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3cpath%20d=&#39;M6%209.25a.75.75%200%20000%201.5h4a.75.75%200%20000-1.5H6z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M19%2014a1%201%200%2011-2%200%201%201%200%20012%200z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3c/svg%3e" alt="" />
+                    </div>
+                    <div class="xl:text-2xl">Мы работаем в полностью автоматическом режиме</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex space-x-6 items-center">
+                    <div class="shrink-0 w-[42px] h-[42px] relative bg-fuchsia-900 bg-opacity-75 rounded-[32px] flex items-center justify-center">
+                      <img loading="lazy" width="24" height="24" class="w-6 h-6" src="data:image/svg+xml,%3csvg%20width=&#39;24&#39;%20height=&#39;24&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath%20fill-rule=&#39;evenodd&#39;%20clip-rule=&#39;evenodd&#39;%20d=&#39;M14.325%203.75h-4.65A3.754%203.754%200%20016.75%206.675a244.25%20244.25%200%20000%20.65%203.754%203.754%200%20012.925%202.925h4.65a3.754%203.754%200%20012.925-2.925%20334.758%20334.758%200%20000-.65%203.754%203.754%200%2001-2.925-2.925zm.605-1.497c-.275-.003-.567-.003-.878-.003H9.948c-.31%200-.603%200-.877.003a.76.76%200%2000-.164.003c-.452.008-.853.027-1.201.074-.628.084-1.195.27-1.65.725-.456.456-.642%201.023-.726%201.65-.047.349-.066.75-.074%201.202a.759.759%200%2000-.003.163c-.003.275-.003.568-.003.878v.104c0%20.31%200%20.603.003.878a.76.76%200%2000.003.163c.008.453.027.853.074%201.201.084.628.27%201.195.726%201.65.455.456%201.022.642%201.65.726.348.047.749.066%201.201.074a.747.747%200%2000.164.003c.274.003.567.003.877.003h4.104c.31%200%20.603%200%20.878-.003a.746.746%200%2000.163-.003c.453-.008.854-.027%201.201-.074.628-.084%201.195-.27%201.65-.726.456-.455.642-1.022.726-1.65.047-.348.066-.748.074-1.201a.767.767%200%2000.003-.163c.003-.275.003-.568.003-.878v-.104c0-.31%200-.603-.003-.878a.746.746%200%2000-.003-.163%2010.683%2010.683%200%2000-.074-1.201c-.084-.628-.27-1.195-.725-1.65-.456-.456-1.023-.642-1.65-.726a10.67%2010.67%200%2000-1.202-.074.756.756%200%2000-.163-.003zm.964%201.541a2.257%202.257%200%20001.312%201.312%204.9%204.9%200%2000-.023-.2c-.061-.462-.169-.66-.3-.79-.13-.13-.327-.237-.788-.3a4.957%204.957%200%2000-.2-.022zm1.312%205.1a2.257%202.257%200%2000-1.312%201.312c.07-.006.137-.014.2-.022.462-.063.66-.17.79-.3.13-.13.238-.328.3-.79.008-.063.016-.13.022-.2zm-9.1%201.312a2.257%202.257%200%2000-1.312-1.312c.007.07.014.137.023.2.062.462.169.66.3.79.13.13.327.237.788.3.064.008.131.016.201.022zm-1.312-5.1a2.257%202.257%200%20001.312-1.312c-.07.006-.137.014-.2.023-.462.062-.66.169-.79.3-.13.13-.237.327-.3.788l-.022.2zM12%206.75a.25.25%200%20100%20.5.25.25%200%20000-.5zM10.25%207a1.75%201.75%200%20113.5%200%201.75%201.75%200%2001-3.5%200zm-1.566%207.448c1.866-.361%203.863-.28%205.48.684.226.135.44.304.625.512.376.423.57.947.579%201.473.191-.123.383-.26.577-.407l1.808-1.365a2.637%202.637%200%20013.123%200c.836.63%201.17%201.763.571%202.723-.425.681-1.066%201.624-1.717%202.228-.66.61-1.597%201.124-2.306%201.466-.862.416-1.792.646-2.697.792-1.85.3-3.774.254-5.602-.123a14.275%2014.275%200%2000-2.865-.293H4a.75.75%200%20010-1.5h2.26c1.062%200%202.135.111%203.168.324a14.1%2014.1%200%20005.06.111c.828-.134%201.602-.333%202.284-.662.683-.33%201.451-.764%201.938-1.215.493-.457%201.044-1.248%201.465-1.922.127-.204.109-.497-.202-.732-.37-.28-.947-.28-1.316%200l-1.807%201.365c-.722.545-1.61%201.128-2.711%201.304a8.907%208.907%200%2001-.347.048%2010.03%2010.03%200%2001-2.11.02.75.75%200%2011.14-1.493c.628.06%201.19.046%201.668-.003l.03-.003a.742.742%200%2000.15-1.138%201.15%201.15%200%2000-.275-.222c-1.181-.705-2.759-.822-4.426-.5a12.124%2012.124%200%2000-4.535%201.935.75.75%200%2001-.868-1.224%2013.623%2013.623%200%20015.118-2.183z&#39;%20fill=&#39;%23D682C4&#39;/%3e%3c/svg%3e" alt="" />
+                    </div>
+                    <div class="xl:text-2xl">Мы не взымаем скрытых комиссий</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-center bg-cover mb-16">
+        <div class="container mx-auto opacity-[.99] text-white">
+          <div class="text-center mb-5 xl:mb-[88px]">
+            <h2 class="text-[26px] xl:text-[34px] uppercase mb-4">Надежный обмен криптовалют</h2>
+            <div class="max-w-sm mx-auto shadow border border-fuchsia-800"></div>
+          </div>
+          <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mb-8 xl:mb-16">
+            <div class="xl:w-1/4 flex flex-col justify-between xl:pb-12">
+              <div class="flex flex-col items-center xl:items-start">
+                <img loading="lazy" width="200" height="50" src="{% static 'images/trustpilot.D6NVwv_s.svg' %}" alt="" class="xl:mb-12 w-36 xl:w-48" />
+                <div class="text-zinc-100 text-[40px]">4.3</div>
+                <div class="w-[100px] mb-2">
+                  <img loading="lazy" src="{% static 'images/stars-4.5.svg' %}" alt="TrustScore 4.3 out of 5" />
+                </div>
+                <div class="opacity-25 text-zinc-100">TrustScore</div>
+              </div>
+              <a href="https://www.trustpilot.com/review/quickex.io" target="_blank" class="space-x-2 items-center hidden xl:flex">
+                <div class="text-zinc-100 text-xl">Все отзывы на Trustpilot</div>
+                <svg class="w-5 h-auto" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M3.70667 11.6508C3.30732 11.7058 2.99951 12.0532 2.99951 12.4735C2.99951 12.9321 3.36582 13.3038 3.81769 13.3038H18.1994L13.0042 18.555L12.9248 18.6479C12.6865 18.9725 12.7119 19.4338 13.0018 19.7292C13.3207 20.0542 13.8387 20.0552 14.1589 19.7317L20.7473 13.0732C20.7865 13.0351 20.822 12.993 20.8531 12.9476C21.0761 12.6234 21.0447 12.1736 20.7588 11.8847L14.1588 5.21556L14.0669 5.13537C13.7461 4.89489 13.2916 4.92268 13.0018 5.21809C12.6829 5.54305 12.684 6.06878 13.0043 6.39234L18.2007 11.6432L3.81769 11.6432L3.70667 11.6508Z" fill="currentColor"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="xl:w-3/4 px-8 xl:px-12">
+              <div class="relative trustpilot-swiper">
+                <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                  <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                    <div class="swiper-slide swiper-slide-active" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">Maria</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">I have been using this exchanger for more than a year already. I like that the exchange is always carried out quickly, there have never been any delays. The conditions are suitable for everyone and therefore I only use it on a regular basis.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">20/02/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/63f3094e9b64b1bdaf5c9c50" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide swiper-slide-next" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">Seba</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Excellent service! Support responds instantly, it's clear that people are working. The transaction is fast, of cource the speed of transaction depends more on the network congestion, but as soon as the network passes, you will be transferred money as fast as possible!...</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">23/12/2019</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/5e01246ec84545083434b519" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">Yves</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">One of the best crypto exchanges. Everything is clear and it is not difficult even for a beginner to exchange crypto. The service takes a small commission. And the money comes instantly. Conveniently fast and reliable.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">03/10/2022</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/633b05ae3d107cfdfcd1bfee" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">BestChange</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">We started a partnership with this exchanger and it is already listed on our monitor. Also you may leave your feedback or review on this page: https://www. bestchange. com/quickex-exchanger.html</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">16/01/2019</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/5c3f1f489d378007a404910a" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">Marco</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Best service for crypto exchanging! My friend recommend me quickex several weeks ago so I tried it. And I've never regretted. It's very convenient and have a lot of crypto pairs. Will continue to work with this service.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">10/03/2022</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/622a04e80e5829d9e2a3acfa" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">Vladimir</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Good exchanger. I changed BTC to BUSD. Funds received on the Ether network instead of BSC. At the expense of the exchanger, the funds were transferred to the desired network, and they also gave a small bonus.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">23/10/2022</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/63550ded8056669a30a8d700" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">JD com</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">This exchanger has a quick exchange and high liquidity. Responsive tech support. Will use again!</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">17/11/2019</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/5dd11466c845450918c231f1" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">Kanmi</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">I had an amazing experience in terms of security, the smooth transition and very understanding simple user interface</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">26/04/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/6448ad27ffcce051d2b49cdc" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between gap-1">
+                          <div class="text-zinc-100 text-lg">Guest</div>
+                          <div class="flex">
+                            <img loading="lazy" src="{% static 'images/5stars.svg' %}" alt="Rated 5 out of 5 stars" />
+                          </div>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Transactions/exchange take it 20-25 min. Thanks</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">07/03/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.trustpilot.com/reviews/6407967269bed4de8574175f" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                  </div>
+                  <!--  -->
+                  <!--  -->
+                  <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                  </div>
+                </div>
+                <a href="https://quickex.io/ru#" class="arrow-prev w-6 h-6 bg-neutral-700 rounded-full shadow justify-center items-center flex absolute top-1/2 -translate-y-1/2 -left-10 swiper-button-disabled">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.0415 9.08317L0.95817 4.99984L5.0415 0.916504" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                </a>
+                <a href="https://quickex.io/ru#" class="arrow-next w-6 h-6 bg-neutral-700 rounded-full shadow justify-center items-center flex absolute top-1/2 -translate-y-1/2 -right-10">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.958496 0.91683L5.04183 5.00016L0.958496 9.0835" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col xl:flex-row gap-6 xl:gap-12 mb-8 xl:mb-16">
+            <div class="xl:w-1/4 flex flex-col justify-between xl:pb-12">
+              <div class="flex flex-col items-center xl:items-start">
+                <img loading="lazy" width="185" height="37" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAAAlCAMAAAAp17hWAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAALxUExURUdwTB8fHxgYGBoaGgAAABgYGBYWFu7u7hsbG0VFRfLy8vLy8v////Ly8uHh4fHx8UlJSUlJSUdHR0hISEdHR8LCwsTExL+/v8LCwr6+vsDAwDMzM////8HBwezs7MTExEdHR8LCwu3t7cXFxfLy8vHx8cDAwO/v78PDw7+/v/Dw8PPz80NDQ0ZGRkhISERERDg4OElJSUVFRRwcHB0dHRoaGhkZGRsbGxgYGBcXF+vr69TU1ODg4OLi4tzc3OPj49LS0unp6cfHxzc3N+jo6CkpKdDQ0MjIyCYmJisrKygoKOfn58/Pz9XV1TU1NdfX19nZ2crKyuXl5fn5+dvb297e3lNTUzQ0NKKiosvLyx8fHy0tLc3NzUJCQjo6OiAgINra2jAwMC8vLzIyMldXVyIiIiMjIyUlJT09PT8/Pzw8PEBAQHZ2dkFBQUpKSrW1taSkpJ6enpWVlbe3t5GRkdjY2FRUVFBQUI+Pj6urq3l5eXBwcHx8fJKSkoODg729vYuLi42NjZCQkFVVVXFxcYCAgHNzc3V1dbOzs5ubm3h4eFhYWFZWVsnJyYyMjFFRUa6uroiIiEtLS5SUlGxsbKenp/j4+KioqLKysnp6em5ubk1NTZqampOTk93d3ZaWlp+fn46Ojrm5uaOjo5ycnKWlpX5+fpeXl3R0dHJycszMzFpaWk9PT7Gxsc7OzoeHh2VlZXt7e3d3d39/f52dnYmJiTs7O5iYmExMTIGBgU5OTm1tbWhoaP39/bS0tGtra6amprCwsFtbW7a2tllZWd/f32BgYIaGhqCgoIqKijY2NqGhoZmZmYKCgm9vb4WFhbq6uq+vr8bGxmJiYl5eXq2trWRkZLu7u7y8vDk5OVxcXGFhYV1dXff391JSUubm5i4uLvb29vz8/NPT06ysrP7+/mdnZ319ffX19bi4uGpqauTk5F9fXz4+PoSEhOrq6iwsLDExMdHR0b6+vtbW1mZmZqmpqaqqqmNjY2lpaSoqKvul+KQAAAAbdFJOUwAQU80CyKn19fdSxwKpEcyyx8kcYPhgHMmyx9QS6goAAAhXSURBVFjDvZd5WFNXGsbP7Pu+T6BiHbcZlujsNZAUNKiEIAgkqSFuqCRGVpVNQKkgiFUUNxBwFwQEBfel7nunWmutS6fttJ12prPvy1/zvd853Nw882+e/J6He97vO985ebk559wbIb725QkhougHYeMLXxRCfCU2VBz9Xvj43OfF16NCxr7RYeSz4qsxIaPx+2HkS+IzE0NG+9gw8ikRFzpeejqciOjQ0fVUOBE5w2QrSifKOD9bD6f6jqxvqfK/+f+9+dy985lhOpuPthc+jGedMmfOnARNzVEVOmkmadaUSWXTXitq31LzVqBEQ9Y+IxYrTs5UbH2rpheJ1pk6UmKo4vboCPCsM3bx4jp978xanqL4WUnaRq8B7Lg9maIao9HYy/lEUn2ypITk8U6p95EuzYB6SOoa53o+9PAUpws5vG7UsUYOE17FpogATz2mxBFdIuLpid4laVpU4vWe0vdGdPAUHZMZS75hmAEKX6f2ee64Rypf1nyA3u1Sn4AumKxKL0HUxGlT/BHxLww6VsthIk8xQe/EQonWIOfRebW6cCivLsh5FU9RlQIy8nWfUpiSsgfOuWcEqQmsUprQuUZqds4Vd+Gc2r96dVM0UiLYuRwmfIpYvtnEryAe+3wVQc5zfGZq/rSty5lCbapvKMj5Up6iNgNUYfY/bPYfNlIblZHxW/jinnFwzqqfLcSxzujiYHuGLL1E7QpeaxV1D+z4lihxSu+8Ug4THkUMGZgJEZdAasDjGaTGNfx4nOhZDIdvUn/fOSr0epE9SqlXILw8RZkZ4JYvf5fESB+pHnMJYu4ZCees2qWHURzsZH2fFEp7zeZM/M+t6Go+jv/JbK6jpnaZopNHmcXwup8I56wukiozGv3UJAb2BfbBWFYmUn2sikltC5SsiiewOBzJUPFHSHbFX4ZzjiPhnFWbdL6eg2IZNMRz6ZX4+G3URHdy32GSxfHxQ7IJQiQp4uCcVQGplUlJ7DwpSd//mzyoQ1evXs3lHDsPlKw0EbvpQ35vYgpJ+k0FdM3meDycQ3SepFMjx2C4xukW6fyJiUuvmExrqamQU2DdDJlMB6hpMQUj7IocOIeIwoJus9vXUOMefsgk2e1Y/wnVT3z2AC2U2hIIj2UR+NjqLEl/f/+krAZKbHgBNJOKRR6rooJup2cOog61fl/MepGuTVlZT6hxyhn2FBUVXc7KgvNVkxRqcuFQLCEX52YQvyQx2ehwdOu34BWHI1mqd/p3ZQ+P6aD4gkNjYwJxlj6kKkHHdv3uMsQihe+l6A5ddiHClo6hv7Nc2pSQsI6aQ/opEj7QzRCtcmK+wqs32kaJg/pE0/z5DwJRwy05por0/vkaA5nENZr8pUwdh4KdI3WJtsK7+3HjES0lMQi3BShtyszcAU0dLUuZfZmZK/TO1bxiriJPbzTLOHfuan0ilyq6zmlhjRyzlGThXI07+MreoMlvzNDxSrBzylhxTs74Oz0lo5ZRCOd+7MpXL8L5jBmxWDrUYdSGBDlX84p5Ch8c4dcGVktE47x5lXrn61Cy6b2r2urhMXg4Fc7TqE4jXqXJ96XpaA52TplyauvT0nKpuUthLZynReOhQ3+5aWm459upw6gNOaKbIUfNK2YpPNihEPN2kfrdrFlt2KHD5/nbqip7ReMyOC/kqIzU3lkap1IJrPOdqTpeww5lhY0ZRW0rFlRkJI7GMgrL8DhNxakeBeepqcup2U8dw87liOpIySg1r5imMMI5K5wyEZ5pZ+g6YprG6uLi4pOsnFgurHbDeaCkDju/mz7kujwECiorK8sm4Q5vkDHMUbsjcAPXUbiK2u5JPflahg9x6rhTXf2yHFKhP1sUYooiiVxslXIrybwpm+k6bopGA4VrWb1BysZqFSlnoOSAhbhOH7LZwuAIOW/5F5xzjEMvymIZo/vqk9ItlvVYPBbLRuXcYqnH3pVTbJFDcNSutwQjpituwTmrR7jnj6afp+vI6RqFWCOs7uO1gNV6UrcDJSusRBF9iH0ElPUB7pT1n3Qt5Rgne5TV2qJf9xesVnZutd6Lls6tViz3vBd4SLccAucrrcGIqQoHnLO6gaflf6d+COdTNdZSONoDhdVdw7mVpG4ESlpthCsPN91NCsvaUGLDbStFjw2HXozNhj2cg82zBFvTZltJzUHqli+Ez9tso5KoPZNOqebFcsggnNuCEYsUBtxp/Nbgnw8PFy36Dx5N2q+cHYZfY+PWnvFvgSjjMXC+a5FGhRtgaRpK/XX1+BcmuN0XEHIPDr0Ydw/eve8i3ov3Rbf7JpxTOMbHzkkd5o35/urHDgMPcfupOb5E0cuTucVCxV+CXlv/vXDh2aDE8oUNuugdH4+5CecLNQZdYPxx3WI44XLhiVPKPTjZY1z4DjZwPAbGLruO4Z0bMZ99y0k02PULKsbl8uvjTTzYJRYo5up9NlLi/SDn2Qvs5kC0So45RrJogYY/nTnh0D6knkK8d5VyB87HmHQ8VQZlJY6/6nRszUqEkY/gHGq3Zv00hqSvCXIuB4vZirc1W1t7ViDxjyDnG2bP9r2u9Ng6NWYjBUdna3QnS4rUAZd3ABHWRB/n34Pz5F4c+LIQL1L3kwfgnGMYXM6qXU7hWTuAIcnBzuVg8Zxiaq7i9C2ZcOTqmYJU07H95ds6Nv95eIyHOjzPadQnKkbsGzp4/uDNEg72OJ3OZlZ/I1V+by9dx8u6AiT4WqCVlqspik75/RvLE0uczguJiRedOlSF+FHoWD0qnIgfho7KEeFEfPqnIePlcWHkG+JjPw4ZbSPDyLfFR38SMs5EhpFvio9/4mehYvOY8PFdIcRHPvnzEHF+fNj4zrfE/wDg4FZDt0FtGgAAAABJRU5ErkJggg==" alt="" class="mb-4 xl:mb-12" />
+                <div class="text-[40px]">
+                  <span class="text-red-300">0</span>
+                  <span class="text-zinc-100">/</span>
+                  <span class="text-lime-400">1340</span>
+                </div>
+              </div>
+              <a href="https://www.bestchange.ru/quickex-exchanger.html" target="_blank" class="space-x-2 items-center hidden xl:flex">
+                <div class="text-zinc-100 text-xl">Все отзывы на BestChange</div>
+                <svg class="w-5 h-auto" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M3.70667 11.6508C3.30732 11.7058 2.99951 12.0532 2.99951 12.4735C2.99951 12.9321 3.36582 13.3038 3.81769 13.3038H18.1994L13.0042 18.555L12.9248 18.6479C12.6865 18.9725 12.7119 19.4338 13.0018 19.7292C13.3207 20.0542 13.8387 20.0552 14.1589 19.7317L20.7473 13.0732C20.7865 13.0351 20.822 12.993 20.8531 12.9476C21.0761 12.6234 21.0447 12.1736 20.7588 11.8847L14.1588 5.21556L14.0669 5.13537C13.7461 4.89489 13.2916 4.92268 13.0018 5.21809C12.6829 5.54305 12.684 6.06878 13.0043 6.39234L18.2007 11.6432L3.81769 11.6432L3.70667 11.6508Z" fill="currentColor"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="xl:w-3/4 px-8 xl:px-12">
+              <div class="relative trustbest-swiper">
+                <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                  <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                    <div class="swiper-slide swiper-slide-active" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Оксана</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Пока что доверяю только этому обменнику после многих других. Обменник работает стабильно, транзакции оперативные, выгодный курс.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">03/11/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2265179" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide swiper-slide-next" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Дмитрий</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Последнее время постоянно пользуюсь этим обменником бтц — доллар. Быстрый вывод, отличный курс обмена, хорошая, оперативная служба поддержки.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">02/11/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2264132" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Диана</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Как правило, через это сервис делаю обмены по направлению BTC-USDT. Транзакции по пол дня не висят — оперативно проходят. Да и комиссия не задрана.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">02/11/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2262754" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Мария</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Меняю в обменнике Euro на Bitcoin, здесь самый выгодный курс и хорошая скорость обмена, поддержка быстро помогает.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">01/11/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2260397" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Дмитрий</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Быстрый и надежный сервис. Всегда выгодные курсы, заявки обрабатываются оперативно. Для обмена крипты — отличный вариант.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">01/11/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2259626" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Виктор</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Действительно, обменник надёжный и работает чётко! Я меняю здесь WMZ на QIWI периодически и всегда курс выгоднее, чем где-то. Деньги на кошелёк приходят быстро. Проблем ни разу не возникало. Моя оценка — отлично!</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">01/11/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2259277" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Саша</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Обменник понравился, транзакцию выполнили на протяжении нескольких минут, рекомендую!</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">31/10/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2258764" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Константин</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Постоянно меняю здесь TRON и MONERO, все устраивает. Обменник работает как часы без задержек в переводе. Курсы тоже приемлемые, так держать.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">30/10/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2254578" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                    <div class="swiper-slide" style="width: 234.667px; margin-right: 20px;">
+                      <div class="px-4 py-5 bg-neutral-700 rounded-[11px] shadow space-y-2.5 mb-12">
+                        <div class="flex justify-between">
+                          <div class="text-zinc-100 text-lg">Лиза Г.</div>
+                          <svg class="w-5 h-auto text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z"></path>
+                          </svg>
+                        </div>
+                        <div class="space-y-3">
+                          <div class="text-zinc-100 break-words">Я занималась обменом биткоинов. Когда я оформляла заявку, курс криптовалюты был зафиксирован, что позволило мне знать точную сумму, которую я получу в результате обмена. Кроме того, процесс обмена биткоинов происходит довольно быстро.</div>
+                          <div class="flex justify-between items-center space-x-4 text-[11px]">
+                            <div class="text-zinc-100">30/10/2023</div>
+                            <a class="flex items-center space-x-1 border-b border-white border-dashed border-opacity-50 hover:border-transparent" href="https://www.bestchange.ru/quickex-exchanger.html?review=2254284" target="_blank">
+                              <div class="text-white text-opacity-50">Читать полностью</div>
+                              <svg class="w-[5px] h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                              </svg>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                  </div>
+                  <!--  -->
+                  <!--  -->
+                  <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                  </div>
+                </div>
+                <a href="https://quickex.io/ru#" class="arrow-prev w-6 h-6 bg-neutral-700 rounded-full shadow justify-center items-center flex absolute top-1/2 -translate-y-1/2 -left-10 swiper-button-disabled">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.0415 9.08317L0.95817 4.99984L5.0415 0.916504" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                </a>
+                <a href="https://quickex.io/ru#" class="arrow-next w-6 h-6 bg-neutral-700 rounded-full shadow justify-center items-center flex absolute top-1/2 -translate-y-1/2 -right-10">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.958496 0.91683L5.04183 5.00016L0.958496 9.0835" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-center bg-cover mb-16">
+        <div class="container mx-auto opacity-[.99] text-white">
+          <div class="text-center mb-5 xl:mb-16">
+            <h2 class="text-[26px] xl:text-[34px] uppercase mb-4">СТАТЬИ В БЛОГЕ</h2>
+            <div class="max-w-sm mx-auto shadow border border-fuchsia-800"></div>
+          </div>
+          <div class="relative blog-swiper -mx-2 xl:-mx-5">
+            <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+              <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                <div class="swiper-slide swiper-slide-active" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/simple-and-secure-btc-to-xmr-exchange-on-quickex" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2024/01/QuickEx-Exchange----------2024-01-25T174127.881.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">How to Exchange BTC to XMR</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">ipaul.smith6</div>
+                            <div>·</div>
+                            <div class="">4 min read</div>
+                            <div>·</div>
+                            <div class="">30 Jan 2024</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="Discover the ease and security of converting Bitcoin to Monero with Quickex, the premier BTC to XMR crypto exchange.  Learn about Bitcoin&#39;s transparency and Monero&#39;s privacy solutions, the benefits of diversifying your crypto portfolio, and how Quickex facilitates effortless exchanges.">Discover the ease and security of converting Bitcoin to Monero with Quickex, the premier BTC to XMR crypto exchange. Learn about Bitcoin's transparency and Monero's privacy solutions, the benefits of diversifying your crypto portfolio, and how Quickex facilitates effortless exchanges.</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+                <div class="swiper-slide swiper-slide-next" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/what-is-conflux" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2024/01/35-1.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">What is Conflux? Everything You Need to Know</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">ipaul.smith6</div>
+                            <div>·</div>
+                            <div class="">4 min read</div>
+                            <div>·</div>
+                            <div class="">19 Jan 2024</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="Conflux is a state-of-the-art public blockchain system that aims to optimize scalability, security, and decentralization. It stands out for its unique approach to blockchain architecture and consensus mechanism.">Conflux is a state-of-the-art public blockchain system that aims to optimize scalability, security, and decentralization. It stands out for its unique approach to blockchain architecture and consensus mechanism.</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+                <div class="swiper-slide" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/manta-network-innovations-in-blockchain-privacy-and-scalability" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2024/01/QuickEx-Exchange----------2024-01-19T012709.420-1.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">What is Manta Network? Answers to all Questions</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">ipaul.smith6</div>
+                            <div>·</div>
+                            <div class="">4 min read</div>
+                            <div>·</div>
+                            <div class="">19 Jan 2024</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="Created to address the limitations of existing blockchain solutions, Manta Network is a multi-modular ecosystem consisting of two blockchain networks with a focus on zero-disclosure (ZK) applications.">Created to address the limitations of existing blockchain solutions, Manta Network is a multi-modular ecosystem consisting of two blockchain networks with a focus on zero-disclosure (ZK) applications.</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+                <div class="swiper-slide" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/secure-your-investments-a-guide-to-choosing-a-safe-cryptocurrency-exchange-in-2023" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2024/01/QuickEx-Exchange----------2024-01-09T165743.640.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">Choosing a Safe Cryptocurrency Exchange in 2024: Quickex Guide to Protect Your Investments</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">ipaul.smith6</div>
+                            <div>·</div>
+                            <div class="">4 min read</div>
+                            <div>·</div>
+                            <div class="">9 Jan 2024</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="When investing in cryptocurrencies in 2024, select a reliable exchange. This guide provides tips for assessing exchange security and reliability, helping you make safe investment choices.">When investing in cryptocurrencies in 2024, select a reliable exchange. This guide provides tips for assessing exchange security and reliability, helping you make safe investment choices.</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+                <div class="swiper-slide" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/what-is-crypto-memo-and-destination-tags-quickex-blog" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2024/01/QuickEx-Exchange----------2024-01-09T154710.670.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">What is Memo In Crypto? Full Guide from Quickex</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">ipaul.smith6</div>
+                            <div>·</div>
+                            <div class="">6 min read</div>
+                            <div>·</div>
+                            <div class="">9 Jan 2024</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="When sending a deposit of XRP, ATOM, EOS, XEM and some other tokens on the Quickex exchange you need to provide the following information for your deposit:
+
+ * Your wallet address;
+ * Destination Tag or Memo.
+
+Memos and Destination Tags are information that many crypto users ignore, although they play a critical role in the proper recording and processing of transactions.
+
+
+What is Memo in Crypto?
+
+A memo in cryptocurrency transfers is a unique short piece of additional information that is fille">When sending a deposit of XRP, ATOM, EOS, XEM and some other tokens on the Quickex exchange you need to provide the following information for your deposit: * Your wallet address; * Destination Tag or Memo. Memos and Destination Tags are information that many crypto users ignore, although they play a critical role in the proper recording and processing of transactions. What is Memo in Crypto? A memo in cryptocurrency transfers is a unique short piece of additional information that is fille</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+                <div class="swiper-slide" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/tether-vs-binance-coin-the-cryptocurrency-comparison" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2024/01/QuickEx-Exchange----------2024-01-04T191112.871.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">Tether vs Binance Coin: The Cryptocurrency Comparison</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">ipaul.smith6</div>
+                            <div>·</div>
+                            <div class="">5 min read</div>
+                            <div>·</div>
+                            <div class="">4 Jan 2024</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="This article delves into the contrasting worlds of stablecoins and volatile cryptocurrencies, exemplified by USDT (Tether) and BNB (Binance Coin). It aims to provide a comprehensive understanding of what stable currencies are and how they differ fundamentally from their more volatile counterparts.">This article delves into the contrasting worlds of stablecoins and volatile cryptocurrencies, exemplified by USDT (Tether) and BNB (Binance Coin). It aims to provide a comprehensive understanding of what stable currencies are and how they differ fundamentally from their more volatile counterparts.</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+                <div class="swiper-slide" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/how-to-explore-benefits-of-converting-eth-to-btc-for-beginners" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2023/09/QuickEx-Exchange---------79-.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">How to Explore Benefits of Converting ETH to BTC for Beginners</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">quickex</div>
+                            <div>·</div>
+                            <div class="">3 min read</div>
+                            <div>·</div>
+                            <div class="">11 Oct 2023</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="This beginner&#39;s guide aims to shed light on the benefits of converting ETH to BTC. We&#39;ll discuss key considerations, potential risks, and the necessary steps to navigate the cryptocurrency market and make informed investment choices.">This beginner's guide aims to shed light on the benefits of converting ETH to BTC. We'll discuss key considerations, potential risks, and the necessary steps to navigate the cryptocurrency market and make informed investment choices.</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+                <div class="swiper-slide" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/what-is-the-most-cost-effective-way-to-exchange-eth-to-btc" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2023/09/QuickEx-Exchange---------78-.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">What is the Most Cost-Effective Way to Exchange ETH to BTC</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">quickex</div>
+                            <div>·</div>
+                            <div class="">4 min read</div>
+                            <div>·</div>
+                            <div class="">11 Oct 2023</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="This guide delves into the most cost-effective methods of exchanging ETH for BTC. It provides an overview of the critical determinants of exchange rates, including transaction fees and market liquidity.">This guide delves into the most cost-effective methods of exchanging ETH for BTC. It provides an overview of the critical determinants of exchange rates, including transaction fees and market liquidity.</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+                <div class="swiper-slide" style="width: 360px; margin-right: 40px;">
+                  <a href="https://quickex.io/ru/blog/what-are-the-different-ways-of-exchanging-btc-to-xmr" class="flex h-full">
+                    <div class="rounded-[22px] bg-neutral-700 overflow-hidden">
+                      <div class="pt-[50%] relative bg-center bg-cover" style="
+                                background-image: url('https://quickex.io/api/content/images/2023/09/QuickEx-Exchange---------81-.png');
+                              "></div>
+                      <div class="px-4 pt-5 pb-6 space-y-6">
+                        <div class="space-y-2.5">
+                          <div class="text-2xl">What are the Different Ways of Exchanging BTC to XMR?</div>
+                          <div class="text-sm opacity-25 items-center gap-[7px] flex">
+                            <div class="">quickex</div>
+                            <div>·</div>
+                            <div class="">4 min read</div>
+                            <div>·</div>
+                            <div class="">11 Oct 2023</div>
+                          </div>
+                          <div class="text-stone-300 line-clamp-4" title="Exchanging Bitcoin (BTC) for Monero (XMR) offers the opportunity to diversify your cryptocurrency portfolio or leverage the privacy and security features of Monero. ">Exchanging Bitcoin (BTC) for Monero (XMR) offers the opportunity to diversify your cryptocurrency portfolio or leverage the privacy and security features of Monero.</div>
+                        </div>
+                        <div class="justify-between items-center gap-6 flex">
+                          <!--  -->
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!--  -->
+                </div>
+              </div>
+              <!--  -->
+              <!--  -->
+              <!--  -->
+            </div>
+            <div class="flex justify-center items-center xl:hidden">
+              <button class="arrow-prev w-6 h-6 justify-center items-center flex swiper-button-disabled" disabled="">
+                <svg class="w-[7px] h-[14px]" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.0415 9.08317L0.95817 4.99984L5.0415 0.916504" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                </svg>
+              </button>
+              <div class="pagination-outer px-12 py-6">
+                <div class="pagination-wrapper swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                  <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                  <span class="swiper-pagination-bullet"></span>
+                  <span class="swiper-pagination-bullet"></span>
+                  <span class="swiper-pagination-bullet"></span>
+                  <span class="swiper-pagination-bullet"></span>
+                  <span class="swiper-pagination-bullet"></span>
+                  <span class="swiper-pagination-bullet"></span>
+                </div>
+              </div>
+              <button class="arrow-next w-6 h-6 justify-center items-center flex">
+                <svg class="w-[7px] h-[14px]" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.958496 0.91683L5.04183 5.00016L0.958496 9.0835" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-center mb-16 xl:mt-8">
+            <a href="https://quickex.io/ru/blog" class="text-zinc-100 px-6 py-3 rounded-xl border border-neutral-100 border-opacity-50 items-center gap-2 flex">
+              <span class="text-xl">Читать все статьи</span>
+              <svg class="w-4 h-auto" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M3.70667 11.6508C3.30732 11.7058 2.99951 12.0532 2.99951 12.4735C2.99951 12.9321 3.36582 13.3038 3.81769 13.3038H18.1994L13.0042 18.555L12.9248 18.6479C12.6865 18.9725 12.7119 19.4338 13.0018 19.7292C13.3207 20.0542 13.8387 20.0552 14.1589 19.7317L20.7473 13.0732C20.7865 13.0351 20.822 12.993 20.8531 12.9476C21.0761 12.6234 21.0447 12.1736 20.7588 11.8847L14.1588 5.21556L14.0669 5.13537C13.7461 4.89489 13.2916 4.92268 13.0018 5.21809C12.6829 5.54305 12.684 6.06878 13.0043 6.39234L18.2007 11.6432L3.81769 11.6432L3.70667 11.6508Z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="bg-center bg-cover mb-6 xl:mb-32">
+        <div class="container mx-auto opacity-[.99] text-white">
+          <div class="text-center mb-5 xl:mb-10">
+            <div class="text-[26px] xl:text-[34px] uppercase mb-4">МЫ ЭТО QUICKEX</div>
+            <div class="max-w-sm mx-auto shadow border border-fuchsia-800"></div>
+          </div>
+          <div class="bg-neutral-700 rounded-[22px] shadow flex flex-col xl:flex-row xl:items-center xl:justify-between px-8 xl:px-12 mb-8 pb-8 xl:pb-0">
+            <div class="flex flex-col xl:flex-row xl:items-center">
+              <div class="flex items-center space-x-6 xl:pr-20 py-8">
+                <img src="{% static 'images/logo.B5AI44uj.png' %}" alt="" class="w-[75px] h-[75px] xl:w-[106px] xl:h-[106px]" />
+                <div>
+                  <div class="text-[28px] font-medium">Quickex</div>
+                  <div class="text-neutral-500">@QuickEx_Tweets</div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between xl:justify-start mb-6 xl:mb-0">
+                <div class="xl:px-6 xl:py-8">
+                  <div class="text-stone-300 font-medium">Tweets</div>
+                  <div class="text-2xl font-bold">351</div>
+                </div>
+                <div class="xl:px-6 xl:py-8">
+                  <div class="text-stone-300 font-medium">Подписок</div>
+                  <div class="text-2xl font-bold">0</div>
+                </div>
+                <div class="xl:px-6 xl:py-8">
+                  <div class="text-stone-300 font-medium">Подписчиков</div>
+                  <div class="text-2xl font-bold">463</div>
+                </div>
+              </div>
+            </div>
+            <button class="px-6 py-3 bg-blue-500 rounded-lg flex space-x-4 items-center shrink-0 self-start xl:self-center">
+              <svg class="w-5 h-auto" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.2229 4.93363C20.4923 5.2657 19.7049 5.48391 18.8889 5.58827C19.7238 5.08543 20.369 4.28848 20.6726 3.33025C19.8851 3.80462 19.0123 4.13668 18.092 4.32643C17.3425 3.51051 16.2894 3.03613 15.0939 3.03613C12.8644 3.03613 11.0428 4.85773 11.0428 7.10627C11.0428 7.42885 11.0807 7.74193 11.1471 8.03605C7.76958 7.86527 4.76204 6.24291 2.76018 3.78565C2.40914 4.38336 2.2099 5.08543 2.2099 5.82546C2.2099 7.2391 2.92146 8.49145 4.02201 9.20301C3.3484 9.20301 2.72223 9.01326 2.17195 8.72863V8.75709C2.17195 10.7305 3.5761 12.3813 5.43565 12.7513C4.83863 12.9147 4.21185 12.9374 3.60456 12.8177C3.86225 13.6265 4.36692 14.3342 5.04763 14.8414C5.72834 15.3485 6.55086 15.6295 7.39956 15.645C5.96091 16.7839 4.1776 17.3996 2.34273 17.3907C2.02015 17.3907 1.69758 17.3717 1.375 17.3338C3.17763 18.4913 5.3218 19.1649 7.61778 19.1649C15.0939 19.1649 19.202 12.9601 19.202 7.58065C19.202 7.40038 19.202 7.22961 19.1925 7.04934C19.9895 6.48009 20.6726 5.75905 21.2229 4.93363Z" fill="currentColor"></path>
+              </svg>
+              <a href="https://twitter.com/QuickEx_Tweets" target="_blank" class="font-semibold">Follow us</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <section data-v-587474e9="" id="faq" class="bg-center bg-cover mb-8 xl:mb-40">
+        <div data-v-587474e9="" class="container mx-auto opacity-[.99] text-white">
+          <div data-v-587474e9="" class="text-center mb-5 xl:mb-16">
+            <h2 data-v-587474e9="" class="text-[26px] xl:text-[34px] mb-6">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+            <div data-v-587474e9="" class="max-w-sm mx-auto shadow border border-fuchsia-800"></div>
+          </div>
+          <div data-v-587474e9="" class="grid grid-cols-1 xl:grid-cols-[1fr_3fr] gap-12">
+            <ul data-v-587474e9="" class="space-y-4">
+              <li data-v-587474e9="">
+                <a data-v-587474e9="" href="https://quickex.io/ru#" class="p-4 items-center flex rounded-[11px] shadow border border-fuchsia-800">
+                  <div data-v-587474e9="" class="grow shrink basis-0 text-xl text-pink-50">О сервисе</div>
+                  <svg data-v-587474e9="" class="w-2 h-auto" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                  </svg>
+                </a>
+              </li>
+              <li data-v-587474e9="">
+                <a data-v-587474e9="" href="https://quickex.io/ru#" class="p-4 items-center flex">
+                  <div data-v-587474e9="" class="grow shrink basis-0 text-xl text-zinc-400">Об обменах</div>
+                  <!--  -->
+                </a>
+              </li>
+            </ul>
+            
+            <div data-v-587474e9="">
+              <ul data-v-587474e9="" class="space-y-4">
+                <li data-v-587474e9="">
+                  <a data-v-587474e9="" href="https://quickex.io/ru#" class="block px-6 py-6 relative text-neutral-400 border-b border-white border-opacity-5">
+                    <svg data-v-587474e9="" class="w-2 h-auto absolute top-6 right-6 rotate-[90deg]" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                    <div data-v-587474e9="" class="text-xl pr-8">Почему не отвечают на мои сообщения в чате?</div>
+                    <!--  -->
+                  </a>
+                </li>
+                <li data-v-587474e9="">
+                  <a data-v-587474e9="" href="https://quickex.io/ru#" class="block px-6 py-6 relative text-neutral-400 border-b border-white border-opacity-5">
+                    <svg data-v-587474e9="" class="w-2 h-auto absolute top-6 right-6 rotate-[90deg]" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                    <div data-v-587474e9="" class="text-xl pr-8">Каков режим работы вашего обменника?</div>
+                    <!--  -->
+                  </a>
+                </li>
+                <li data-v-587474e9="">
+                  <a data-v-587474e9="" href="https://quickex.io/ru#" class="block px-6 py-6 relative text-neutral-400 border-b border-white border-opacity-5">
+                    <svg data-v-587474e9="" class="w-2 h-auto absolute top-6 right-6 rotate-[90deg]" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                    <div data-v-587474e9="" class="text-xl pr-8">Обязательна ли регистрация на вашем сайте?</div>
+                    <!--  -->
+                  </a>
+                </li>
+                <li data-v-587474e9="">
+                  <a data-v-587474e9="" href="https://quickex.io/ru#" class="block px-6 py-6 relative text-neutral-400 border-b border-white border-opacity-5">
+                    <svg data-v-587474e9="" class="w-2 h-auto absolute top-6 right-6 rotate-[90deg]" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                    <div data-v-587474e9="" class="text-xl pr-8">У вас есть партнерская программа?</div>
+                    <!--  -->
+                  </a>
+                </li>
+                <li data-v-587474e9="">
+                  <a data-v-587474e9="" href="https://quickex.io/ru#" class="block px-6 py-6 relative text-neutral-400 border-b border-white border-opacity-5">
+                    <svg data-v-587474e9="" class="w-2 h-auto absolute top-6 right-6 rotate-[90deg]" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                    <div data-v-587474e9="" class="text-xl pr-8">Какие бонусы доступны для постоянных клиентов?</div>
+                    <!--  -->
+                  </a>
+                </li>
+                <li data-v-587474e9="">
+                  <a data-v-587474e9="" href="https://quickex.io/ru#" class="block px-6 py-6 relative text-neutral-400 border-b border-white border-opacity-5">
+                    <svg data-v-587474e9="" class="w-2 h-auto absolute top-6 right-6 rotate-[90deg]" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                    <div data-v-587474e9="" class="text-xl pr-8">Сколько времени у меня есть на создание заявки?</div>
+                    <!--  -->
+                  </a>
+                </li>
+                <li data-v-587474e9="">
+                  <a data-v-587474e9="" href="https://quickex.io/ru#" class="block px-6 py-6 relative text-neutral-400 border-b border-white border-opacity-5">
+                    <svg data-v-587474e9="" class="w-2 h-auto absolute top-6 right-6 rotate-[90deg]" viewBox="0 0 4 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.999512 0.817057L2.99951 3.48372L0.999512 6.15039" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
+                    </svg>
+                    <div data-v-587474e9="" class="text-xl pr-8">Почему сайт отображается некорректно, и что делать?</div>
+                    <!--  -->
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="flex items-center justify-center mb-16 xl:mt-16">
+        <img width="1440" height="942" alt="" src="data:image/svg+xml,%3csvg%20width=&#39;1440&#39;%20height=&#39;942&#39;%20fill=&#39;none&#39;%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cg%20opacity=&#39;.03&#39;%20stroke=&#39;%23fff&#39;%20stroke-width=&#39;4&#39;%3e%3cpath%20d=&#39;M-354.921%20690.983c25.507-74.945%20136.601-222.757%20376.929-214.443%20300.41%2010.391%20488.402%20237.115%20771.807%20293.796C1002.99%20812.171%201526.89%20806.234%201747%20551.17&#39;/%3e%3cpath%20d=&#39;M-371.008%20572.625c25.507-74.945%20136.601-222.756%20376.93-214.443%20300.409%2010.392%20488.401%20237.116%20771.806%20293.797%20209.174%2041.835%20733.072%2035.898%20953.182-219.167&#39;/%3e%3cpath%20d=&#39;M-402.218%20457.328c25.507-74.945%20136.602-222.757%20376.93-214.444C275.12%20253.276%20463.112%20480%20746.517%20536.681c209.174%2041.835%20733.072%2035.898%20953.182-219.167&#39;/%3e%3cpath%20d=&#39;M-458.616%20328.109c25.506-74.945%20136.601-222.757%20376.929-214.443%20300.409%2010.391%20488.401%20237.115%20771.807%20293.796%20209.174%2041.835%20733.07%2035.898%20953.19-219.166&#39;/%3e%3cpath%20d=&#39;M-503.45%20217.396C-477.944%20142.451-366.849-5.361-126.521%202.953%20173.888%2013.344%20361.88%20240.068%20645.286%20296.749c209.174%2041.835%20733.074%2035.898%20953.184-219.166&#39;/%3e%3c/g%3e%3c/svg%3e" class="absolute pointer-events-none w-full" />
+        <div class="container mx-auto opacity-[.99] text-white">
+          <div class="grid grid-cols-[1fr] md:grid-cols-[3fr_2fr] gap-12">
+            <div class="pt-12">
+              <h2 class="text-[40px] font-semibold mb-10">Обменивайте любую криптовалюту за считанные минуты</h2>
+              <div class="text-xl mb-16">Quickex предоставляет вам множество вариантов обмена от наших партнеров, поэтому вы можете легко выбрать любую понравившуюся криптовалюту и мгновенно обменять ее без дополнительных комиссий.</div>
+              <div class="flex justify-center">
+                <a href="https://quickex.io/#exchange" class="w-full md:px-[120px] md:w-max py-6 bg-gradient-to-r from-fuchsia-800 to-pink-800 rounded-[11px] shadow"><span class="text-pink-100 text-xl font-medium">Обменять</span></a>
+              </div>
+            </div>
+            <div class="relative flex justify-end">
+              <div class="flex justify-center items-center">
+                <div class="overflow-hidden rounded-2xl relative hidden md:block">
+                  <img width="456" height="456" alt="" class="block" src="{% static 'images/rightnow.DN5gW9pd.png' %}" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- ] -->
+  </main>
+
+  <script>
+  // Clear local storage when the page is opened
+  localStorage.clear();
+</script>
+{% endblock content %}

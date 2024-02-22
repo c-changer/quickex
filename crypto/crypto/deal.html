@@ -1,0 +1,338 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  c-changer
+{% endblock %}
+{% block metaTitle %}
+  c-changer
+{% endblock %}
+{% block cssStyle %}
+  {% static 'css/deal.min.css' %}
+{% endblock %}
+
+{% block content %}
+  <main class="main">
+      {% if exchange.confirmed == False %}
+        <div id="comp-confirm-order" class="modal show" style="opacity: 1;">
+      <div class="over"></div>
+      <div class="modal__wrap">
+        <div class="modal__scroll">
+          <div class="modal__box">
+            <div class="modal__form">
+              <h4 class="modal__title">Подтвердите данные по сделке {{ exchange.id }}</h4>
+              <div class="modal__list">
+                <div class="modal__couple">
+                  <div class="modal__item">
+                    <div class="modal__item-option">
+                      <div class="modal__item-label">Получите</div>
+                      <div class="modal__item-result">{{ exchange.sumTo }} {{ exchange.coinTo }}</div>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="modal__item">
+                    <div class="modal__item-option">
+                      <div class="modal__item-label">По реквизитам</div>
+                      <div class="modal__item-result">{{ exchange.wallet }}</div>
+                    </div>
+                  </div>
+                </div>
+                <!--  -->
+              </div>
+              <div class="modal__footer">
+                <a href="{% url 'cancel' %}" class="modal__cancel">Отменить сделку</a>
+                <a class="modal__action" href="{% url 'confirm' %}">Подтвердить данные</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      {% endif %}
+    
+    <div id="order" class="order" style="opacity: 1;">
+      <div class="wrap">
+        <div class="order__content">
+          <div class="order__hdr">
+            <h1 class="order__hdr-title">Заказ {{ exchange.id }}</h1>
+            <div class="order__hdr-info">
+              <div class="result">{{ exchange.sumFrom }}</div>
+              <div class="option">{{ exchange.coinFrom }}</div>
+              <img src="https://coinchanger.in/img/sprite.svg?v=1666338994#drop" style="width: 14px; transform: rotate(-90deg);" alt="" />
+
+              <div class="result">
+                {{ exchange.sumTo }}
+              </div>
+              <div class="option">{{ exchange.coinTo }}</div>
+            </div>
+            <div class="order__hdr-over">
+              <p>
+                <strong>Статус сделки:</strong>
+                В обработке
+              </p>
+              <p>
+                <strong>Плавающий курс</strong>
+                <br />
+                Мы автоматически зафиксируем курс в момент 2-го подтверждения и произведем обмен.
+                <br />
+                <a href="{% url 'cancel' %}">Отменить сделку</a>
+              </p>
+            </div>
+          </div>
+          <div class="order__info">
+            <!--  -->
+            <div class="order__info-aml">
+              Все транзакции в данном направлении обмена проверяются на предмет AML рисков. В случае если криптовалюта отправленная Вами будет иметь High Risk или связана с нелегитимными источниками, coinchanger.in оставляет за собой право на то, чтобы приостановить транзакцию. Транзакции где доля актива с высокорискованными метками превышают допустимый процент будут так же приостановлены. Вы можете узнать
+              <a href="{% url 'aml-agreement' %}" target="_blank">подробнее о нашей AML политике</a>
+              .
+            </div>
+          </div>
+        </div>
+        <div class="order__main">
+          <div class="order__step active">
+            <div class="order__step-hdr">
+              <div class="order__step-num">1</div>
+              <h4 class="order__step-title">Оплата сделки</h4>
+            </div>
+            <div class="order__step-content">
+              <div class="order__step-info">
+                <div class="order__step-item">
+                  <div class="order__step-field">
+                    <div class="wrapper">
+                      <div class="label">переводите</div>
+                      <div class="result">
+                        <span class="amount1">{{ exchange.sumFrom }}</span> {{ exchange.coinFrom }}
+                      </div>
+                    </div>
+                    <button class="copy copy1"><img src="https://coinchanger.in/img/sprite.svg?v=1666338994#copy" style="width: 40px;" alt="" /></button>
+                  </div>
+                </div>
+                <div class="order__step-item">
+                  <div class="order__step-field">
+                    <div class="wrapper">
+                      <div class="label">на кошелек</div>
+                      <div class="result wallet">{{ exchange.dep_wallet }}</div>
+                    </div>
+                    <div class="qr">
+                      <button class="qr__btn"><img src="https://coinchanger.in/img/sprite.svg?v=1666338994#qr" style="width: 40px;" alt="" /></button>
+                      <div class="qr__hide" style="display: none;">
+                        <button class="qr__close"><img src="https://coinchanger.in/img/sprite.svg?v=1666338994#close_1" style="width:40px" alt="" /></button>
+                        <img src="{{ qrcode.url }}" alt="qr-code" />
+                        <span>QR-код для оплаты</span>
+                      </div>
+                    </div>
+                    <button class="copy copy2"><img src="https://coinchanger.in/img/sprite.svg?v=1666338994#copy" style="width:40px" alt="" /></button>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="order__step-item">
+                  <div class="order__step-text">
+                    <b>Внимание!</b>
+                    <p></p>
+                    <p>В последнее время участились случаи мошенничества. Если вы указывайте не свой личный кошелёк, а кошелёк сторонних лиц (Инвестиционных экспертов, других обменных сервисов, брокеров и.т. д) убедитесь, что это не мошенники, почитайте отзывы в интернете, иначе вы рискуйте потерять свои средства.</p>
+                    <p></p>
+                    <p>Наш сервис не принимает платежи, если криптовалюта отправленная Вами будет иметь High Risk или связана с нелегитимными источниками. В случае, если вы уже осуществили перевод на наши счета, может потребоваться процедура верификации личности для возврата средств с учетом комиссии сети.</p>
+                    <!--  -->
+                  </div>
+                  <!--  -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order__step secondstep {% if exchange.status == "S2" %}active{% endif %}">
+            <div class="order__step-hdr">
+              <div class="order__step-num">2</div>
+              <h4 class="order__step-title">Обработка платежа</h4>
+            </div>
+            <div class="order__step-content">
+              <div class="order__step-info">
+                <div class="order__step-text">
+                  <p>Все платежи обрабатываются автоматически, и как только средства поступят на наш счет, робот мгновенно направит средства на следующий этап.</p>
+                </div>
+                <!--  -->
+              </div>
+            </div>
+          </div>
+          <div class="order__step">
+            <div class="order__step-hdr">
+              <div class="order__step-num">3</div>
+              <h4 class="order__step-title">Перевод</h4>
+            </div>
+            <div class="order__step-content last">
+              <div class="order__step-info">
+                <div class="order__step-text">
+                  <p>Наш робот автоматически переведет средства на результирующий счет. Ваш платеж будет обработан в течение нескольких минут.</p>
+                </div>
+                <div class="order__step-tabel">
+                  <div class="order__step-row">
+                    <div class="option">Мы переведем:</div>
+                    <div class="result">{{ exchange.sumTo }} {{ exchange.coinTo }}</div>
+                  </div>
+                  <div class="order__step-row">
+                    <div class="option">По реквизитам:</div>
+                    {% if exchange.fio == '' %}
+                    <div class="result">{{ exchange.wallet }}</div>
+                    {% else %}
+                    <div class="result">{{ exchange.fio }} <br> {{ exchange.wallet }}</div>
+                    {% endif %}
+                  </div>
+
+                  <!--  -->
+                </div>
+                <!--  -->
+                <!--  -->
+                <!--  -->
+              </div>
+            </div>
+          </div>
+          <img src="{% static 'images/unicorn.svg' %}" alt="bg" class="order__img" />
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="modal-success" id="js-success-modal" style="display:none;">
+    <div class="over"></div>
+    <div class="notice">
+      <button class="modal__close js-close-notice">
+        <svg class="icon" width="16" height="16">
+          <use xlink:href="https://coinchanger.in/img/sprite.svg?v=1666338994#close"></use>
+        </svg>
+      </button><div class="notice__content">
+        <img class="notice__content-img" src="https://coinchanger.in/img/done.svg?v=1666338994" alt="done" /><div class="notice__content-title"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // For modal__action
+    var btnModalAction = document.querySelector('.modal__action')
+    var modal = document.querySelector('.modal')
+    
+    if (btnModalAction && modal) {
+      btnModalAction.addEventListener('click', function () {
+        modal.classList.remove('show')
+        modal.classList.add('hide')
+      })
+    }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Your script here
+      var btnQR = document.querySelector('.qr__btn')
+      var modalQR = document.querySelector('.qr__hide')
+    
+      if (btnQR && modalQR) {
+        btnQR.addEventListener('click', function () {
+          modalQR.style.display = 'block'
+        })
+      }
+    })
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var copyButton = document.querySelector('.copy1')
+      var amountElement = document.querySelector('.amount1')
+      var successModal = document.querySelector('.modal-success')
+    
+      copyButton.addEventListener('click', function () {
+        // Copy the inner text of .amount to the clipboard
+        var amountToCopy = amountElement.innerText
+        navigator.clipboard
+          .writeText(amountToCopy)
+          .then(function () {
+            // Show the success modal
+            successModal.style.display = 'block'
+    
+            // Hide the success modal after 3 seconds
+            setTimeout(function () {
+              successModal.style.display = 'none'
+            }, 1000)
+          })
+          .catch(function (err) {
+            console.error('Unable to copy text to clipboard', err)
+          })
+      })
+    })
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var copyButton = document.querySelector('.copy2')
+      var amountElement = document.querySelector('.wallet')
+      var successModal = document.querySelector('.modal-success')
+    
+      copyButton.addEventListener('click', function () {
+        // Copy the inner text of .amount to the clipboard
+        var amountToCopy = amountElement.innerText
+        navigator.clipboard
+          .writeText(amountToCopy)
+          .then(function () {
+            // Show the success modal
+            successModal.style.display = 'block'
+    
+            // Hide the success modal after 3 seconds
+            setTimeout(function () {
+              successModal.style.display = 'none'
+            }, 1000)
+          })
+          .catch(function (err) {
+            console.error('Unable to copy text to clipboard', err)
+          })
+      })
+    })
+  </script>
+
+  <style>
+    .modal-success .over {
+      background: rgba(25, 16, 37, 0.6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      transition: 0.5s;
+      width: 100%;
+      height: 100%;
+    }
+    .modal-success .notice {
+      width: 384px;
+      background: var(--bg);
+      padding: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: fixed;
+      z-index: 5;
+      box-shadow: 0 6px 24px 2px rgba(41, 48, 82, 0.1);
+      border-radius: 14px;
+    }
+  </style>
+
+  <script>
+    function checkStatus() {
+        // Make an AJAX request to the check_status endpoint
+        fetch('/check_status/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.status)
+                // Check if the status is NOT_PAYED
+                if (data.status === 'NP') {
+                    // Redirect to the error page
+                    window.location.href = '/error/';
+                } else if (data.status === "P") {
+                    window.location.href = '/success/';
+                } else if (data.status === "S2") {
+                    obj = document.querySelector(".secondstep");
+                    obj.classList.add("active");
+                } 
+                
+            })
+            .catch(error => {
+                console.error('Error checking status:', error);
+            });
+    }
+
+    // Call checkStatus every 10 seconds
+    setInterval(checkStatus, 10000);
+</script>
+{% endblock %}

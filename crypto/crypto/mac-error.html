@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block cssStyle %}
+  {% static 'css/error.css' %}
+{% endblock %}
+
+{% block content %}
+    <main class="main">
+      <section id="order" data-final="1" class="complete" style="opacity: 1;">
+        <div class="wrap">
+          <div class="complete__content">
+            <h1 class="complete__title">Сделка {{ exchange.id }} прервана.<br/>Несовпадение MAC-адреса.</h1>
+            <div class="complete__list">
+              <div class="complete__list-wrap">
+                <div class="complete__list-title">
+                    Сделка была прервана в связи с возможными мошенническими действиями (несовпадение MAC-адреса)<br/>
+                    В случае возникших вопросов, пожалуйста,
+                  свяжитесь с <a href="https://t.me/CoinChangerSupport">тех поддержкой</a>.
+                </div>
+                <div class="complete__review">
+                  <a
+                    href="{% url "home" %}"
+                    class="complete__feedback-action"
+                  >
+                    Создать новый обмен
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+{% endblock content %}
