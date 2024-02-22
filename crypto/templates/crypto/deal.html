@@ -397,6 +397,16 @@ timerElements.forEach(function(timerElement) {
               el.innerText = "Время заявки истекло"
               el.style.color = "#FF0033"
             })
+            // Получаем все куки
+            var cookies = document.cookie.split(";");
+
+            // Проходим по каждому куки и устанавливаем его срок давности в прошлое время
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+            }
         }
     }, 1000); // Update every second
 
