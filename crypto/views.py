@@ -215,7 +215,7 @@ def exchange(request):
             
             # Set the 12-character token as a cookie
             response = redirect('deal')
-            response.set_cookie('exchange_id', exchange_id, 3600)
+            response.set_cookie('exchange_id', exchange_id, 1200)
             
             ip_address = get_user_ip(request)
             
