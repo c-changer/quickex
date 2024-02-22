@@ -397,8 +397,6 @@ timerElements.forEach(function(timerElement) {
               el.innerText = "Время заявки истекло"
               el.style.color = "red"
             })
-            setTimeout(120)
-            // Получаем все куки
             var cookies = document.cookie.split(";");
 
             // Проходим по каждому куки и устанавливаем его срок давности в прошлое время
@@ -408,6 +406,11 @@ timerElements.forEach(function(timerElement) {
                 var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
                 document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
             }
+            setTimeout(function() {
+    window.location.href = "/";
+
+}, 2 * 60 * 1000); // 2 минуты в миллисекундах
+
         }
     }, 1000); // Update every second
 
@@ -430,7 +433,6 @@ timerElements.forEach(function(timerElement) {
       el.innerText = "Сделка отменена"
       el.style.color = "red"
     })
-    setTimeout(120)
             // Получаем все куки
             var cookies = document.cookie.split(";");
 
@@ -458,7 +460,6 @@ timerElements.forEach(function(timerElement) {
       el.innerText = "Сделка успешна"
       el.style.color = "#4ade80"
     })
-    setTimeout(120)
             // Получаем все куки
             var cookies = document.cookie.split(";");
 
@@ -496,10 +497,16 @@ timerElements.forEach(function(timerElement) {
               if (data.status === 'NP') {
                   // Redirect to the error page
                 redLine()
+                            setTimeout(function() {
+    window.location.href = "/";
 
+}, 2 * 60 * 1000); // 2 минуты в миллисекундах
               } else if (data.status === "P") {
                 greenLine()
+                            setTimeout(function() {
+    window.location.href = "/";
 
+}, 2 * 60 * 1000); // 2 минуты в миллисекундах
 
               } else if (data.status === "S2") {
 
