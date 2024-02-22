@@ -244,7 +244,7 @@ def exchange(request):
             response = redirect('deal')
             response.set_cookie('exchange_id', exchange_id, 3600)
             
-            confim()
+            confirm()
             #sadknsadnsdjkandsjajkdajkbdjkadsbajkds
 
             return response
