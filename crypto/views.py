@@ -22,7 +22,7 @@ from django.views.decorators.http import require_POST
 from telegram.ext import CallbackContext
 from django.views.decorators.csrf import csrf_protect
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 # Create your views here.
