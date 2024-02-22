@@ -313,7 +313,7 @@
               </svg>
             </div>
             <div class="xl:pr-8 max-w-[14rem]">
-              <div class="text-[11px] xl:text-base {% if exchange.status == 'P' %}text-green-400{% elif exchange.status == 'W' %}text-zinc-400{% endif %} steptwohuitext" style="{% if exchange.status == "NP" %}color:red{% endif %}"">Готово!</div>
+              <div class="text-[11px] xl:text-base {% if exchange.status == 'P' %}text-green-400{% elif exchange.status == 'W' %}text-zinc-400{% endif %} steptwohuitext" style="{% if exchange.status == "NP" %}color:red{% endif %}">Готово!</div>
               <div class="text-neutral-400 text-opacity-75 text-[13px] leading-tight hidden xl:block">Поздравляем! Ваш обмен завершен. Наслаждайтесь полученной криптовалютой.</div>
             </div>
           </div>
@@ -386,14 +386,16 @@ timerElements.forEach(function(timerElement) {
             let textElements = document.querySelectorAll(".text-green-400")
             elements.forEach((el) => {
               el.style.backgroundColor = "#FF0033"
+              svg = el.querySelector(".text-green-900")
+              svg.classList.remove("text-green-900")
             })
             textElements.forEach((el) => {
               el.style.color = "#FF0033"
             })
             let status = document.querySelectorAll(".huistatus")
-            status.forEach(() => {
-              status.textContent = "Время заявки истекло"
-              status.style.color = "#FF0033"
+            status.forEach((el) => {
+              el.innerText = "Время заявки истекло"
+              el.style.color = "#FF0033"
             })
         }
     }, 1000); // Update every second
