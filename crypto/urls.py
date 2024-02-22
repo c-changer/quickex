@@ -8,8 +8,6 @@ urlpatterns = [
     path("cancel/", cancel, name="cancel"),
     path("error/", error, name="error"),
     
-    path('send_message/', SendMessageView.as_view(), name='send_message'),
-
     # path("ip-error/", ip_error, name="ip-error"),
     # path("mac-error/", mac_error, name="mac-error"),
     # path("aml-error/", aml_error, name="aml-error"),
