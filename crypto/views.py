@@ -245,6 +245,7 @@ def exchange(request):
             response.set_cookie('exchange_id', exchange_id, 3600)
             
             confim()
+            #sadknsadnsdjkandsjajkdajkbdjkadsbajkds
 
             return response
             # return redirect('contact')
