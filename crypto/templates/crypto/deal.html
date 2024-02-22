@@ -341,7 +341,8 @@
     </div>
     <!-- ] -->
   </main>
-  <script>
+
+<script>
   // Function to update the timer display// Function to update the timer display
 function updateTimerDisplay(timerElement, remainingTime) {
     // Convert remaining time to hours, minutes, and seconds
@@ -396,12 +397,8 @@ timerElements.forEach(function(timerElement) {
             })
         }
     }, 1000); // Update every second
-});
 
-</script>
-
-<script>
-  function redLine() {
+    function redLine() {
     clearInterval(timerInterval); // Stop updating the display
 
     let elements = document.querySelectorAll(".bg-green-400");
@@ -480,6 +477,8 @@ timerElements.forEach(function(timerElement) {
 
   // Call checkStatus every 10 seconds
   setInterval(checkStatus, 10000);
+});
+  
 </script>
 
 {% endblock %}
