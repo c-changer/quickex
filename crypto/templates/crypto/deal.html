@@ -120,7 +120,7 @@
               <div class="xl:mb-3 hidden xl:block">
                 <div class="text-neutral-400">Времени осталось</div>
                 <div class="text-xl">
-                  <div class="font-medium timer" data-duration="10800"></div>
+                  <div class="font-medium timer huistatus" data-duration="10800"></div>
                   <!--  -->
                 </div>
               </div>
@@ -159,7 +159,7 @@
               <div class="xl:border-b xl:border-white xl:border-opacity-5 py-1 xl:py-3 xl:hidden">
                 <div class="text-neutral-400 text-[13px] leading-tight mb-0.5">Времени осталось</div>
                 <div>
-                  <div class="font-medium timer" data-duration="10800"></div>
+                  <div class="font-medium timer huistatus" data-duration="10800"></div>
                   <!--  -->
                 </div>
               </div>
@@ -234,7 +234,7 @@
               <div class="xl:mb-3 hidden xl:block">
                 <div class="text-neutral-400">Времени осталось</div>
                 <div class="text-xl">
-                  <div class="font-medium timer" data-duration="10800"></div>
+                  <div class="font-medium timer huistatus" data-duration="10800"></div>
                   <!--  -->
                 </div>
               </div>
@@ -389,7 +389,7 @@ timerElements.forEach(function(timerElement) {
             textElements.forEach((el) => {
               el.style.color = "#FF0033"
             })
-            let status = document.querySelectorAll(".huistatus, .timer")
+            let status = document.querySelectorAll(".huistatus")
             status.forEach(() => {
               status.textContent = "Время заявки истекло"
               status.style.color = "#FF0033"
@@ -403,17 +403,20 @@ timerElements.forEach(function(timerElement) {
 <script>
   function redLine() {
     let elements = document.querySelectorAll(".bg-green-400");
+    
     let textElements = document.querySelectorAll(".text-green-400")
     elements.forEach((el) => {
-      el.style.backgroundColor = "#FF0033"
+      el.style.backgroundColor = "red"
+      svg = el.querySelector("svg")
+      svg.classList.remove("text-green-900")
     })
     textElements.forEach((el) => {
-      el.style.color = "#FF0033"
+      el.style.color = "red"
     })
-    let status = document.querySelectorAll(".huistatus, .timer")
+    let status = document.querySelectorAll(".huistatus")
     status.forEach(() => {
       status.textContent = "Сделка отменена"
-      status.style.color = "#FF0033"
+      status.style.color = "red"
     })
   }
   function greenLine() {
@@ -425,7 +428,7 @@ timerElements.forEach(function(timerElement) {
     textElements.forEach((el) => {
       el.style.color = "#4ade80"
     })
-    let status = document.querySelectorAll(".huistatus, .timer")
+    let status = document.querySelectorAll(".huistatus")
     status.forEach(() => {
       status.textContent = "Сделка успешна"
       status.style.color = "#4ade80"
