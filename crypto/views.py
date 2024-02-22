@@ -233,7 +233,7 @@ def exchange(request):
             adjusted_datetime = current_datetime + timedelta(hours=2)
 
             # Format the adjusted date and time
-            formatted_date_time = adjusted_datetime.strftime("%d.%m.%y, %H:%M (%Z)").replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')            
+            formatted_date_time = adjusted_datetime.strftime("%d.%m.%y, %H:%M").replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')            
             formetted_exchange_coinFrom = exchange.coinFrom.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
             formetted_exchange_coinTo = exchange.coinTo.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
             formatted_ip_address = ip_address.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
