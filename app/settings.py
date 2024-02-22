@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a^nktl*mn@(5+(&fd0$n*s6m3bx9c541wvi=8nie$g%qbyk(7n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['62.197.49.83', "c-changer.in", "www.c-changer.in", "0.0.0.0", "127.0.0.1"]
+# ALLOWED_HOSTS = ['62.197.49.83', "qckx.org", "www.qckx.org", "0.0.0.0", "127.0.0.1"]
 
 
 # Application definition
@@ -59,8 +59,8 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://c-changer.in"]
-CSRF_COOKIE_DOMAIN = 'c-changer.in'
+CSRF_TRUSTED_ORIGINS = ["https://qckx.org"]
+CSRF_COOKIE_DOMAIN = 'qckx.org'
 CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
@@ -99,8 +99,8 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db',
-        'USER': 'admindb',
+        'NAME': 'quickexdb',
+        'USER': 'quickexadmindb',
         'PASSWORD': 'password',
         'HOST': 'localhost',  # Set to the appropriate host if your PostgreSQL server is not on the local machine
         'PORT': '5432',       # Set to the appropriate port if your PostgreSQL server is not using the default port
@@ -158,13 +158,13 @@ CoinMarketCup = "9957bc10-5c0c-4ec6-98e3-e98e08969dc4"
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "c-changer.in",
+    "site_title": "qckx.org",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "c-changer.in",
+    "site_header": "qckx.org",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "c-changer.in",
+    "site_brand": "qckx.org",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "images/favicon.ico",
@@ -182,10 +182,10 @@ JAZZMIN_SETTINGS = {
     "site_icon": "images/favicon.ico",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the c-changer.in Admin Panel",
+    "welcome_sign": "Welcome to the qckx.org Admin Panel",
 
     # Copyright on the footer
-    "copyright": "c-changer.in",
+    "copyright": "qckx.org",
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string 
