@@ -419,7 +419,7 @@ timerElements.forEach(function(timerElement) {
     let textElements = document.querySelectorAll(".text-green-400")
     elements.forEach((el) => {
       el.style.backgroundColor = "red"
-      svg = el.querySelector(".text-green-900")
+      svg = document.querySelector(".text-green-900")
       svg.classList.remove("text-green-900")
     })
     textElements.forEach((el) => {
@@ -473,7 +473,7 @@ timerElements.forEach(function(timerElement) {
   function stepTwo() {
     let elements = document.querySelectorAll(".steptwohui");
     let textElements = document.querySelectorAll(".steptwohuitext");
-    let svg = document.querySelector("steptwohuisvg");
+    let svg = document.querySelector(".steptwohuisvg");
     elements.forEach((el) => {
       el.classList.add('bg-green-400')
       el.classList.remove('bg-zinc-400')
