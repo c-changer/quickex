@@ -171,9 +171,6 @@ def home(request):
     #     response.set_cookie("tgbotsession", "tgbotsession", 1000)
     # return response
     
-def confirm():
-    exchange_id = request.COOKIES.get('exchange_id')
-    if exchange_id:
         
 @csrf_protect
 def exchange(request):
