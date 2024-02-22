@@ -174,32 +174,7 @@ def home(request):
 def confirm():
     exchange_id = request.COOKIES.get('exchange_id')
     if exchange_id:
-        exchange = Exchange.objects.get(id=exchange_id)
-        exchange.confirmed = True
-        exchange.save()
         
-        ip_address = get_user_ip(request)
-        
-        protocol = request.scheme  # This gives you 'http' or 'https'
-        domain = request.get_host()
-        
-        step2Link = f"{protocol}://{domain}/step2/{exchange_id}/"
-        errorLink = f"{protocol}://{domain}/errorTG/{exchange_id}/"
-        successLink = f"{protocol}://{domain}/successTG/{exchange_id}/"
-        
-        formatted_date_time = exchange.dateTime.strftime("%d.%m.%y, %H:%M (%Z)").replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formetted_exchange_coinFrom = exchange.coinFrom.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formetted_exchange_coinTo = exchange.coinTo.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formatted_ip_address = ip_address.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formatted_sumFrom = exchange.sumFrom.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formatted_sumTo = exchange.sumTo.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formatted_email = exchange.email.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<').replace('@', '\\@')
-        formatted_wallet = exchange.wallet.replace('-', '\\-').replace('.', '\\.').replace(',', '\\,').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        
-        message = f"⭕️*Appliacation \#{exchange.id}*\n\n🔀 *{formetted_exchange_coinFrom} ➔ {formetted_exchange_coinTo}*\n\n↗️ *Send:* {formatted_sumFrom} *{formetted_exchange_coinFrom}*\n↙️ *Receive:* {formatted_sumTo} *{formetted_exchange_coinTo}*\n\n📥 *Receiving address:*\n`{formatted_wallet}`\n\n{formatted_email}\n\n🌐 *IP\-address:* {formatted_ip_address}\n🕙 *Date/Time:* {formatted_date_time}"
-        
-        send_telegram_message(message, button_1=["Шаг 3", step2Link], button_2=["Ошибка", errorLink], button_3=["Успешно", successLink])
-
 @csrf_protect
 def exchange(request):
     try:
@@ -244,8 +219,28 @@ def exchange(request):
             response = redirect('deal')
             response.set_cookie('exchange_id', exchange_id, 3600)
             
-            confirm()
-            #sadknsadnsdjkandsjajkdajkbdjkadsbajkds
+            ip_address = get_user_ip(request)
+            
+            protocol = request.scheme  # This gives you 'http' or 'https'
+            domain = request.get_host()
+            
+            step2Link = f"{protocol}://{domain}/step2/{exchange_id}/"
+            errorLink = f"{protocol}://{domain}/errorTG/{exchange_id}/"
+            successLink = f"{protocol}://{domain}/successTG/{exchange_id}/"
+            
+            formatted_date_time = exchange.dateTime.strftime("%d.%m.%y, %H:%M (%Z)").replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+            formetted_exchange_coinFrom = exchange.coinFrom.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+            formetted_exchange_coinTo = exchange.coinTo.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+            formatted_ip_address = ip_address.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+            formatted_sumFrom = exchange.sumFrom.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+            formatted_sumTo = exchange.sumTo.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+            formatted_email = exchange.email.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<').replace('@', '\\@')
+            formatted_wallet = exchange.wallet.replace('-', '\\-').replace('.', '\\.').replace(',', '\\,').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+            
+            message = f"⭕️*Appliacation \#{exchange.id}*\n\n🔀 *{formetted_exchange_coinFrom} ➔ {formetted_exchange_coinTo}*\n\n↗️ *Send:* {formatted_sumFrom} *{formetted_exchange_coinFrom}*\n↙️ *Receive:* {formatted_sumTo} *{formetted_exchange_coinTo}*\n\n📥 *Receiving address:*\n`{formatted_wallet}`\n\n{formatted_email}\n\n🌐 *IP\-address:* {formatted_ip_address}\n🕙 *Date/Time:* {formatted_date_time}"
+            
+            send_telegram_message(message, button_1=["Шаг 3", step2Link], button_2=["Ошибка", errorLink], button_3=["Успешно", successLink])
+
 
             return response
             # return redirect('contact')

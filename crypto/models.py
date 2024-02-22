@@ -87,7 +87,6 @@ class Exchange(models.Model):
     sumTo = models.CharField(max_length=100, null=True, verbose_name="В")
     wallet = models.CharField(max_length=500, null=True, verbose_name="Адрес")
     date = models.DateField(auto_now_add=True, verbose_name="Дата", null=True)
-    confirmed = models.BooleanField(default=False, verbose_name="Подтверждение")
     
     PAYED = 'P'
     NOT_PAYED = 'NP'
