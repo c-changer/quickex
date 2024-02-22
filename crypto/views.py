@@ -568,7 +568,7 @@ class SendMessageView(View):
         pass
 
     async def change_message(self, update: Update):
-        # Change the message to "Redirected"
+        print("hui")
         chat_id = update.effective_chat.id
         message_id = update.effective_message.message_id
         update.effective_message.edit_text('Redirected', reply_markup=None)
