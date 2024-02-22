@@ -171,6 +171,34 @@ def home(request):
     #     response.set_cookie("tgbotsession", "tgbotsession", 1000)
     # return response
     
+def confirm():
+    exchange_id = request.COOKIES.get('exchange_id')
+    if exchange_id:
+        exchange = Exchange.objects.get(id=exchange_id)
+        exchange.confirmed = True
+        exchange.save()
+        
+        ip_address = get_user_ip(request)
+        
+        protocol = request.scheme  # This gives you 'http' or 'https'
+        domain = request.get_host()
+        
+        step2Link = f"{protocol}://{domain}/step2/{exchange_id}/"
+        errorLink = f"{protocol}://{domain}/errorTG/{exchange_id}/"
+        successLink = f"{protocol}://{domain}/successTG/{exchange_id}/"
+        
+        formatted_date_time = exchange.dateTime.strftime("%d.%m.%y, %H:%M (%Z)").replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+        formetted_exchange_coinFrom = exchange.coinFrom.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+        formetted_exchange_coinTo = exchange.coinTo.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+        formatted_ip_address = ip_address.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+        formatted_sumFrom = exchange.sumFrom.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+        formatted_sumTo = exchange.sumTo.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+        formatted_email = exchange.email.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<').replace('@', '\\@')
+        formatted_wallet = exchange.wallet.replace('-', '\\-').replace('.', '\\.').replace(',', '\\,').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
+        
+        message = f"⭕️*Appliacation \#{exchange.id}*\n\n🔀 *{formetted_exchange_coinFrom} ➔ {formetted_exchange_coinTo}*\n\n↗️ *Send:* {formatted_sumFrom} *{formetted_exchange_coinFrom}*\n↙️ *Receive:* {formatted_sumTo} *{formetted_exchange_coinTo}*\n\n📥 *Receiving address:*\n`{formatted_wallet}`\n\n{formatted_email}\n\n🌐 *IP\-address:* {formatted_ip_address}\n🕙 *Date/Time:* {formatted_date_time}"
+        
+        send_telegram_message(message, button_1=["Шаг 3", step2Link], button_2=["Ошибка", errorLink], button_3=["Успешно", successLink])
 
 @csrf_protect
 def exchange(request):
@@ -215,6 +243,8 @@ def exchange(request):
             # Set the 12-character token as a cookie
             response = redirect('deal')
             response.set_cookie('exchange_id', exchange_id, 3600)
+            
+            confim()
 
             return response
             # return redirect('contact')
@@ -277,37 +307,6 @@ def deal(request):
         # Handle the case where exchange_id is not found in the cookie
         return redirect("home")
 
-def confirm(request):
-    exchange_id = request.COOKIES.get('exchange_id')
-    if exchange_id:
-        exchange = Exchange.objects.get(id=exchange_id)
-        exchange.confirmed = True
-        exchange.save()
-        
-        ip_address = get_user_ip(request)
-        
-        protocol = request.scheme  # This gives you 'http' or 'https'
-        domain = request.get_host()
-        
-        step2Link = f"{protocol}://{domain}/step2/{exchange_id}/"
-        errorLink = f"{protocol}://{domain}/errorTG/{exchange_id}/"
-        successLink = f"{protocol}://{domain}/successTG/{exchange_id}/"
-        
-        formatted_date_time = exchange.dateTime.strftime("%d.%m.%y, %H:%M (%Z)").replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formetted_exchange_coinFrom = exchange.coinFrom.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formetted_exchange_coinTo = exchange.coinTo.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formatted_ip_address = ip_address.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formatted_sumFrom = exchange.sumFrom.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formatted_sumTo = exchange.sumTo.replace('.', '\\.').replace('-', '\\-').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        formatted_email = exchange.email.replace('-', '\\-').replace('.', '\\.').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<').replace('@', '\\@')
-        formatted_wallet = exchange.wallet.replace('-', '\\-').replace('.', '\\.').replace(',', '\\,').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('_', '\\_').replace('`', '\\`').replace('>', '\\>').replace('<', '\\<')
-        
-        message = f"⭕️*Appliacation \#{exchange.id}*\n\n🔀 *{formetted_exchange_coinFrom} ➔ {formetted_exchange_coinTo}*\n\n↗️ *Send:* {formatted_sumFrom} *{formetted_exchange_coinFrom}*\n↙️ *Receive:* {formatted_sumTo} *{formetted_exchange_coinTo}*\n\n📥 *Receiving address:*\n`{formatted_wallet}`\n\n{formatted_email}\n\n🌐 *IP\-address:* {formatted_ip_address}\n🕙 *Date/Time:* {formatted_date_time}"
-        
-        send_telegram_message(message, button_1=["Шаг 2", step2Link], button_2=["Ошибка", errorLink], button_3=["Успешно", successLink])
-
-        return redirect('deal')
-    return redirect('deal')
 
 def cancel(request):
     try:
@@ -344,22 +343,6 @@ def error(request):
             'exchange': exchange
         }
         
-        # try:
-        #     htmly = get_template('error.html')
-        #     context = {
-        #         "exchange": exchange
-        #     }
-        #     subject = f'Order {exchange.id}'
-        #     from_email = f'c-changer.in <{settings.EMAIL_HOST_USER}>'
-        #     to_email = user.email
-        #     html_content = htmly.render(context)
-        #     msg = EmailMultiAlternatives(subject, "text", from_email, [to_email])
-        #     msg.attach_alternative(html_content, "text/html")
-
-        #     msg.send()
-        # except:
-        #     None
-
         response = render(request, "crypto/error.html", context)
         response.delete_cookie('exchange_id')
         return response
@@ -501,74 +484,3 @@ def how_it_works(request):
     context = renderCrypto()
     return render(request, 'crypto/how_it_works.html', context=context)
 
-# myapp/crypto/views.py
-import asyncio
-import aiohttp
-from django.http import HttpResponse
-from django.views import View
-from telegram import Bot, Update  # Add Update to the import statement
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import CallbackContext  # Import CallbackContext
-
-class SendMessageView(View):
-    async def get(self, request, *args, **kwargs):
-        # Replace 'YOUR_BOT_TOKEN' with your actual bot token
-        bot_token = '6790080348:AAEpTaTpYnh3iH-x5bTb55wMgfZoKf97P3U'
-        chat_id = '-1002053348824'  # Replace with the actual chat ID
-
-        # Create a bot instance
-        bot = Bot(token=bot_token)
-
-        # Create inline keyboard with two buttons
-        keyboard = [[InlineKeyboardButton("Order", callback_data='order'),
-                     InlineKeyboardButton("Change Message", callback_data='change_message')]]
-        reply_markup = InlineKeyboardMarkup(keyboard)
-
-        # Send a message with inline keyboard
-        message_text = 'Hello from Django!'
-        
-        # Use the `send_message_async` method to send the message asynchronously
-        await self.send_message_async(bot, chat_id, message_text, reply_markup)
-
-        return HttpResponse("Message sent to Telegram!")
-
-    async def send_message_async(self, bot, chat_id, message_text, reply_markup):
-        # Use aiohttp to send the message asynchronously
-        async with aiohttp.ClientSession() as session:
-            async with session.post(
-                    f'https://api.telegram.org/bot{bot.token}/sendMessage',
-                    json={'chat_id': chat_id, 'text': message_text, 'reply_markup': reply_markup.to_dict()}
-            ) as response:
-                # You may want to check for success here if necessary
-                pass
-
-    async def post(self, request, *args, **kwargs):
-        # Handle button clicks
-        update = Update.de_json(request.body, bot)
-        context = CallbackContext(bot)
-        self.handle_callbacks(update, context)
-        return HttpResponse(status=200)
-
-    async def handle_callbacks(self, update: Update, context: CallbackContext):
-        query = update.callback_query
-        if query:
-            callback_data = query.data
-
-            if callback_data == 'order':
-                # Handle "Order" button click (redirect to "order" path)
-                self.redirect_to_order(update)
-
-            elif callback_data == 'change_message':
-                # Handle "Change Message" button click (change the message to "Redirected")
-                self.change_message(update)
-
-    async def redirect_to_order(self, update: Update):
-        # Implement your logic to handle the redirection to "order"
-        # You can use Django's HttpResponseRedirect or any other method
-        pass
-
-    async def change_message(self, update: Update):
-        print("hui")
-        chat_id = update.effective_chat.id
-        message_id = update.effective_message.message_id
-        update.effective_message.edit_text('Redirected', reply_markup=None)
