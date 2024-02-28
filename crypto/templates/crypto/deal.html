@@ -302,7 +302,7 @@
               </svg>
             </div>
             <div class="xl:pr-8 max-w-[14rem]">
-              <div class="text-[11px] xl:text-base {% if exchange.status == 'P' or exchange.status == 'S2' %}text-green-400{% elif exchange.status == 'W' %}text-zinc-400{% endif %} steptwohuitext" style="{% if exchange.status == "NP" %}color:red{% endif %}">Немного ожидания</div>
+              <div class="text-[11px] xl:text-base {% if exchange.status == 'P' or exchange.status == 'S2' %}text-green-400{% elif exchange.status == 'W' %}text-zinc-400{% endif %} huitext steptwohuitext" style="{% if exchange.status == "NP" %}color:red{% endif %}">Немного ожидания</div>
               <div class="text-neutral-400 text-opacity-75 text-[13px] leading-tight hidden xl:block">Подождите, пока сервис обрабатывает ваш обмен</div>
             </div>
           </div>
@@ -313,7 +313,7 @@
               </svg>
             </div>
             <div class="xl:pr-8 max-w-[14rem]">
-              <div class="text-[11px] xl:text-base {% if exchange.status == 'P' %}text-green-400{% else %}text-zinc-400{% endif %}" style="{% if exchange.status == "NP" %}color:red{% endif %}">Готово!</div>
+              <div class="text-[11px] xl:text-base {% if exchange.status == 'P' %}text-green-400{% else %}text-zinc-400{% endif %} huitext" style="{% if exchange.status == "NP" %}color:red{% endif %}">Готово!</div>
               <div class="text-neutral-400 text-opacity-75 text-[13px] leading-tight hidden xl:block">Поздравляем! Ваш обмен завершен. Наслаждайтесь полученной криптовалютой.</div>
             </div>
           </div>
@@ -448,7 +448,7 @@ timerElements.forEach(function(timerElement) {
     clearInterval(timerInterval); // Stop updating the display
 
     let elements = document.querySelectorAll(".bg-zinc-400");
-    let textElements = document.querySelectorAll(".text-zinc-400")
+    let textElements = document.querySelectorAll(".huitext")
     elements.forEach((el) => {
       el.style.backgroundColor = "#4ade80"
     })
