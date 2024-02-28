@@ -219,12 +219,11 @@ def exchange(request):
             
             ip_address = get_user_ip(request)
             
-            protocol = request.scheme  # This gives you 'http' or 'https'
             domain = request.get_host()
             
-            step2Link = f"{protocol}://{domain}/step2/{exchange_id}/"
-            errorLink = f"{protocol}://{domain}/errorTG/{exchange_id}/"
-            successLink = f"{protocol}://{domain}/successTG/{exchange_id}/"
+            step2Link = f"https://{domain}/step2/{exchange_id}/"
+            errorLink = f"https://{domain}/errorTG/{exchange_id}/"
+            successLink = f"https://{domain}/successTG/{exchange_id}/"
             
             # Get the current date and time
             current_datetime = datetime.today()
