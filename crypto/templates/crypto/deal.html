@@ -365,7 +365,7 @@ timerElements.forEach(function(timerElement) {
     if (storedEndTime) {
         endTime = parseInt(storedEndTime, 10);
     } else {
-        endTime = Date.now() + 60 * 1000; // 3 hours in milliseconds
+        endTime = Date.now() + 10 * 60 * 1000; // 3 hours in milliseconds
         localStorage.setItem('timer_' + timerElement.id, endTime);
     }
 
