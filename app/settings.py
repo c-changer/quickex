@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://qckx.org"]
+CSRF_TRUSTED_ORIGINS = ["https://www.qckx.org", "https://qckx.org"]
 CSRF_COOKIE_DOMAIN = 'qckx.org'
 CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
