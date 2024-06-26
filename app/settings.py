@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a^nktl*mn@(5+(&fd0$n*s6m3bx9c541wvi=8nie$g%qbyk(7n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['38.180.58.62', 'qckx.org', 'www.qckx.org', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['38.180.58.62', 'quickex.org', 'www.quickex.org', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -59,8 +59,8 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://www.qckx.org", "https://qckx.org"]
-CSRF_COOKIE_DOMAIN = 'qckx.org'
+CSRF_TRUSTED_ORIGINS = ["https://www.quickex.org", "https://quickex.org"]
+CSRF_COOKIE_DOMAIN = 'quickex.org'
 CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
@@ -159,13 +159,13 @@ CoinMarketCup = "9957bc10-5c0c-4ec6-98e3-e98e08969dc4"
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "qckx.org",
+    "site_title": "quickex.org",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "qckx.org",
+    "site_header": "quickex.org",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "qckx.org",
+    "site_brand": "quickex.org",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "images/logo.jpeg",
@@ -183,10 +183,10 @@ JAZZMIN_SETTINGS = {
     "site_icon": "images/favicon.ico",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the qckx.org Admin Panel",
+    "welcome_sign": "Welcome to the quickex.org Admin Panel",
 
     # Copyright on the footer
-    "copyright": "qckx.org",
+    "copyright": "quickex.org",
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string 
