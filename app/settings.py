@@ -59,8 +59,8 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://www.quickex.org", "https://quickex.org"]
-CSRF_COOKIE_DOMAIN = 'quickex.org'
+CSRF_TRUSTED_ORIGINS = ["https://www.quickex.world", "https://quickex.world"]
+CSRF_COOKIE_DOMAIN = 'quickex.world'
 CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
@@ -159,13 +159,13 @@ CoinMarketCup = "9957bc10-5c0c-4ec6-98e3-e98e08969dc4"
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "quickex.org",
+    "site_title": "quickex.world",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "quickex.org",
+    "site_header": "quickex.world",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "quickex.org",
+    "site_brand": "quickex.world",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "images/logo.jpeg",
@@ -183,10 +183,10 @@ JAZZMIN_SETTINGS = {
     "site_icon": "images/favicon.ico",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the quickex.org Admin Panel",
+    "welcome_sign": "Welcome to the quickex.world Admin Panel",
 
     # Copyright on the footer
-    "copyright": "quickex.org",
+    "copyright": "quickex.world",
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string 
