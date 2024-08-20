@@ -28,13 +28,11 @@ from datetime import datetime, timedelta
 # Create your views here.
 @sync_to_async
 def get_tgbot_token():
-    tgbots = TGbot.objects.all()
-    return tgbots[0].token
+    return TGbot.objects.first().token
 
 @sync_to_async
 def get_tgbot_chat_id():
-    tgbots = TGbot.objects.all()
-    return tgbots[0].chat_id
+    return TGbot.objects.first().chat_id
 
 async def send_telegram_message_async(message, button_1=None, button_2=None, button_3=None):
     token = await get_tgbot_token()
