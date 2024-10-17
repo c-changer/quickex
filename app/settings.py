@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a^nktl*mn@(5+(&fd0$n*s6m3bx9c541wvi=8nie$g%qbyk(7n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['38.180.38.173', 'quickex.space', 'www.quickex.space', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['38.180.38.173', 'quickex.me', 'www.quickex.me', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -59,8 +59,8 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://www.quickex.space", "https://quickex.space"]
-CSRF_COOKIE_DOMAIN = 'quickex.space'
+CSRF_TRUSTED_ORIGINS = ["https://www.quickex.me", "https://quickex.me"]
+CSRF_COOKIE_DOMAIN = 'quickex.me'
 CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
