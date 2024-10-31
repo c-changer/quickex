@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.bizssages.middleware.bizssageMiddleware',
+    'django.contrib.messages.middleware.messageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
 ]
@@ -78,7 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.bizssages.context_processors.bizssages',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -205,7 +205,7 @@ JAZZMIN_SETTINGS = {
         # Url that gets reversed (Permissions can be added)
 
         # external url that opens in a new window (Permissions can be added)
-        {"name": "Support", "url": "https://t.biz/fuficweb/", "new_window": True},
+        {"name": "Support", "url": "https://t.me/fuficweb/", "new_window": True},
 
         # model admin to link to (Permissions checked against model)
 
@@ -218,7 +218,7 @@ JAZZMIN_SETTINGS = {
 
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
-        {"name": "Support", "url": "https://t.biz/fuficweb/", "new_window": True},
+        {"name": "Support", "url": "https://t.me/fuficweb/", "new_window": True},
     ],
 
     #############
