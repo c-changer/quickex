@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a^nktl*mn@(5+(&fd0$n*s6m3bx9c541wvi=8nie$g%qbyk(7n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['38.180.38.173', 'quickex.me', 'www.quickex.me', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['38.180.38.173', 'quickex.biz', 'www.quickex.biz', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.bizssages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     
@@ -54,13 +54,13 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.bizssages.middleware.bizssageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://www.quickex.me", "https://quickex.me"]
-CSRF_COOKIE_DOMAIN = 'quickex.me'
+CSRF_TRUSTED_ORIGINS = ["https://www.quickex.biz", "https://quickex.biz"]
+CSRF_COOKIE_DOMAIN = 'quickex.biz'
 CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
@@ -78,7 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.bizssages.context_processors.bizssages',
             ],
         },
     },
@@ -205,7 +205,7 @@ JAZZMIN_SETTINGS = {
         # Url that gets reversed (Permissions can be added)
 
         # external url that opens in a new window (Permissions can be added)
-        {"name": "Support", "url": "https://t.me/fuficweb/", "new_window": True},
+        {"name": "Support", "url": "https://t.biz/fuficweb/", "new_window": True},
 
         # model admin to link to (Permissions checked against model)
 
@@ -218,7 +218,7 @@ JAZZMIN_SETTINGS = {
 
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
-        {"name": "Support", "url": "https://t.me/fuficweb/", "new_window": True},
+        {"name": "Support", "url": "https://t.biz/fuficweb/", "new_window": True},
     ],
 
     #############
