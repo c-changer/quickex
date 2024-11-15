@@ -41,7 +41,7 @@ class TGbotAdmin(admin.ModelAdmin):
     actions_on_bottom = False    
     list_display = ['name', 'token', 'chat_id']
     def has_add_permission(self, request):
-        return False
+        return True
     def has_delete_permission(self, request):
         return False
 admin.site.register(TGbot, TGbotAdmin)
