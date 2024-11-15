@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a^nktl*mn@(5+(&fd0$n*s6m3bx9c541wvi=8nie$g%qbyk(7n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['178.23.190.9', 'quickex.ink', 'www.quickex.ink', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['178.23.190.9', 'guickex.iok', 'www.guickex.iok', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -59,8 +59,8 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://www.quickex.ink", "https://quickex.ink"]
-CSRF_COOKIE_DOMAIN = 'quickex.ink'
+CSRF_TRUSTED_ORIGINS = ["https://www.guickex.iok", "https://guickex.iok"]
+CSRF_COOKIE_DOMAIN = 'guickex.iok'
 CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
@@ -183,10 +183,10 @@ JAZZMIN_SETTINGS = {
     "site_icon": "images/favicon.ico",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the quickex.in Admin Panel",
+    "welcome_sign": "Welcome to the guickex.io Admin Panel",
 
     # Copyright on the footer
-    "copyright": "quickex.in",
+    "copyright": "guickex.io",
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string 
