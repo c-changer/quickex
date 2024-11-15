@@ -5,7 +5,7 @@ import random
 class Crypto(models.Model):
     icon = models.URLField(max_length=1000, default="", verbose_name="Иконка")
     name = models.CharField(max_length=50, default="", verbose_name="Имя")
-    symbol = models.CharField(max_length=10, default="", verbose_name="Индекс")
+    symbol = models.CharField(max_length=10, unique=True, default="", verbose_name="Индекс")
     price = models.DecimalField(max_digits=20, decimal_places=10, default=0, verbose_name="Цена")
     is_available = models.BooleanField(default=True, verbose_name="Включение/Выключение")
     
