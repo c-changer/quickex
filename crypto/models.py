@@ -33,7 +33,7 @@ class DepositPayment(models.Model):
                 ('C-Chain', 'C-Chain'),
                 ('Polygon', 'Polygon'),)
     network = models.CharField(max_length=100, verbose_name="Сеть", null=True, blank=True, default="", choices=NETWOR_CHOISES, help_text="Указывать только на монеты где нужно")
-    qrcode = models.ImageField(upload_to="", verbose_name="QR-код")
+    qrcode = models.ImageField(upload_to="", null=True, blank=True, verbose_name="QR-код")
     address = models.CharField(max_length=1000, verbose_name="Адрес")
     is_available = models.BooleanField(default=True, verbose_name="Включение/Выключение")
 
