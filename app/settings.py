@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a^nktl*mn@(5+(&fd0$n*s6m3bx9c541wvi=8nie$g%qbyk(7n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['178.23.190.9', 'guickex.io', 'www.guickex.io', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -59,8 +59,8 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://www.guickex.io", "https://guickex.io"]
-CSRF_COOKIE_DOMAIN = 'guickex.io'
+CSRF_TRUSTED_ORIGINS = ["localhost"]
+CSRF_COOKIE_DOMAIN = 'localhost'
 CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
@@ -154,18 +154,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
 
-CoinMarketCup = "9957bc10-5c0c-4ec6-98e3-e98e08969dc4"
+CoinMarketCup = ""
 
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "quickex.one",
+    "site_title": "Admin",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "quickex.one",
+    "site_header": "Admin",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "quickex.one",
+    "site_brand": "Admin",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "images/logo.jpeg",
@@ -183,10 +183,10 @@ JAZZMIN_SETTINGS = {
     "site_icon": "images/favicon.ico",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the guickex.io Admin Panel",
+    "welcome_sign": "Welcome to the Admin Panel",
 
     # Copyright on the footer
-    "copyright": "guickex.io",
+    "copyright": "jazzmin",
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string 
